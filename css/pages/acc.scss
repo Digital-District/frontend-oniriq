@@ -1,0 +1,68 @@
+@import "../global";
+@import "../layout";
+
+.heading-title{
+    font-size: 38px;
+    color: $dark-blue;
+}
+.acc {
+    padding: $sec-padding;
+    form{
+        @include minLarge {
+            width: 50%;
+        }
+        @include minMeduimToMaxMeduim {
+            width: 70%;
+        }
+        @include minMeduim {
+            margin: auto;
+        }
+        @include maxSmall {
+            margin: 0 20px;
+        }
+        label{
+            color: $dark-gray;
+            font-family: AvenirLTStd-Roman;
+            a {
+                color: $dark-gray-half-opacity;
+                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                &:hover{
+                    color: $dark-gray;
+                }
+            }
+        }
+    }
+    .desc{
+        color: $dark-gray;
+        a {
+            color: $gold;
+        }
+    }
+}
+.reset-success-msg {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    background-color: $dark-gray;
+    padding: 10px 15px;
+    color: $white;
+    font-family: AvenirLTStd-Roman;
+    font-size: 14px;
+    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+    @include minMeduim {
+        width: 400px;
+    }
+    @include maxSmall {
+        width: calc(100% - 20px);
+    }
+    &:not(.show) {
+        display: none;
+    }
+    a {
+        color: $white;
+        text-shadow: unset;
+        &:hover{
+            color: $white;
+        }
+    }
+}

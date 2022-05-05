@@ -1,0 +1,60 @@
+@mixin prefixer($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  #{$property}: $value;
+}
+@mixin opacity($val) {
+  zoom: 1;
+  $opacity-ie: $val * 100;
+  filter: alpha(opacity= $opacity-ie);
+  opacity: $val;
+}
+@mixin overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin minExtraLarge {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin minLarge {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin maxMeduim {
+  @media (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin minMeduim {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin minMeduimToMaxMeduim {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin maxSmall {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin minSmall {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+@mixin maxExtraSmall {
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}

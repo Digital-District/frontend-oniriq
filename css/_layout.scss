@@ -1,0 +1,282 @@
+.header{
+  position: relative;
+  @include minMeduim {
+    padding-top: 90px;
+  }
+  @include maxSmall {
+    padding-top: 72px;
+  }
+  .navbar {
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: $white;
+    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+    &.sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      left: 0;
+      z-index: 100;
+      @include prefixer(box-shadow, 0 3px 10px #00000017, webkit moz o);
+    }
+    .container{
+      position: relative;
+      @include maxMeduim {
+        padding-inline: 15px;
+      }
+      .navbar-toggler {
+        border: none;
+        padding: 0;
+        &:focus {
+          outline: unset;
+        }
+      }
+      .navbar-collapse {
+        flex: unset;
+        @include maxMeduim {
+          display: block !important;
+          position: fixed;
+          top: 0;
+          left: -300px;
+          height: 100vh;
+          padding: 20px;
+          z-index: 100;
+          overflow-y: auto;
+          width: 300px;
+          background-color: $white;
+        }
+        .navbar-nav {
+          .nav-item {
+            &.active {
+              a {
+                font-weight: 600;
+              }
+            }
+            a {
+              @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+              &:hover{
+                color: $gold;
+              }
+            }
+            .nav-link {
+              @extend %nav-link;
+            }
+            &:hover > .sub-menu {
+              @include minLarge {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0, 0);
+              }
+            }
+            & > .sub-menu{
+              @include minLarge {
+                position: absolute;
+                width: 100%;
+                background: $light-gray;
+                z-index: 2;
+                left: 0;
+                right: 0;
+                top: 80px;
+                padding: 30px;
+                @include opacity(0);
+                @include prefixer(transform, translate(0,20px), webkit moz o);
+                @include prefixer(transition, all 0.3s ease-in-out 0s, webkit moz o);
+                visibility: hidden;
+                display: flex;
+                font-size: 14px;
+                color: $black;
+              }
+              @include maxMeduim {
+                padding-left: 15px;
+              }
+              .megamenu-li{
+                @include minLarge {
+                  flex-grow: 1;
+                  padding-right: 30px;
+                }
+                @include maxMeduim {
+                  &:not(:first-of-type){
+                    margin-top: 15px;
+                  }
+                }
+                .title{
+                  text-transform: uppercase;
+                  position: relative;
+                  padding-bottom: 5px;
+                  display: block;
+                  &:after{
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $light-gray2;
+                  }
+                }
+                .submenu-li{
+                  a {
+                    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                    &:hover{
+                      color: $gold;
+                    }
+                  }
+                }
+              }
+              .menu-banner{
+                .shop-now{
+                  color: $gold;
+                  font-size: 12px;
+                  span{
+                    padding-right: 10px;
+                    text-transform: uppercase;
+                  }
+                }
+              }
+            }
+            i {
+              font-size: 12px;
+            }
+          }
+          
+        }
+      }
+      .navbar-brand {
+        padding: 0;
+        @include minMeduim {
+          width: 200px;
+        }
+        @include maxSmall {
+          width: 150px;
+        }
+      }
+      .shop-elements{
+        a{
+          &:not(.search){
+            width: 30px;
+          }
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.search{
+            position: relative;
+            margin-right: 10px;
+            @include minMeduim {
+              &:after{
+                position: absolute;
+                content: '';
+                width: 1.7px;
+                height: 100%;
+                right: 0;
+                bottom: 0;
+                background-color: $light-gray2;
+              }
+            }
+            span{
+              color: $black-half-opacity;
+              padding-inline: 10px 15px;
+            }
+          }
+          &.filled{
+            i{
+              color: $light-black;
+              position: relative;
+              &:after{
+                position: absolute;
+                content: '';
+                width: 7px;
+                height: 7px;
+                right: -1px;
+                bottom: -2px;
+                background-color: $red;
+                border-radius: 50%;
+                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+              }
+            }
+          }
+          &:hover{
+            i{
+              color: $gold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.categories-header {
+  .navbar-nav {
+    .nav-link {
+      @extend %nav-link;
+      font-family: AvenirLTStd-Roman;
+    }
+  }
+  .search-form {
+    @extend %header-search-form;
+    width: 240px;
+    .autocomplete-suggestions{
+      width: auto !important;
+    }
+  }
+}
+.search-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  padding-block: 30px;
+  z-index: 100;
+  @include prefixer(box-shadow, 0 3px 10px #00000017, webkit moz o);
+  .logo{
+    img {
+      @include minMeduim {
+        width: 200px;
+      }
+      @include maxSmall {
+        width: 150px;
+      }
+    }
+  }
+  .search-form {
+    @include minLarge {
+      width: 50%;
+    }
+    @include minMeduimToMaxMeduim {
+      width: 70%;
+    }
+    @include minMeduim {
+      margin: auto;
+    }
+    @include maxSmall {
+      margin: 0 20px;
+    }
+    @extend %header-search-form;
+    .autocomplete-suggestions{
+      position: relative !important;
+      width: 100% !important;
+    }
+  }
+}
+.footer {
+  padding: $sec-padding;
+  .title {
+    font-size: 24px;
+    color: $dark-gray;
+  }
+  .links {
+    li {
+      a {
+        color: $black-half-opacity;
+        @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+        &:hover {
+          color: $gold;
+        }
+      }
+    }
+  }
+}

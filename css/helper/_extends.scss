@@ -1,0 +1,41 @@
+%header-search-form {
+    button{
+        border: 1px solid #ced4da;
+        background-color: unset;
+        cursor: pointer;
+        &.search-filter-clear{
+          display: none;
+          
+          span{ 
+            font-size: 20px;
+            line-height: 1;
+          }
+        }
+        &.search-btn {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+        i, span {
+          color: $light-black;
+        }
+    }
+    .autocomplete-suggestions{
+        background-color: $white;
+        padding: 10px;
+        overflow-y: auto;
+        border: 1px solid #ced4da;
+        border-top: 0;
+        .autocomplete-suggestion {
+            font-size: 18px;
+            padding: 5px;
+            color: $dark-gray;
+            cursor: pointer;
+            &:hover{
+            background-color: $light-gray;
+            }
+        }
+    }
+}
+%nav-link {
+    font-size: 20px;
+    color: $dark-gray;
+}

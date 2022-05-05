@@ -1,0 +1,68 @@
+@import "../global";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.categories{
+    padding: $sec-padding;
+    .cat-box{
+        .cat-img{
+            display: block;
+            position: relative;
+            &:before{
+                @include overlay;
+                content: " ";
+                z-index: 1;
+                background: #00000029;
+                -webkit-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        }
+        .cat-overlay{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            @include prefixer(transform, translate(-50%, -50%), webkit moz o);
+            h5{
+                font-family: 'Playfair Display', serif;
+                font-size: 72px;
+            }
+        }
+    }
+}
+.deals{
+    padding: $sec-padding;
+    .deals-box{
+        border-radius: 25px;
+        background-color: $light-black2;
+        @include minLarge {
+            padding-left: 50px;
+        }
+        @include maxMeduim {
+            padding: 50px;
+        }
+        & > div{
+            flex-grow: 1;
+            flex-basis: 0;
+            h2{
+                font-family: 'Playfair Display', serif;
+                font-size: 44px;
+                font-weight: 600;
+            }
+            p{
+                font-size: 19px;
+                color: $white-half-opacity;
+            }
+            img{
+                width: 400px;
+            }
+            .shop-now{
+                background-color: $beige;
+                color: $light-black2;
+                width: 243px;
+                padding: 12px 24px 12px 24px;
+                text-transform: uppercase;
+                border-radius: 4px;
+            }
+        }
+    }
+}
