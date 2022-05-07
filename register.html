@@ -15,7 +15,7 @@
 
 <body>
 	<div class="header">
-		<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
 					aria-expanded="false" aria-label="Toggle navigation">
@@ -31,19 +31,19 @@
 									<span class="title">Categories </span>
 									<ul class="sub-menu list-unstyled" id="collapse-categories">
 										<li class="submenu-li mt-3">
-											<a href="">Clothing</a>
+											<a href="categories.html">Clothing</a>
 										</li>
 										<li class="submenu-li mt-2">
-											<a href="">Shoes</a>
+											<a href="categories.html">Shoes</a>
 										</li>
 										<li class="submenu-li mt-2">
-											<a href="">Accessories</a>
+											<a href="categories.html">Accessories</a>
 										</li>
 										<li class="submenu-li mt-2">
-											<a href="">Underwear</a>
+											<a href="categories.html">Underwear</a>
 										</li>
 										<li class="submenu-li mt-2">
-											<a href="">Deals</a>
+											<a href="categories.html">Deals</a>
 										</li>
 									</ul>
 								</li>
@@ -93,7 +93,7 @@
 					</ul>
 				</div>
 				<a class="navbar-brand mr-0" href="/"><img src="images/logo.png" alt="ONIRIQ" class="w-100"></a>
-				<div class="shop-elements d-flex justify-content-between align-items-center">
+				<div class="shop-elements d-flex justify-content-end align-items-center">
 					<a href="javascript:void(0)" class="search" onclick="$('.search-box').slideDown();"><i class="icon-magnifier"></i><span class="d-md-block d-none">Search</span></a>
 					<a href="/sign-in.html" class="user"><i class="icon-user"></i></a>
 					<a href="/wishlist.html" class="wishlist"><i class="icon-heart"></i></a>
@@ -110,15 +110,17 @@
 				<img src="images/logo.png" alt="ONIRIQ">
 			</div>
 			<div class="search-form">
-				<div class="input-group">
-					<input  type="text" id="search-autocomplete" class="form-control border-right-0" placeholder="Search" aria-label="Search">
-					<button type="button" class="border-left-0 border-right-0 search-filter-clear" aria-label="clear">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<button type="button" class="border-left-0 search-btn" aria-label="search">
-						<i class="icon-magnifier" aria-hidden="true"></i>
-					</button>
-				</div>
+				<form action="">
+					<div class="input-group">
+						<input  type="text" id="search-autocomplete" class="form-control border-right-0" placeholder="Search" aria-label="Search">
+						<button type="button" class="border-left-0 border-right-0 search-filter-clear" aria-label="clear">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<button type="submit" class="border-left-0 search-btn" aria-label="search">
+							<i class="icon-magnifier" aria-hidden="true"></i>
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

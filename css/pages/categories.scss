@@ -1,0 +1,357 @@
+@import "../global";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.heading-title {
+    @include minMeduim {
+        width: 620px;
+    }
+    h2 {
+        font-size: 24px;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+    }
+    .shop-now {
+        margin: 30px auto 0;
+    }
+}
+.shop-now {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    border: solid 1px $light-black3;
+    border-radius: 4px;
+    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+    &:hover {
+        background-color: $dark-gray;
+        color: $white;
+    }
+}
+.add-to-bag {
+    @extend %cart-btn;
+}
+.product-box {
+    &:hover {
+        .card-img-top {
+            &:after{
+                left: 0;
+            }
+        }
+    }
+    .card-img-top {
+        position: relative;
+        overflow: hidden;
+        &:after {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            content: " ";
+            z-index: 1;
+            background-color: #0000001a;
+            @include prefixer(transition, all 0.5s ease-in-out, webkit moz o);
+        }
+    }
+    .card-body {
+        font-size: 14px;
+        .card-title, .card-text {
+            color: $light-black3;
+        }
+        .card-title {
+            font-weight: 900;
+            font-size: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .card-price {
+            color: $gold;
+        }
+    }
+}
+
+.banner {
+    .carousel {
+      .carousel-indicators {
+        li {
+          background: $white-half-opacity;
+          @include opacity(1);
+          width: 12px;
+          height: 12px;
+          border-top: 0;
+          border-bottom: 0;
+          border-radius: 50%;
+          margin: 0 5px;
+          cursor: pointer;
+          &.active {
+            background-color: $white;
+          }
+          &:hover {
+            background-color: $white;
+          }
+        }
+      }
+      .carousel-item {
+        position: relative;
+        .carousel-img {
+          display: block;
+          background-repeat: no-repeat;
+          background-size: cover;
+          @include maxMeduim {
+            background-position: left 35% bottom;
+          }
+          @include minMeduim {
+            height: calc(100vh - 152px);
+          }
+          @include maxSmall {
+            height: calc(100vh - 134px);
+          }
+        }
+        .caption-container {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            .carousel-caption {
+                width: 50%;
+                position: relative;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                h1 {
+                    font-family: 'Playfair Display', serif;
+                    color: $white;
+                    @include minMeduim {
+                        font-size: 80px;
+                    }
+                    @include minSmallToMaxSmall {
+                        font-size: 40px;
+                    }
+                }
+                .shop-btn {
+                    @include minSmall {
+                        width: 203px;
+                    }
+                    height: 48px;
+                    margin: 50px auto 0;
+                    text-transform: uppercase;
+                    border-radius: 4px;
+                    background-color: $gold;
+                    color: $white;
+                    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                    &:hover {
+                        background-color: $dark-gray;
+                    }
+                }
+            }
+        }
+      }
+    }
+}
+.new-in {
+    padding: $sec-padding;
+    .heading-title {
+        h2 {
+            font-size: 20px;
+        }
+    }
+}
+.our-mission {
+    padding: $sec-padding;
+    .inner {
+        & > div {
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+        .details {
+            h2 {
+                font-family: 'Playfair Display', serif;
+                font-size: 48px;
+                color: $gold;
+            }
+            p {
+                font-family: Avenir-Roman;
+                font-size: 20px;
+                color: $dark-gray;
+                line-height: 1.71;
+                @include minLarge {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+.discover {
+    padding: $sec-padding;
+    background-color: $gold-quarter-opacity;
+    .card {
+        background-color: transparent;
+    }
+}
+.new-categories {
+    padding: $sec-padding;
+}
+.categories {
+    padding: $sec-padding;
+    .heading-title {
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+    }
+    .cat-box {
+        position: relative;
+        @include maxExtraSmall {
+            margin-inline: 30px;
+        }
+        .cat-img {
+            position: relative;
+            &:after {
+                @include overlay;
+                content: " ";
+                z-index: 1;
+                background: #00000029;
+                @include prefixer(transition, all .3s ease-in-out, webkit moz o);
+            }
+        }
+        .cat-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+            @include prefixer(transform, translate(-50%, -50%), webkit moz o);
+            h3 {
+                @include minMeduim {
+                    font-size: 32px;
+                }
+                @include minSmallToMaxSmall {
+                    font-size: 20px;                    
+                }
+                letter-spacing: 1px;
+                font-family: 'Playfair Display', serif;
+            }
+        }
+    }
+}
+.testimonials {
+    padding: $sec-padding;
+    background-color: $gold;
+    .heading-title {
+        h2 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.82px;
+            font-size: 38px
+        }
+        p{
+            font-size: 18px;
+            @include opacity(0.67);
+        }
+    }
+    #owl-testimonials {
+        .owl-stage-outer {
+            border-top: 1px solid $white-quarter-opacity;
+            padding-top: 20px;
+            .testi-box {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 20px;
+                padding-bottom: 65px;
+                min-height: 312px;
+                position: relative;
+                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                @include maxExtraSmall {
+                    margin-inline: 30px;
+                }
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: -21px;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $white;
+                    display: none;
+                    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                }
+                &:hover {
+                    background-color: $white;
+                    &:before {
+                        display: block;
+                    }
+                    p {
+                        color: $black;
+                        @include opacity(1);
+                    }
+                    .testi-details {
+                        span {
+                            color: $black-half-opacity;
+                        }
+                    }
+                }
+                p {
+                    color: $white;
+                    @include opacity(0.61);
+                    font-family: 'Playfair Display', serif;
+                    font-size: 18px;
+                    margin-bottom: 0;
+                }   
+                .testi-details {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 20px;
+                    img {
+                        width: 32px;
+                        height: 32px;
+                    }
+                    h5 {
+                        color: $black;
+                        font-size: 12px;
+                    }
+                    span {
+                        color: $white-half-opacity;
+                        font-size: 12px;
+                    }
+                }     
+            }
+        }
+        .owl-nav {
+            display: flex;
+            justify-content: end;
+            .owl-next, .owl-prev {
+                width: 40px;
+                height: 40px;
+                background: #fff;
+                border-radius: 50%;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                bottom: -20px;
+                // @include prefixer(transform, translateY(-50%), webkit moz o);
+                &:hover {
+                    background-color: $black-half-opacity;
+                    svg {
+                        fill: $white !important;
+                    }
+                }
+            }
+            .owl-next {
+                @include minSmall{
+                    right: 10px;
+                }
+                @include maxSmall{
+                    right: 40px;
+                }
+            }
+            .owl-prev {
+                @include minSmall{
+                    left: 10px;
+                }
+                @include maxSmall{
+                    left: 40px;
+                }
+            }
+        }
+    }
+}

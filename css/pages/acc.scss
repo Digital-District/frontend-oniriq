@@ -2,22 +2,22 @@
 @import "../layout";
 
 .heading-title{
-    font-size: 38px;
+    @media (min-width: 420px) {
+        font-size: 38px;
+    }
     color: $dark-blue;
+    line-height: 1.06;
+    letter-spacing: -1.14px;
+    font-weight: bold;
 }
 .acc {
     padding: $sec-padding;
     form{
-        @include minLarge {
-            width: 50%;
-        }
-        @include minMeduimToMaxMeduim {
-            width: 70%;
-        }
-        @include minMeduim {
+        @media (min-width: 420px) {
+            width: 382px; 
             margin: auto;
         }
-        @include maxSmall {
+        @media (max-width: 419.98px) {
             margin: 0 20px;
         }
         label{

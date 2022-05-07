@@ -1,3 +1,5 @@
+@import 'mixins';
+
 %header-search-form {
     button{
         border: 1px solid #ced4da;
@@ -5,7 +7,6 @@
         cursor: pointer;
         &.search-filter-clear{
           display: none;
-          
           span{ 
             font-size: 20px;
             line-height: 1;
@@ -36,6 +37,22 @@
     }
 }
 %nav-link {
-    font-size: 20px;
-    color: $dark-gray;
+  font-size: 20px;
+  color: $dark-gray;
+}
+%cart-btn {
+  border-color: $dark-gray;
+  border-width: 1px;
+  height: 40px;
+  text-transform: uppercase;
+  color: $dark-gray;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background-color: unset;
+  cursor: pointer;
+  @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+  &:hover {
+    background-color: $dark-gray;
+    color: $white;
+  }
 }

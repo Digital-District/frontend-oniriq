@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Categories</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css?ver=29be384a3d0563d7308dc00d497f1a0e"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="css/pages/categories.css">
+</head>
+
+<body>
+	<div class="header">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNavbar">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a href="javasrcipt:void(0)" class="nav-link d-none d-lg-block">Men</a>
+							<a class="nav-link d-lg-none d-flex justify-content-between align-items-center" href="#collapse-men" data-toggle="collapse" aria-expanded="false"><span>Men</span><i class="icon-arrow-down"></i></a>
+							<ul class="sub-menu list-unstyled d-lg-flex collapse" id="collapse-men">
+								<li class="megamenu-li parant">
+									<span class="title">Categories </span>
+									<ul class="sub-menu list-unstyled" id="collapse-categories">
+										<li class="submenu-li mt-3">
+											<a href="categories.html">Clothing</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="categories.html">Shoes</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="categories.html">Accessories</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="categories.html">Underwear</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="categories.html">Deals</a>
+										</li>
+									</ul>
+								</li>
+								<li class="megamenu-li parant">
+									<span class="title">Brands </span>
+									<ul class="sub-menu list-unstyled" id="collapse-brands">
+										<li class="submenu-li mt-3">
+											<a href="">Adidas</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="">Converse</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="">Nike</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="">New Balance</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="">Reebok</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="">Espadrilles</a>
+										</li>
+									</ul>
+								</li>
+								<li class="megamenu-li parant">
+									<span class="title">Other </span>
+									<ul class="sub-menu list-unstyled" id="collapse-other">
+										<li class="submenu-li mt-3">
+											<a href="">In deals</a>
+										</li>
+										<li class="submenu-li mt-2">
+											<a href="">Recommended</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu-banner d-flex flex-column">
+									<img class="img-fluid mb-2" src="images/header-banner.jpg" alt="">
+									<span>Deals of today</span>
+									<a class="mt-2" href="sub-category.html"><span>Shop now</span><i class="icon-arrow-right"></i></a>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item"><a href="/" class="nav-link">Women</a></li>
+						<li class="nav-item"><a href="/" class="nav-link">Kids</a></li>
+					</ul>
+				</div>
+				<a class="navbar-brand mr-0" href="/"><img src="images/logo.png" alt="ONIRIQ" class="w-100"></a>
+				<div class="shop-elements d-flex justify-content-end align-items-center">
+					<!-- <a href="javascript:void(0)" class="search" onclick="$('.search-box').slideDown();"><i class="icon-magnifier"></i><span class="d-md-block d-none">Search</span></a> -->
+					<a href="/sign-in.html" class="user"><i class="icon-user"></i></a>
+					<a href="/wishlist.html" class="wishlist"><i class="icon-heart"></i></a>
+					<a href="/cart.html" class="cart"><i class="icon-bag"></i></a>
+				</div>
+			</div>
+		</nav>
+	</div>
+    <div class="categories-header">
+		<div class="container d-flex align-items-center justify-content-between">
+            <ul class="list-inline mb-0 d-none d-lg-block">
+                <li class="list-inline-item mr-4"><a href="" class="">Clothing</a></li>
+                <li class="list-inline-item mr-4"><a href="" class="">Shoes</a></li>
+                <li class="list-inline-item mr-4"><a href="" class="">Accessories</a></li>
+                <li class="list-inline-item mr-4"><a href="" class="">Underwear</a></li>
+                <li class="list-inline-item mr-4"><a href="" class="">Deals</a></li>
+            </ul>
+            <div class="search-form">
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" id="search-autocomplete" class="form-control border-right-0" placeholder="Search" aria-label="Search" autocomplete="off">
+                        <button type="button" class="border-left-0 border-right-0 search-filter-clear" aria-label="clear">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <button type="submit" class="border-left-0 search-btn" aria-label="search">
+                            <i class="icon-magnifier" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </form>
+            <div class="autocomplete-suggestions" style="position: absolute; display: none; max-height: 200px; z-index: 9999;"></div></div>
+        </div>
+	</div>
+
+    <div class="banner">
+        <div id="carouselExampleIndicators" class="carousel mt-4" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-img" style="background-image: url('images/banner.jpg');"></div>
+                    <div class="caption-container d-flex align-items-center justify-content-center position-absolute">
+                        <div class="carousel-caption py-0 text-center">
+                            <h1>New Fall Collection</h1>
+                            <a href="sub-category.html" class="shop-btn d-flex align-items-center justify-content-center">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-img" style="background-image: url('images/banner.jpg');"></div>
+                    <div class="caption-container d-flex align-items-center justify-content-center position-absolute">
+                        <div class="carousel-caption py-0 text-center">
+                            <h1>New Fall Collection</h1>
+                            <a href="sub-category.html" class="shop-btn d-flex align-items-center justify-content-center">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-in">
+        <div class="container">
+            <div class="heading-title text-center m-auto">
+                <h2>New in: hand-picked daily from the world’s best brands and most researched this period.</h2>
+                <a href="sub-category.html" class="shop-now d-flex align-items-center justify-content-center">Shop Now</a>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-1.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>
+                            <button class="add-to-bag btn-block">Add To Bag</button> 
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-2.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>  
+                            <button class="add-to-bag btn-block">Add To Bag</button>    
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-3.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>   
+                            <button class="add-to-bag btn-block">Add To Bag</button>   
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-4.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>  
+                            <button class="add-to-bag btn-block">Add To Bag</button>    
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="our-mission">
+        <div class="container">
+            <div class="inner d-flex align-items-center">
+                <div class="details">
+                    <h2>Your Goal,<span class="d-inline d-lg-block"> Our Mission.</span></h2>
+                    <p>Oniriq for delivering you the best fashion for all ages. This is the customers' opinion about the matching of the item and real product and the delivery service.</p>
+                    <a href="sub-category.html" class="shop-now d-flex align-items-center justify-content-center mt-5">Shop Now</a>
+                </div>
+                <div class="img d-none d-lg-block">
+                    <img class="w-100 img-fluid" src="images/mission.jpg" alt="Our Mission">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="discover">
+        <div class="container">
+            <div class="heading-title text-center m-auto">
+                <h2>Discover: highlights from Black Clothing</h2>
+                <a href="sub-category.html" class="shop-now d-flex align-items-center justify-content-center">Shop Now</a>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-1.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>
+                            <button class="add-to-bag btn-block">Add To Bag</button> 
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-2.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>  
+                            <button class="add-to-bag btn-block">Add To Bag</button>    
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-3.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>   
+                            <button class="add-to-bag btn-block">Add To Bag</button>   
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newin-4.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>  
+                            <button class="add-to-bag btn-block">Add To Bag</button>    
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-categories">
+        <div class="container">
+            <div class="heading-title text-center m-auto">
+                <h2>Figure our new category for suits.</h2>
+                <a href="sub-category.html" class="shop-now d-flex align-items-center justify-content-center">Shop Now</a>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newcat-1.jpg" alt="Hemsworth Teal Suit">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Hemsworth Teal Suit</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>
+                            <button class="add-to-bag btn-block">Add To Bag</button> 
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newcat-2.jpg" alt="Hereford Cavalry Indigo">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Hereford Cavalry Indigo</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>  
+                            <button class="add-to-bag btn-block">Add To Bag</button>    
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newcat-3.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>   
+                            <button class="add-to-bag btn-block">Add To Bag</button>   
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <div class="card product-box border-0">
+                        <div class="card-img-top rounded-0 mb-4">
+                            <img class="img-fluid w-100" src="images/newcat-4.jpg" alt="Zimmermann">
+                        </div>
+                        <div class="card-body p-0">
+                            <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                            <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                            <p class="card-price">5,400 QAR</p>  
+                            <button class="add-to-bag btn-block">Add To Bag</button>    
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories">
+        <div class="container">
+            <div class="heading-title text-center m-auto">
+                <h2>Get a look at categories.</h2>
+            </div>
+        </div>
+        <div id="owl-categories" class="owl-carousel mt-5">
+            <div class="cat-box">
+                <a href="">
+                    <div class="cat-img">
+                        <img src="images/cats-1.jpg" class="w-100" alt="Accessories">
+                    </div>
+                    <div class="cat-title text-white">
+                        <h3>Accessories</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-box">
+                <a href="">
+                    <div class="cat-img">
+                        <img src="images/cats-2.jpg" class="w-100" alt="Jackets">
+                    </div>
+                    <div class="cat-title text-white">
+                        <h3>Jackets</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-box">
+                <a href="">
+                    <div class="cat-img">
+                        <img src="images/cats-3.jpg" class="w-100" alt="Shoes">
+                    </div>
+                    <div class="cat-title text-white">
+                        <h3>Shoes</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-box">
+                <a href="">
+                    <div class="cat-img">
+                        <img src="images/cats-4.jpg" class="w-100" alt="Suits">
+                    </div>
+                    <div class="cat-title text-white">
+                        <h3>Suits</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="cat-box">
+                <a href="">
+                    <div class="cat-img">
+                        <img src="images/cats-5.jpg" class="w-100" alt="Pants">
+                    </div>
+                    <div class="cat-title text-white">
+                        <h3>Pants</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="testimonials">
+        <div class="container">
+            <div class="heading-title text-center m-auto text-white">
+                <h2 class="mb-4">Your Goal, <b>Our Mission.</b></h2>
+                <p>This is the customers' opinion about the matching of the item and real product and the delivery service.</p>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="offset-lg-1"></div>
+            <div class="col-lg-11">
+                <div id="owl-testimonials" class="owl-carousel mt-5">
+                    <div class="testi-box">
+                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
+                        <div class="testi-details d-flex">
+                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
+                            <div class="ml-2">
+                                <h5 class="mb-0">Mohamed Nasr</h5>
+                                <span>Ux designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-box">
+                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
+                        <div class="testi-details d-flex">
+                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
+                            <div class="ml-2">
+                                <h5 class="mb-0">Mohamed Nasr</h5>
+                                <span>Ux designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-box">
+                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
+                        <div class="testi-details d-flex">
+                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
+                            <div class="ml-2">
+                                <h5 class="mb-0">Mohamed Nasr</h5>
+                                <span>Ux designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-box">
+                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
+                        <div class="testi-details d-flex">
+                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
+                            <div class="ml-2">
+                                <h5 class="mb-0">Mohamed Nasr</h5>
+                                <span>Ux designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testi-box">
+                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
+                        <div class="testi-details d-flex">
+                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
+                            <div class="ml-2">
+                                <h5 class="mb-0">Mohamed Nasr</h5>
+                                <span>Ux designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<h3 class="title mb-4">Service</h3>
+					<ul class="list-unstyled mb-0 links">
+						<li class="mb-2"><a href="">About Us</a></li>
+						<li class="mb-2"><a href="">Privacy & Policy</a></li>
+						<li class="mb-2"><a href="">Terms & Conditions</a></li>
+						<li class="mb-2"><a href="">Contact Us</a></li>
+						<li class="mb-2"><a href="">Returns & Refunds</a></li>
+						<li class="mb-2"><a href="">FAQs</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+					<h3 class="title mb-4">Top Categories</h3>
+					<ul class="list-unstyled mb-0 links">
+						<li class="mb-2"><a href="">Shoes</a></li>
+						<li class="mb-2"><a href="">Accessories</a></li>
+						<li class="mb-2"><a href="">Clothing</a></li>
+						<li class="mb-2"><a href="">Ramadan</a></li>
+						<li class="mb-2"><a href="">Deals</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+					<h3 class="title mb-4">Recommended</h3>
+					<ul class="list-unstyled mb-0 links">
+						<li class="mb-2"><a href="">Athletic Shoes</a></li>
+						<li class="mb-2"><a href="">Deals</a></li>
+						<li class="mb-2"><a href="">Wishlist</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+					<h3 class="title mb-4">Download Our App</h3>
+					<ul class="list-inline list-unstyled mb-5 apps-logo">
+						<li class="mb-3"><a href=""><img src="images/Google Play.png" alt=""></a></li>
+						<li class="mb-3"><a href=""><img src="images/Badge.png" alt=""></a></li>
+						<li class="mb-3"><a href=""><img src="images/Badge_2.png" alt=""></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="fullscreen-bg"></div>
+    <ul class="list-unstyled d-none" id="search-results-list">
+        <li>Off-White T-Shirts & Vests</li>
+        <li>Moschino T-Shirts</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Off-White T-Shirts & Vests</li>
+        <li>Moschino T-Shirts</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Off-White T-Shirts & Vests</li>
+        <li>Moschino T-Shirts</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Plam Angles Track Jacket</li>
+        <li>Plam Angles Track Jacket</li>
+    </ul>
+
+	<!-- <a href="javascript:void(0)" class="go-top" class="rounded"><i class="fa fa-angle-up"></i></a> -->
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script> -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script> -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<script src="js/main.js"></script>
+    <script>
+        $('#owl-categories').owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3000,
+            // dots: true,
+            autoplayHoverPause: true,
+            loop: true,
+            margin: 20,
+            responsiveClass:true,
+            responsive: {
+                0: {
+                    items: 1,
+                    //stagePadding: 150,
+                },
+                576: {
+                    items: 2,
+                    stagePadding: 150,
+                },
+                992: {
+                    items: 3,
+                    stagePadding: 200,
+                }
+            }
+        });
+        $('#owl-testimonials').owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3000,
+            nav : true,
+            dots: false,
+            navText: [
+                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);"><path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"></path></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>'
+            ],
+            autoplayHoverPause: true,
+            // stagePadding: 200,
+            loop: true,
+            margin: 30,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                576: {
+                    items: 2,
+                },
+                768: {
+                    items: 3,
+                },
+                992: {
+                    items: 4,
+                },
+                1200: {
+                    items: 4.5,
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -7,6 +7,14 @@
 
 body {
   font-family: AvenirLTStd-Book;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+.container {
+  @media (min-width: 1360px) {
+    max-width: 144rem;
+    padding-inline: 4.8rem;
+  }
 }
 a{
   color: $black;
