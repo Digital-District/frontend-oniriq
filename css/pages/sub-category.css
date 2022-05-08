@@ -1,8 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: AvenirLTStd-Black;
   src: url("../../fonts/AvenirLTStd-Black.otf") format("opentype");
-}
-
+} */
 @font-face {
   font-family: AvenirLTStd-Book;
   src: url("../../fonts/AvenirLTStd-Book.otf") format("opentype");
@@ -11,6 +10,41 @@
 @font-face {
   font-family: AvenirLTStd-Roman;
   src: url("../../fonts/AvenirLTStd-Roman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Medium;
+  src: url("../../fonts/Avenir-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Light;
+  src: url("../../fonts/Avenir-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url("../../fonts/Avenir-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Regular;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-SemiBold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Medium;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Bold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Bold.otf") format("opentype");
 }
 
 .categories-header .search-form button, .search-box .search-form button {
@@ -61,12 +95,12 @@
 }
 
 .shop .shop-content .shop-grid .product-box .card-body .add-to-bag, .shop .shop-content .shop-grid .product-box .card-body .view-cart {
+  font-family: Avenir-Heavy;
   border-color: #303030;
   border-width: 1px;
   height: 40px;
   text-transform: uppercase;
   color: #303030;
-  font-weight: 900;
   letter-spacing: 1px;
   background-color: unset;
   cursor: pointer;
@@ -171,8 +205,12 @@
   }
 }
 
+.header .navbar .container .navbar-collapse .navbar-nav .nav-item {
+  font-family: Avenir-Medium;
+}
+
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item.active > a {
-  font-weight: 600;
+  color: #00000080;
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item a {
@@ -505,6 +543,7 @@
 
 .page-title h1 {
   font-size: 32px;
+  font-family: Avenir-Medium;
   text-transform: uppercase;
 }
 
@@ -528,7 +567,7 @@
 }
 
 body {
-  font-family: AvenirLTStd-Book;
+  font-family: Avenir-Light;
   overflow-x: hidden;
   font-size: 16px;
 }
@@ -549,6 +588,7 @@ a:hover {
 }
 
 .btn-primary {
+  font-family: 'Avenir-Heavy';
   background-color: #303030;
   border-color: #303030;
   text-transform: uppercase;
@@ -647,6 +687,23 @@ button:active:focus {
   z-index: 1;
   opacity: 1;
   visibility: visible;
+}
+
+#ajax-loader {
+  display: none;
+  position: fixed;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 500px;
+  z-index: 100010;
+  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
+}
+
+.shop .shop-sidebar {
+  font-family: "Avenir-Medium";
 }
 
 .shop .shop-sidebar .close {
@@ -825,9 +882,11 @@ button:active:focus {
 .shop .shop-sidebar .filter-group .filter-options .slider-box .price-values > div {
   border: 1px solid #30303080;
   padding: 5px 10px;
-  width: 110px;
+  width: 89px;
+  height: 48px;
   border-radius: 4px;
   font-family: AvenirLTStd-Roman;
+  font-size: 12px;
 }
 
 .shop .shop-sidebar .filter-group .filter-options .slider-box .price-values > div label {
@@ -841,6 +900,8 @@ button:active:focus {
   vertical-align: top;
   color: #303030;
   outline: 0;
+  padding: 0;
+  text-align: right;
 }
 
 .shop .shop-sidebar .filter-group .filter-options .slider-box .slider {
@@ -874,12 +935,20 @@ button:active:focus {
 .shop .shop-content .shop-topbar .results-count {
   font-size: 18px;
   color: #00000080;
+  font-family: Avenir-Heavy;
 }
 
 .shop .shop-content .shop-topbar .tags > div {
+  height: 36px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-right: 10px;
   margin-top: 10px;
   padding: 5px 10px;
@@ -888,6 +957,7 @@ button:active:focus {
 }
 
 .shop .shop-content .shop-topbar .tags > div .title {
+  font-size: 12px;
   max-width: 120px;
   white-space: nowrap;
   overflow: hidden;
@@ -898,8 +968,7 @@ button:active:focus {
 
 .shop .shop-content .shop-topbar .tags > div .clear {
   margin-left: 5px;
-  font-size: 24px;
-  height: 25px;
+  font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1013,13 +1082,17 @@ button:active:focus {
 }
 
 .shop .shop-content .shop-grid .product-box .card-body .card-title {
-  font-weight: 900;
-  font-size: 20px;
+  font-family: Avenir-Heavy;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.shop .shop-content .shop-grid .product-box .card-body .card-text {
+  font-family: AvenirLTStd-Book;
 }
 
 .shop .shop-content .shop-grid .product-box .card-body .card-price {

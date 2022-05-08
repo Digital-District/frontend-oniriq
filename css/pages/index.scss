@@ -23,7 +23,7 @@
             z-index: 2;
             @include prefixer(transform, translate(-50%, -50%), webkit moz o);
             h5{
-                font-family: 'Playfair Display', serif;
+                font-family: 'PlayfairDisplay-Regular';
                 font-size: 72px;
             }
         }
@@ -44,9 +44,8 @@
             flex-grow: 1;
             flex-basis: 0;
             h2{
-                font-family: 'Playfair Display', serif;
+                font-family: 'PlayfairDisplay-SemiBold';
                 font-size: 44px;
-                font-weight: 600;
             }
             p{
                 font-size: 19px;
@@ -56,6 +55,7 @@
                 width: 400px;
             }
             .shop-now{
+                font-family: 'AvenirLTStd-Book';
                 background-color: $beige;
                 color: $light-black2;
                 width: 243px;

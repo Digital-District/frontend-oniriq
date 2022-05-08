@@ -41,12 +41,12 @@
   color: $dark-gray;
 }
 %cart-btn {
+  font-family: Avenir-Heavy;
   border-color: $dark-gray;
   border-width: 1px;
   height: 40px;
   text-transform: uppercase;
   color: $dark-gray;
-  font-weight: 900;
   letter-spacing: 1px;
   background-color: unset;
   cursor: pointer;

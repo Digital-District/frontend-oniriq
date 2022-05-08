@@ -44,7 +44,13 @@
 	});
 
 	$('.shop-sidebar .filter-options ul li input').on("change", function() {
-		//shopFilterProducts();
+		var value = $(this).next().find('.title').text();
+		var tag = '<div>'+
+					'<span class="title">' + value + '</span>'+
+					'<a href="javascript:void(0)" class="clear" onclick="shopFilterTagsClear($(this))"><span>&times;</span></a>'+
+				'</div>'
+		$('.shop-content .shop-topbar .tags').append(tag);
+		shopFilterProducts();
 	});
 })();
 
@@ -78,9 +84,17 @@ function shopFilterSidebarOpen(){
 	if($(window).width() < 576) 
 		$('body').css('overflow', 'hidden');
 }
+function shopFilterTagsClear(ct){
+	ct.parent().fadeOut(200);
+	setTimeout(function(){ ct.parent().remove(); }, 300);
+	shopFilterProducts();
+}
 function shopFilterProducts(){
 	$.get("", function(data, status){
-		location.reload();
+		$('#ajax-loader').fadeIn();
+		setTimeout(function(){
+			location.reload();
+		}, 2000);
 	});
 }
 function shopProductsPagination(selector, page, range){
@@ -110,3 +124,29 @@ function shopProductsPagination(selector, page, range){
 		$(selector).append('<li class="page-item"><a class="page-link" href="javascript:void(0)">Next<span><i class="icon-arrow-right"></i</span></a></li>');
 };
 shopProductsPagination('.pagination', 1, 3);
+
+function owlCarouselInit(options){
+	var autoplay = options.autoplay == undefined ? false : options.autoplay,
+		autoplayTimeout = options.autoplayTimeout == undefined ? 5000 : options.autoplayTimeout,
+		dots = options.dots == undefined ? true : options.dots,
+		nav = options.nav == undefined ? false : options.nav,
+		navText = options.navText == undefined ? '[&#x27;next&#x27;,&#x27;prev&#x27;]' : options.navText,
+		autoplayHoverPause = options.autoplayHoverPause == undefined ? false : options.autoplayHoverPause,
+		loop = options.loop == undefined ? false : options.loop,
+		margin = options.margin == undefined ? 30 : options.margin,
+		responsiveClass = options.responsiveClass == undefined ? false : options.responsiveClass,
+		responsive = options.responsive == undefined ? {768: {items: 1}, 992: {items: 2}, 1200: {items: 3}} : options.responsive;
+		
+	$(options.elem).owlCarousel({
+		autoplay: autoplay,
+		autoplayTimeout: autoplayTimeout,
+		dots: dots,
+		nav:nav,
+		navText: navText,
+		autoplayHoverPause: autoplayHoverPause,
+		loop: loop,
+		margin: margin,
+		responsiveClass:responsiveClass,
+		responsive: responsive
+	});
+}

@@ -5,11 +5,10 @@
     @media (min-width: 420px) {
         font-size: 38px;
     }
+    font-family: 'Avenir-Medium';
     color: $dark-blue;
     line-height: 1.06;
-    letter-spacing: -1.14px;
-    font-weight: bold;
-}
+    letter-spacing: -1.14px;}
 .acc {
     padding: $sec-padding;
     form{
@@ -22,7 +21,7 @@
         }
         label{
             color: $dark-gray;
-            font-family: AvenirLTStd-Roman;
+            font-family: 'AvenirLTStd-Roman';
             a {
                 color: $dark-gray-half-opacity;
                 @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
@@ -33,6 +32,7 @@
         }
     }
     .desc{
+        font-family: 'AvenirLTStd-Book';
         color: $dark-gray;
         a {
             color: $gold;
@@ -40,6 +40,7 @@
     }
 }
 .reset-success-msg {
+    font-family: 'AvenirLTStd-Roman';
     position: fixed;
     right: 10px;
     top: 100px;

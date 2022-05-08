@@ -1,9 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-@font-face {
+/* @font-face {
   font-family: AvenirLTStd-Black;
   src: url("../../fonts/AvenirLTStd-Black.otf") format("opentype");
-}
-
+} */
 @font-face {
   font-family: AvenirLTStd-Book;
   src: url("../../fonts/AvenirLTStd-Book.otf") format("opentype");
@@ -12,6 +10,41 @@
 @font-face {
   font-family: AvenirLTStd-Roman;
   src: url("../../fonts/AvenirLTStd-Roman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Medium;
+  src: url("../../fonts/Avenir-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Light;
+  src: url("../../fonts/Avenir-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url("../../fonts/Avenir-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Regular;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-SemiBold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Medium;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Bold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Bold.otf") format("opentype");
 }
 
 .categories-header .search-form button, .search-box .search-form button {
@@ -62,12 +95,12 @@
 }
 
 .add-to-bag {
+  font-family: Avenir-Heavy;
   border-color: #303030;
   border-width: 1px;
   height: 40px;
   text-transform: uppercase;
   color: #303030;
-  font-weight: 900;
   letter-spacing: 1px;
   background-color: unset;
   cursor: pointer;
@@ -172,8 +205,12 @@
   }
 }
 
+.header .navbar .container .navbar-collapse .navbar-nav .nav-item {
+  font-family: Avenir-Medium;
+}
+
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item.active > a {
-  font-weight: 600;
+  color: #00000080;
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item a {
@@ -506,6 +543,7 @@
 
 .page-title h1 {
   font-size: 32px;
+  font-family: Avenir-Medium;
   text-transform: uppercase;
 }
 
@@ -529,7 +567,7 @@
 }
 
 body {
-  font-family: AvenirLTStd-Book;
+  font-family: Avenir-Light;
   overflow-x: hidden;
   font-size: 16px;
 }
@@ -550,6 +588,7 @@ a:hover {
 }
 
 .btn-primary {
+  font-family: 'Avenir-Heavy';
   background-color: #303030;
   border-color: #303030;
   text-transform: uppercase;
@@ -650,6 +689,19 @@ button:active:focus {
   visibility: visible;
 }
 
+#ajax-loader {
+  display: none;
+  position: fixed;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 500px;
+  z-index: 100010;
+  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
+}
+
 @media (min-width: 768px) {
   .heading-title {
     width: 620px;
@@ -657,6 +709,7 @@ button:active:focus {
 }
 
 .heading-title h2 {
+  font-family: Avenir-Medium;
   font-size: 24px;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -667,6 +720,7 @@ button:active:focus {
 }
 
 .shop-now {
+  font-family: Avenir-Medium;
   width: 120px;
   height: 40px;
   font-size: 14px;
@@ -679,6 +733,12 @@ button:active:focus {
 .shop-now:hover {
   background-color: #303030;
   color: #fff;
+}
+
+@media (max-width: 575.98px) {
+  .product-box {
+    margin-inline: 20px;
+  }
 }
 
 .product-box:hover .card-img-top:after {
@@ -712,13 +772,17 @@ button:active:focus {
 }
 
 .product-box .card-body .card-title {
-  font-weight: 900;
-  font-size: 20px;
+  font-family: Avenir-Heavy;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+
+.product-box .card-body .card-text {
+  font-family: AvenirLTStd-Book;
 }
 
 .product-box .card-body .card-price {
@@ -791,7 +855,7 @@ button:active:focus {
 }
 
 .banner .carousel .carousel-item .caption-container .carousel-caption h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'PlayfairDisplay-Regular';
   color: #fff;
 }
 
@@ -808,6 +872,9 @@ button:active:focus {
 }
 
 .banner .carousel .carousel-item .caption-container .carousel-caption .shop-btn {
+  font-family: Avenir-Heavy;
+  font-size: 14px;
+  letter-spacing: 1px;
   height: 48px;
   margin: 50px auto 0;
   text-transform: uppercase;
@@ -849,9 +916,10 @@ button:active:focus {
 }
 
 .our-mission .inner .details h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'PlayfairDisplay-SemiBold';
   font-size: 48px;
   color: #84754e;
+  text-transform: uppercase;
 }
 
 .our-mission .inner .details p {
@@ -865,6 +933,15 @@ button:active:focus {
   .our-mission .inner .details p {
     width: 80%;
   }
+}
+
+.our-mission .inner .details .shop-now {
+  font-family: Avenir-Heavy;
+}
+
+.our-mission .inner .details .shop-now:not(:hover) {
+  color: #84754e;
+  border-color: #84754e;
 }
 
 .discover {
@@ -885,8 +962,8 @@ button:active:focus {
 }
 
 .categories .heading-title h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
+  font-family: 'PlayfairDisplay-Medium';
+  font-size: 32px;
 }
 
 .categories .cat-box {
@@ -927,7 +1004,7 @@ button:active:focus {
 
 .categories .cat-box .cat-title h3 {
   letter-spacing: 1px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'PlayfairDisplay-Medium';
 }
 
 @media (min-width: 768px) {
@@ -948,12 +1025,17 @@ button:active:focus {
 }
 
 .testimonials .heading-title h2 {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: -0.82px;
+  font-family: 'PlayfairDisplay-Regular';
+  letter-spacing: 0.82px;
   font-size: 38px;
 }
 
+.testimonials .heading-title h2 span {
+  color: #ffffff80;
+}
+
 .testimonials .heading-title p {
+  font-family: AvenirLTStd-Book;
   font-size: 18px;
   zoom: 1;
   filter: alpha(opacity=67);
@@ -1018,7 +1100,7 @@ button:active:focus {
   zoom: 1;
   filter: alpha(opacity=61);
   opacity: 0.61;
-  font-family: 'Playfair Display', serif;
+  font-family: 'PlayfairDisplay-Regular';
   font-size: 18px;
   margin-bottom: 0;
 }
@@ -1027,6 +1109,7 @@ button:active:focus {
   position: absolute;
   bottom: 10px;
   right: 20px;
+  font-family: AvenirLTStd-Book;
 }
 
 .testimonials #owl-testimonials .owl-stage-outer .testi-box .testi-details img {

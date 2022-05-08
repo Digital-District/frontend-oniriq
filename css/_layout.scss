@@ -60,9 +60,10 @@
         }
         .navbar-nav {
           .nav-item {
+            font-family: Avenir-Medium;
             &.active {
               & > a {
-                font-weight: 600;
+                color: $black-half-opacity
               }
             }
             a {
@@ -327,6 +328,7 @@
   }
   h1 {
     font-size: 32px;
+    font-family: Avenir-Medium;
     text-transform: uppercase;
   }
 }

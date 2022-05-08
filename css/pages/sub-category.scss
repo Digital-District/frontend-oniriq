@@ -2,6 +2,7 @@
 
 .shop {
     .shop-sidebar {
+        font-family: "Avenir-Medium";
         .close {
             float: unset;
         }
@@ -147,9 +148,11 @@
                         & > div {
                             border: 1px solid $dark-gray-half-opacity;
                             padding: 5px 10px;
-                            width: 110px;
+                            width: 89px;
+                            height: 48px;
                             border-radius: 4px;
                             font-family: AvenirLTStd-Roman;
+                            font-size: 12px;
                             label {
                                 font-size: 12px;
                                 color: $dark-gray-half-opacity;
@@ -160,6 +163,8 @@
                                 vertical-align: top;
                                 color: $dark-gray;
                                 outline: 0;
+                                padding: 0;
+                                text-align: right;
                             }
                         }
                     }                    
@@ -194,16 +199,21 @@
             .results-count {
                 font-size: 18px;
                 color: $black-half-opacity;
+                font-family: Avenir-Heavy;
             }
             .tags {
                 & > div {
+                    height: 36px;
                     display: inline-flex;
+                    align-items: center;
+                    justify-content: space-between;
                     margin-right: 10px;
                     margin-top: 10px;
                     padding: 5px 10px;
                     border-radius: 4px;
                     border: solid 1px $black-quarter-opacity;
                     .title {
+                        font-size: 12px;
                         max-width: 120px;
                         white-space: nowrap;
                         overflow: hidden;
@@ -213,8 +223,7 @@
                     }
                     .clear {
                         margin-left: 5px;
-                        font-size: 24px;
-                        height: 25px;
+                        font-size: 20px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -313,13 +322,16 @@
                         color: $light-black3;
                     }
                     .card-title {
-                        font-weight: 900;
-                        font-size: 20px;
+                        font-family: Avenir-Heavy;
+                        font-size: 14px;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
                         -webkit-line-clamp: 1;
                         -webkit-box-orient: vertical;
+                    }
+                    .card-text {
+                        font-family: AvenirLTStd-Book;
                     }
                     .card-price {
                         color: $gold;

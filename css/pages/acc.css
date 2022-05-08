@@ -1,8 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: AvenirLTStd-Black;
   src: url("../../fonts/AvenirLTStd-Black.otf") format("opentype");
-}
-
+} */
 @font-face {
   font-family: AvenirLTStd-Book;
   src: url("../../fonts/AvenirLTStd-Book.otf") format("opentype");
@@ -11,6 +10,41 @@
 @font-face {
   font-family: AvenirLTStd-Roman;
   src: url("../../fonts/AvenirLTStd-Roman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Medium;
+  src: url("../../fonts/Avenir-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Light;
+  src: url("../../fonts/Avenir-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url("../../fonts/Avenir-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Regular;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-SemiBold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Medium;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Bold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Bold.otf") format("opentype");
 }
 
 .categories-header .search-form button, .search-box .search-form button {
@@ -152,8 +186,12 @@
   }
 }
 
+.header .navbar .container .navbar-collapse .navbar-nav .nav-item {
+  font-family: Avenir-Medium;
+}
+
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item.active > a {
-  font-weight: 600;
+  color: #00000080;
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item a {
@@ -486,6 +524,7 @@
 
 .page-title h1 {
   font-size: 32px;
+  font-family: Avenir-Medium;
   text-transform: uppercase;
 }
 
@@ -509,7 +548,7 @@
 }
 
 body {
-  font-family: AvenirLTStd-Book;
+  font-family: Avenir-Light;
   overflow-x: hidden;
   font-size: 16px;
 }
@@ -530,6 +569,7 @@ a:hover {
 }
 
 .btn-primary {
+  font-family: 'Avenir-Heavy';
   background-color: #303030;
   border-color: #303030;
   text-transform: uppercase;
@@ -630,6 +670,19 @@ button:active:focus {
   visibility: visible;
 }
 
+#ajax-loader {
+  display: none;
+  position: fixed;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 500px;
+  z-index: 100010;
+  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
+}
+
 .header {
   position: relative;
 }
@@ -722,8 +775,12 @@ button:active:focus {
   }
 }
 
+.header .navbar .container .navbar-collapse .navbar-nav .nav-item {
+  font-family: Avenir-Medium;
+}
+
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item.active > a {
-  font-weight: 600;
+  color: #00000080;
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item a {
@@ -1056,6 +1113,7 @@ button:active:focus {
 
 .page-title h1 {
   font-size: 32px;
+  font-family: Avenir-Medium;
   text-transform: uppercase;
 }
 
@@ -1079,10 +1137,10 @@ button:active:focus {
 }
 
 .heading-title {
+  font-family: 'Avenir-Medium';
   color: #3c3a55;
   line-height: 1.06;
   letter-spacing: -1.14px;
-  font-weight: bold;
 }
 
 @media (min-width: 420px) {
@@ -1110,7 +1168,7 @@ button:active:focus {
 
 .acc form label {
   color: #303030;
-  font-family: AvenirLTStd-Roman;
+  font-family: 'AvenirLTStd-Roman';
 }
 
 .acc form label a {
@@ -1124,6 +1182,7 @@ button:active:focus {
 }
 
 .acc .desc {
+  font-family: 'AvenirLTStd-Book';
   color: #303030;
 }
 
@@ -1132,6 +1191,7 @@ button:active:focus {
 }
 
 .reset-success-msg {
+  font-family: 'AvenirLTStd-Roman';
   position: fixed;
   right: 10px;
   top: 100px;
