@@ -673,10 +673,10 @@ button:active:focus {
 #ajax-loader {
   display: none;
   position: fixed;
-  top: calc(50% - 250px);
-  left: calc(50% - 250px);
-  width: 500px;
-  height: 500px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
   z-index: 100010;
   background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
   -webkit-transform: scale(0.15);
