@@ -1,4 +1,5 @@
 (function () {
+	lazyLoad();
 	$(window).on("scroll",function(){
 		if($(window).scrollTop() > 0)
 			$(".header .navbar").addClass("sticky").animate({top:0,},4000)
@@ -45,12 +46,18 @@
 
 	$('.shop-sidebar .filter-options ul li input').on("change", function() {
 		var value = $(this).next().find('.title').text();
-		var tag = '<div>'+
-					'<span class="title">' + value + '</span>'+
-					'<a href="javascript:void(0)" class="clear" onclick="shopFilterTagsClear($(this))"><span>&times;</span></a>'+
-				'</div>'
-		$('.shop-content .shop-topbar .tags').append(tag);
-		shopFilterProducts();
+		var id = $(this).attr('id');
+		if($(this).is(':checked')){
+			var tag = '<div id="' + id + '">'+
+						'<span class="title">' + value + '</span>'+
+						'<a href="javascript:void(0)" class="clear" onclick="shopFilterTagsClear($(this))"><span>&times;</span></a>'+
+					'</div>'
+			$('.shop-content .shop-topbar .tags').append(tag);
+			shopFilterProducts();
+		}
+		else {
+			shopFilterTagsClear($('.shop-content .shop-topbar .tags #' + id + ' .clear'));
+		}
 	});
 })();
 
@@ -87,6 +94,11 @@ function shopFilterSidebarOpen(){
 function shopFilterTagsClear(ct){
 	ct.parent().fadeOut(200);
 	setTimeout(function(){ ct.parent().remove(); }, 300);
+	if(ct.parent().hasClass('price')){
+		$("#price-range").slider('option', 'values' , [0, 5000]);
+		$("#priceRange-start").val($("#price-range").slider("values", 0).toLocaleString());
+		$("#priceRange-end").val($("#price-range").slider("values", 1).toLocaleString());
+	}
 	shopFilterProducts();
 }
 function shopFilterProducts(){
@@ -134,6 +146,8 @@ function owlCarouselInit(options){
 		autoplayHoverPause = options.autoplayHoverPause == undefined ? false : options.autoplayHoverPause,
 		loop = options.loop == undefined ? false : options.loop,
 		margin = options.margin == undefined ? 30 : options.margin,
+		lazyLoad = options.lazyLoad == undefined ? false : options.lazyLoad;
+		lazyLoadEager = options.lazyLoadEager == undefined ? 0 : options.lazyLoadEager;
 		responsiveClass = options.responsiveClass == undefined ? false : options.responsiveClass,
 		responsive = options.responsive == undefined ? {768: {items: 1}, 992: {items: 2}, 1200: {items: 3}} : options.responsive;
 		
@@ -146,7 +160,25 @@ function owlCarouselInit(options){
 		autoplayHoverPause: autoplayHoverPause,
 		loop: loop,
 		margin: margin,
+		lazyLoad: lazyLoad,
+		lazyLoadEager: lazyLoadEager,
 		responsiveClass:responsiveClass,
 		responsive: responsive
 	});
+}
+
+function lazyLoad() {
+	var lazyLoadEl = $('[data-lazyload]');
+	if( lazyLoadEl.length > 0 ) {
+		lazyLoadEl.each( function(){
+			var element = $(this),
+				elementImg = element.attr( 'data-lazyload' );
+
+			element.attr( 'src', '../images/blank.svg' ).css({ 'background': 'url(../images/preloader.gif) no-repeat center center #FFF' });
+
+			element.appear(function () {
+				element.css({ 'background': 'none' }).removeAttr( 'width' ).removeAttr( 'height' ).attr('src', elementImg);
+			},{accX: 0, accY: 120},'easeInCubic');
+		});
+	}
 }

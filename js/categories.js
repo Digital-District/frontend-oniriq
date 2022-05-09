@@ -8,6 +8,7 @@
         options.autoplayHoverPause = true;
         options.loop = true;
         options.dots = false;
+        options.lazyLoad = true;
 		options.responsiveClass = true;
 		options.responsive = { 0: {items: 1}, 768: {items: 2}, 992: {items: 3}, 1200: {items: 4, loop: false} };
 		
@@ -22,6 +23,7 @@
         options.autoplayHoverPause = true;
         options.loop = true;
         options.dots = false;
+        options.lazyLoad = true;
 		options.responsiveClass = true;
 		options.responsive = { 0: {items: 1}, 768: {items: 2}, 992: {items: 3}, 1200: {items: 4, loop: false} };
 		
@@ -36,6 +38,7 @@
         options.autoplayHoverPause = true;
         options.loop = true;
         options.dots = false;
+        options.lazyLoad = true;
 		options.responsiveClass = true;
 		options.responsive = { 0: {items: 1}, 768: {items: 2}, 992: {items: 3}, 1200: {items: 4, loop: false} };
 		
@@ -50,6 +53,8 @@
         options.autoplayHoverPause = true;
         options.loop = true;
         options.dots = false;
+        options.lazyLoad = true;
+        options.lazyLoadEager= 1;
 		options.responsiveClass = true;
 		options.responsive = { 0: {items: 1}, 576: {items: 2, stagePadding: 150}, 992: {items: 3, stagePadding: 200} };
 		
