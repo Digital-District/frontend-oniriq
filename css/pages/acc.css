@@ -66,7 +66,9 @@
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
-.categories-header .search-form button i, .search-box .search-form button i, .categories-header .search-form button span, .search-box .search-form button span {
+.categories-header .search-form button i, .search-box .search-form button i,
+.categories-header .search-form button span,
+.search-box .search-form button span {
   color: #212121;
 }
 
@@ -210,7 +212,7 @@
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
 
@@ -547,6 +549,45 @@
   color: #84754e;
 }
 
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
+          box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
+  background-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c1c1c1;
+}
+
 body {
   font-family: Avenir-Light;
   overflow-x: hidden;
@@ -601,45 +642,6 @@ button:active:focus {
   -webkit-box-shadow: unset !important;
   -o-box-shadow: unset !important;
   box-shadow: unset !important;
-}
-
-::-moz-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-webkit-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-webkit-scrollbar {
-  width: 7px;
-}
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
-          box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
-  background-color: #fafafa;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #c1c1c1;
 }
 
 .form-control:focus {
@@ -799,7 +801,7 @@ button:active:focus {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
+    transform: translate(0, 0);
   }
 }
 
@@ -1134,6 +1136,45 @@ button:active:focus {
 
 .footer .links li a:hover {
   color: #84754e;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
+          box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
+  background-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c1c1c1;
 }
 
 .heading-title {

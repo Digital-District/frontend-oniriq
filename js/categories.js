@@ -56,7 +56,7 @@
         options.lazyLoad = true;
         options.lazyLoadEager= 1;
 		options.responsiveClass = true;
-		options.responsive = { 0: {items: 1}, 576: {items: 2, stagePadding: 150}, 992: {items: 3, stagePadding: 200} };
+		options.responsive = { 0: {items: 1}, 576: {items: 1, stagePadding: 150}, 768: {items: 2, stagePadding: 150}, 992: {items: 3, stagePadding: 200} };
 		
 		owlCarouselInit(options);
 	}

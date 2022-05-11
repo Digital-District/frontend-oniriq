@@ -1,45 +1,70 @@
-@import 'mixins';
+@import "mixins";
 
 %header-search-form {
-    button{
-        border: 1px solid #ced4da;
-        background-color: unset;
-        cursor: pointer;
-        &.search-filter-clear{
-          display: none;
-          span{ 
-            font-size: 20px;
-            line-height: 1;
-          }
-        }
-        &.search-btn {
-            border-radius: 0 0.25rem 0.25rem 0;
-        }
-        i, span {
-          color: $light-black;
-        }
+  button {
+    border: 1px solid #ced4da;
+    background-color: unset;
+    cursor: pointer;
+
+    &.search-filter-clear {
+      display: none;
+
+      span {
+        font-size: 20px;
+        line-height: 1;
+      }
     }
-    .autocomplete-suggestions{
-        background-color: $white;
-        padding: 10px;
-        overflow-y: auto;
-        border: 1px solid #ced4da;
-        border-top: 0;
-        .autocomplete-suggestion {
-            font-size: 18px;
-            padding: 5px;
-            color: $dark-gray;
-            cursor: pointer;
-            &:hover{
-            background-color: $light-gray;
-            }
-        }
+
+    &.search-btn {
+      border-radius: 0 0.25rem 0.25rem 0;
     }
+
+    i,
+    span {
+      color: $light-black;
+    }
+  }
+
+  .autocomplete-suggestions {
+    background-color: $white;
+    padding: 10px;
+    overflow-y: auto;
+    border: 1px solid #ced4da;
+    border-top: 0;
+
+    .autocomplete-suggestion {
+      font-size: 18px;
+      padding: 5px;
+      color: $dark-gray;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
 }
+
 %nav-link {
   font-size: 20px;
   color: $dark-gray;
 }
+
+%heading-title {
+  @include minMeduim {
+    width: 620px;
+  }
+  h2 {
+    font-family: Avenir-Medium;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+  .shop-now {
+    margin: 30px auto 0;
+  }
+}
+
 %cart-btn {
   font-family: Avenir-Heavy;
   border-color: $dark-gray;
@@ -51,8 +76,202 @@
   background-color: unset;
   cursor: pointer;
   @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+
   &:hover {
     background-color: $dark-gray;
     color: $white;
+  }
+}
+
+%product-box {
+  &:hover {
+    .card-img-top {
+      &:after {
+        left: 0;
+      }
+    }
+  }
+
+  .card-img-top {
+    position: relative;
+    overflow: hidden;
+    min-height: 305px;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      content: " ";
+      z-index: 1;
+      background-color: #0000001a;
+      @include prefixer(transition, all 0.5s ease-in-out, webkit moz o);
+    }
+  }
+
+  .card-body {
+    font-size: 14px;
+    .colors{
+      @extend %custom-radio-btns;
+    }
+    .card-title,
+    .card-text {
+      color: $light-black3;
+    }
+
+    .card-title {
+      font-family: Avenir-Heavy;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    .card-text {
+      font-family: AvenirLTStd-Book;
+    }
+
+    .card-price {
+      color: $gold;
+    }
+
+    .add-to-bag {
+      @extend %add-to-bag;
+    }
+
+    .view-cart {
+      @extend %view-cart;
+    }
+  }
+}
+
+%add-to-bag {
+  @extend %cart-btn;
+  position: relative;
+  overflow: hidden;
+
+  &.state-change {
+    .btn-content {
+      display: none;
+    }
+  }
+
+  &.loading {
+    background: $dark-gray;
+    cursor: not-allowed;
+
+    .btn-loading {
+      display: block;
+    }
+  }
+
+  &.success {
+    border-color: transparent;
+
+    .btn-success {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  .btn-loading {
+    display: none;
+    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+  }
+
+  .btn-success {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: -40px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include prefixer(transition, top 0.3s ease-in-out, webkit moz o);
+  }
+}
+
+%view-cart {
+  display: none;
+  @extend %cart-btn;
+  @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+}
+
+%custom-radio-btns {
+  form {
+    & > div {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+
+      input[type="radio"] {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked,
+        &:hover {
+          & ~ .check {
+            border: 1px solid $dark-gray;
+          }
+        }
+      }
+
+      label {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        z-index: 9;
+        cursor: pointer;
+        @include prefixer(transition, all 0.25s ease-in-out, webkit moz o);
+      }
+
+      .check {
+        display: block;
+        position: absolute;
+        border: 1px solid $light-gray2;
+        height: 30px;
+        width: 30px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        @include prefixer(transition, all 0.25s ease-in-out, webkit moz o);
+
+        &.green {
+          &:before {
+            background-color: $green;
+          }
+        }
+
+        &.brown {
+          &:before {
+            background-color: $brown;
+          }
+        }
+
+        &.pink {
+          &:before {
+            background-color: $pink;
+          }
+        }
+
+        &:before {
+          display: block;
+          position: absolute;
+          content: "";
+          border-radius: 100%;
+          height: 22px;
+          width: 22px;
+          top: 50%;
+          left: 50%;
+          @include prefixer(transform, translate(-50%, -50%), webkit moz o);
+        }
+      }
+    }
   }
 }

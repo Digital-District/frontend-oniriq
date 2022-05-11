@@ -23,6 +23,11 @@
     @content;
   }
 }
+@mixin maxExtraLarge {
+  @media (max-width: 1199.98px) {
+    @content;
+  }
+}
 @mixin minLarge {
   @media (min-width: 992px) {
     @content;

@@ -79,7 +79,7 @@
               @include minLarge {
                 @include opacity(1);
                 visibility: visible;
-                transform: translate(0, 0);
+                @include prefixer(transform, translate(0, 0), webkit moz o);
               }
             }
             & > .sub-menu{
@@ -349,4 +349,32 @@
       }
     }
   }
+}
+
+::selection {
+  background: $gold;
+  color: $white;
+}
+::-moz-selection {
+  background: $gold;
+  color: $white;
+}
+::-webkit-selection {
+  background: $gold;
+  color: $white;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
+  background-color: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c1c1c1;
 }

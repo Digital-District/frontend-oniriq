@@ -4,14 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Categories</title>
+	<title>Item</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> -->
 	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css?ver=29be384a3d0563d7308dc00d497f1a0e"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css?ver=29be384a3d0563d7308dc00d497f1a0e">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-	<link rel="stylesheet" href="css/pages/categories.css">
+    <link rel="stylesheet" href="css/lightboxed-min.css">
+	<link rel="stylesheet" href="css/pages/item.css">
 </head>
 
 <body>
@@ -128,45 +131,167 @@
         </div>
 	</div>
 
-    <div class="banner">
-        <div id="carouselExampleIndicators" class="carousel mt-4" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="carousel-img" style="background-image: url('images/banner.jpg');"></div>
-                    <div class="caption-container d-flex align-items-center justify-content-center position-absolute">
-                        <div class="carousel-caption py-0 text-center">
-                            <h1>New Fall Collection</h1>
-                            <a href="sub-category.html" class="shop-btn d-flex align-items-center justify-content-center">Shop Now</a>
-                        </div>
-                    </div>
+    <div class="page-title">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mt-3 mb-0 pl-0">
+                    <li class="breadcrumb-item"><a href="">Men</a></li>
+                    <li class="breadcrumb-item"><a href="">Clothing</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Jackets</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="single-item">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="item-image-gallery d-sm-flex"></div>
                 </div>
-                <div class="carousel-item">
-                    <div class="carousel-img" style="background-image: url('images/banner.jpg');"></div>
-                    <div class="caption-container d-flex align-items-center justify-content-center position-absolute">
-                        <div class="carousel-caption py-0 text-center">
-                            <h1>New Fall Collection</h1>
-                            <a href="sub-category.html" class="shop-btn d-flex align-items-center justify-content-center">Shop Now</a>
+                <div class="col-lg-6">
+                    <div class="item-details">
+                        <h3 class="item-title text-uppercase">Dolce & Gabbana</h3>
+                        <p class="item-desc mb-1">Tokyo Design Studio X Snow Peak boots.</p>
+                        <p class="price mb-4"><span class="value">5,400 QAR</span><span class="notes ml-3">Including VAT</span></p>
+                        <div class="colors mb-3">
+                            <div class="title mb-2 d-flex align-items-center justify-content-between">
+                                <p class="mb-0">Color: <span>Gold</span></p>
+                                <span class="error">Please select a color</span>
+                            </div>
+                            <form class="form-inline">
+                                <div data-color="green" data-images-src="images/item-green-1.jpg,images/item-green-2.jpg,images/item-green-2.jpg" data-thumbs-src="images/item-green-thumb-1.jpg,images/item-green-thumb-2.jpg,images/item-green-thumb-3.jpg">
+                                    <input id="item-green" type="radio" name="item-color" value="green" onchange="itemColorChange($(this))" />
+                                    <label for="item-green"></label>
+                                    <div class="check rounded-circle green"></div>
+                                </div>
+                                <div data-color="brown" data-images-src="images/item-brown-1.jpg,images/item-brown-2.jpg,images/item-brown-3.jpg" data-thumbs-src="images/item-brown-thumb-1.jpg,images/item-brown-thumb-2.jpg,images/item-brown-thumb-3.jpg">
+                                    <input id="item-brown" type="radio" name="item-color" value="brown" onchange="itemColorChange($(this))" />
+                                    <label for="item-brown"></label>
+                                    <div class="check rounded-circle brown"></div>
+                                </div>
+                                <div data-color="pink" data-images-src="images/item-green-1.jpg,images/item-green-2.jpg,images/item-green-3.jpg" data-thumbs-src="images/item-green-thumb-1.jpg,images/item-green-thumb-2.jpg,images/item-green-thumb-3.jpg">
+                                    <input id="item-pink" type="radio" name="item-color" value="pink" onchange="itemColorChange($(this))" />
+                                    <label for="item-pink"></label>
+                                    <div class="check rounded-circle pink"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sizes mb-5">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="title mb-0 d-flex align-items-center justify-content-between">
+                                    <p class="mb-0">Sizes: <span>24</span></p>
+                                    <span class="error">Please select a size</span>
+                                </div>                                
+                                <a href="" class="guide">Size guide</a>
+                            </div>
+                            <form class="form-inline">
+                                <div class="mt-2">
+                                    <input type="radio" id="size-27" name="size" value="27" onchange="itemSizeChange($(this))" />
+                                    <label class="d-flex align-items-center justify-content-center" for="size-27">27</label>
+                                    <div class="check"></div>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="radio" id="size-25" name="size" value="25" onchange="itemSizeChange($(this))" />
+                                    <label class="d-flex align-items-center justify-content-center" for="size-25">25</label>
+                                    <div class="check"></div>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="radio" id="size-26" name="size" value="26" onchange="itemSizeChange($(this))" />
+                                    <label class="d-flex align-items-center justify-content-center" for="size-26">26</label>
+                                    <div class="check"></div>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="radio" id="size-24" name="size" value="24" onchange="itemSizeChange($(this))" />
+                                    <label class="d-flex align-items-center justify-content-center" for="size-24">24</label>
+                                    <div class="check"></div>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="radio" id="size-28" name="size" value="28" onchange="itemSizeChange($(this))" />
+                                    <label class="d-flex align-items-center justify-content-center" for="size-28">28</label>
+                                    <div class="check"></div>
+                                </div>
+                                <div class="mt-2">
+                                    <input type="radio" id="size-29" name="size" value="29" onchange="itemSizeChange($(this))" />
+                                    <label class="d-flex align-items-center justify-content-center" for="size-29">29</label>
+                                    <div class="check"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <button class="add-to-bag btn-block rounded" onclick="shopProductsAddToCart($(this), true);">
+                            <span class="btn-success"><i class="fa fa-check mr-2"></i>Succefully Added</span>
+                            <span class="btn-content">Add To Bag</span>
+                            <span class="btn-loading"><i class="fa fa-spinner fa-spin"></i></span>
+                        </button> 
+                        <button class="view-cart btn-block mt-0 rounded">View Cart</button>
+                        <button class="add-to-wishlist btn-block mt-4 rounded">Add To Wishlist</button>
+                        <div class="media delivery-box mt-4 py-3 align-items-center">
+                            <img src="images/delivery-truck.png" class="align-self-center mr-3 rounded-circle p-2" alt="Get it today">
+                            <div class="media-body">
+                              <h5 class="mt-0 mb-1">Get it today</h5>
+                              <p class="mb-0">Order in next 2 hours to get it delivered free!</p>
+                            </div>
+                        </div>
+                    </div>	
+                </div>
+            </div>	
+        </div>	
+    </div>	
+    
+    <div class="item-details py-3">
+        <div class="container pr-0">
+            <div class="tab-btns d-md-none d-flex align-items-center justify-content-end">
+                <a href="javascript:void(0)" class="previous mr-2 d-flex align-items-center justify-content-center"><i class="icon-arrow-left"></i></a>
+                <a href="javascript:void(0)" class="next d-flex align-items-center justify-content-center"><i class="icon-arrow-right"></i></a>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active border-0 px-0 py-3" data-toggle="tab" href="#details">Product details</a></li>
+                <li class="nav-item"><a class="nav-link border-0 px-0 py-3" data-toggle="tab" href="#size">Size & fit</a></li>
+                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 disabled" data-toggle="tab" href="#designer">About the designer</a></li>
+                <li class="nav-item"><a class="nav-link border-0 px-0 py-3" data-toggle="tab" href="#shipping">Shipping & returns</a></li>
+            </ul>
+            <div class="container pl-0">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="details">
+                        <div class="d-lg-flex d-block pt-5">
+                            <div class="details-content">
+                                <h3 class="item-title text-uppercase">Dolce & Gabbana</h3>
+                                <p class="item-desc mb-1">Tokyo Design Studio X Snow Peak boots.</p>
+                                <p class="desc-lg">This comfortable top features a label that reads 'Gucci quelle qu’en soit la saison’ which translates to 'Gucci whatever the season'. Crafted in Italy from pure organic cotton, the relaxed fit shirt displays the GG jacquard print with leather trim at the yoke and pockets.</p>
+                                <h4 class="features-title">Main points</h4>
+                                <ul class="features-list list-unstyled mb-0">
+                                    <li class="pl-4">sage-green/jet-black</li>
+                                    <li class="pl-4">front lace-up fastening</li>
+                                    <li class="pl-4">round toe</li>
+                                    <li class="pl-4">logo print to the side</li>
+                                    <li class="pl-4">chunky rubber sole</li>
+                                    <li class="pl-4">sage-green/jet-black</li>
+                                    <li class="pl-4">front lace-up fastening</li>
+                                    <li class="pl-4">round toe</li>
+                                </ul>
+                            </div>
+                            <div class="details-img text-lg-right text-center">
+                                <img data-lazyload="images/item-details.jpg" class="img-fluid" alt="Item 2">
+                            </div>
                         </div>
                     </div>
+                    <div class="tab-pane fade" id="size">...</div>
+                    <div class="tab-pane fade" id="designer">...</div>
+                    <div class="tab-pane fade" id="shipping">...</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="new-in">
+    <div class="similar-items">
         <div class="container">
-            <div class="heading-title text-center m-auto">
-                <h2>New in: hand-picked daily from the world’s best brands and most researched this period.</h2>
-                <a href="sub-category.html" class="shop-now d-flex align-items-center justify-content-center">Shop Now</a>
+            <div class="heading-title w-100">
+                <h2>You Also Might Like</h2>
             </div>
-            <div id="owl-newin" class="owl-carousel mt-5">
+            <div id="owl-similar" class="owl-carousel mt-5">
                 <div class="card product-box border-0">
                     <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newin-1.jpg" alt="Zimmermann">
+                        <img class="img-fluid w-100 owl-lazy" data-src="images/prod-1.jpg" alt="Zimmermann">
                     </div>
                     <div class="card-body p-0">
                         <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
@@ -177,7 +302,7 @@
                 </div>
                 <div class="card product-box border-0">
                     <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newin-2.jpg" alt="Zimmermann">
+                        <img class="img-fluid w-100 owl-lazy" data-src="images/prod-13.jpg" alt="Zimmermann">
                     </div>
                     <div class="card-body p-0">
                         <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
@@ -188,7 +313,7 @@
                 </div>
                 <div class="card product-box border-0">
                     <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newin-3.jpg" alt="Zimmermann">
+                        <img class="img-fluid w-100 owl-lazy" data-src="images/prod-10.jpg" alt="Zimmermann">
                     </div>
                     <div class="card-body p-0">
                         <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
@@ -199,7 +324,7 @@
                 </div>
                 <div class="card product-box border-0">
                     <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newin-4.jpg" alt="Zimmermann">
+                        <img class="img-fluid w-100 owl-lazy" data-src="images/prod-11.jpg" alt="Zimmermann">
                     </div>
                     <div class="card-body p-0">
                         <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
@@ -208,20 +333,16 @@
                         <button class="add-to-bag btn-block">Add To Bag</button>    
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="our-mission">
-        <div class="container">
-            <div class="inner d-flex align-items-center">
-                <div class="details">
-                    <h2>Your Goal,<span class="d-inline d-lg-block"> Our Mission.</span></h2>
-                    <p>Oniriq for delivering you the best fashion for all ages. This is the customers' opinion about the matching of the item and real product and the delivery service.</p>
-                    <a href="sub-category.html" class="shop-now rounded-0 d-flex align-items-center justify-content-center mt-5">Shop Now</a>
-                </div>
-                <div class="img d-none d-lg-block">
-                    <img class="w-100 img-fluid" data-lazyload="images/mission.jpg" alt="Our Mission">
+                <div class="card product-box border-0">
+                    <div class="card-img-top rounded-0 mb-4">
+                        <img class="img-fluid w-100 owl-lazy" data-src="images/prod-12.jpg" alt="Zimmermann">
+                    </div>
+                    <div class="card-body p-0">
+                        <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
+                        <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
+                        <p class="card-price">5,400 QAR</p>  
+                        <button class="add-to-bag btn-block">Add To Bag</button>    
+                    </div>
                 </div>
             </div>
         </div>
@@ -276,186 +397,6 @@
                         <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
                         <p class="card-price">5,400 QAR</p>  
                         <button class="add-to-bag btn-block">Add To Bag</button>    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="new-categories">
-        <div class="container">
-            <div class="heading-title text-center m-auto">
-                <h2>Figure our new category for suits.</h2>
-                <a href="sub-category.html" class="shop-now d-flex align-items-center justify-content-center">Shop Now</a>
-            </div>
-            <div id="owl-newCategories" class="owl-carousel mt-5">
-                <div class="card product-box border-0 mb-1">
-                    <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newcat-1.jpg" alt="Hemsworth Teal Suit">
-                    </div>
-                    <div class="card-body p-0">
-                        <a href=""><h3 class="card-title mb-1">Hemsworth Teal Suit</h3></a>
-                        <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
-                        <p class="card-price">5,400 QAR</p>
-                        <button class="add-to-bag btn-block">Add To Bag</button> 
-                    </div>
-                </div>
-                <div class="card product-box border-0 mb-1">
-                    <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newcat-2.jpg" alt="Hereford Cavalry Indigo">
-                    </div>
-                    <div class="card-body p-0">
-                        <a href=""><h3 class="card-title mb-1">Hereford Cavalry Indigo</h3></a>
-                        <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
-                        <p class="card-price">5,400 QAR</p>  
-                        <button class="add-to-bag btn-block">Add To Bag</button>    
-                    </div>
-                </div>
-                <div class="card product-box border-0 mb-1">
-                    <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newcat-3.jpg" alt="Zimmermann">
-                    </div>
-                    <div class="card-body p-0">
-                        <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
-                        <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
-                        <p class="card-price">5,400 QAR</p>   
-                        <button class="add-to-bag btn-block">Add To Bag</button>   
-                    </div>
-                </div>
-                <div class="card product-box border-0 mb-1">
-                    <div class="card-img-top rounded-0 mb-4">
-                        <img class="img-fluid w-100 owl-lazy" data-src="images/newcat-4.jpg" alt="Zimmermann">
-                    </div>
-                    <div class="card-body p-0">
-                        <a href=""><h3 class="card-title mb-1">Zimmermann</h3></a>
-                        <p class="card-text mb-1">Top Handle Bag inHandle Bag Handle.</p>
-                        <p class="card-price">5,400 QAR</p>  
-                        <button class="add-to-bag btn-block">Add To Bag</button>    
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="categories">
-        <div class="container">
-            <div class="heading-title text-center m-auto">
-                <h2>Get a look at categories.</h2>
-            </div>
-        </div>
-        <div id="owl-categories" class="owl-carousel mt-5">
-            <div class="cat-box">
-                <a href="">
-                    <div class="cat-img">
-                        <img class="w-100 owl-lazy" data-src="images/cats-1.jpg" alt="Accessories">
-                    </div>
-                    <div class="cat-title text-white">
-                        <h3>Accessories</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="cat-box">
-                <a href="">
-                    <div class="cat-img">
-                        <img class="w-100 owl-lazy" data-src="images/cats-2.jpg" alt="Jackets">
-                    </div>
-                    <div class="cat-title text-white">
-                        <h3>Jackets</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="cat-box">
-                <a href="">
-                    <div class="cat-img">
-                        <img class="w-100 owl-lazy" data-src="images/cats-3.jpg" alt="Shoes">
-                    </div>
-                    <div class="cat-title text-white">
-                        <h3>Shoes</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="cat-box">
-                <a href="">
-                    <div class="cat-img">
-                        <img class="w-100 owl-lazy" data-src="images/cats-4.jpg" alt="Suits">
-                    </div>
-                    <div class="cat-title text-white">
-                        <h3>Suits</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="cat-box">
-                <a href="">
-                    <div class="cat-img">
-                        <img class="w-100 owl-lazy" data-src="images/cats-5.jpg" alt="Pants">
-                    </div>
-                    <div class="cat-title text-white">
-                        <h3>Pants</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <div class="testimonials">
-        <div class="container">
-            <div class="heading-title text-center m-auto text-white">
-                <h2 class="mb-4"><span>Your Goal, </span><b>Our Mission.</b></h2>
-                <p>This is the customers' opinion about the matching of the item and real product and the delivery service.</p>
-            </div>
-        </div>
-        <div class="row no-gutters">
-            <div class="col-lg-11 offset-lg-1">
-                <div id="owl-testimonials" class="owl-carousel mt-5">
-                    <div class="testi-box">
-                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
-                        <div class="testi-details d-flex">
-                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
-                            <div class="ml-2">
-                                <h5 class="mb-0">Mohamed Nasr</h5>
-                                <span>Ux designer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi-box">
-                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
-                        <div class="testi-details d-flex">
-                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
-                            <div class="ml-2">
-                                <h5 class="mb-0">Mohamed Nasr</h5>
-                                <span>Ux designer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi-box">
-                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
-                        <div class="testi-details d-flex">
-                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
-                            <div class="ml-2">
-                                <h5 class="mb-0">Mohamed Nasr</h5>
-                                <span>Ux designer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi-box">
-                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
-                        <div class="testi-details d-flex">
-                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
-                            <div class="ml-2">
-                                <h5 class="mb-0">Mohamed Nasr</h5>
-                                <span>Ux designer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi-box">
-                        <p><q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</q></p>
-                        <div class="testi-details d-flex">
-                            <img class="img-fluid rounded-circle" src="images/testi.jpg" alt="Mohamed Nasr">
-                            <div class="ml-2">
-                                <h5 class="mb-0">Mohamed Nasr</h5>
-                                <span>Ux designer</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -539,9 +480,11 @@
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-	<script src="js/main.js"></script>
-    <script src="js/categories.js"></script>
+	<script src="js/lightboxed-min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/item.js"></script>
 </body>
 
 </html>

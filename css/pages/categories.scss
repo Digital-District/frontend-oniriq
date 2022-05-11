@@ -1,18 +1,7 @@
 @import "../global";
 
 .heading-title {
-    @include minMeduim {
-        width: 620px;
-    }
-    h2 {
-        font-family: Avenir-Medium;
-        font-size: 24px;
-        letter-spacing: 1px;
-        text-transform: capitalize;
-    }
-    .shop-now {
-        margin: 30px auto 0;
-    }
+    @extend %heading-title;
 }
 .shop-now {
     font-family: Avenir-Medium;
@@ -27,56 +16,11 @@
         color: $white;
     }
 }
-.add-to-bag {
-    @extend %cart-btn;
-}
 .product-box {
     @include maxExtraSmall {
         margin-inline: 20px;
     }
-    &:hover {
-        .card-img-top {
-            &:after{
-                left: 0;
-            }
-        }
-    }
-    .card-img-top {
-        position: relative;
-        overflow: hidden;
-        &:after {
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            content: " ";
-            z-index: 1;
-            background-color: #0000001a;
-            @include prefixer(transition, all 0.5s ease-in-out, webkit moz o);
-        }
-    }
-    .card-body {
-        font-size: 14px;
-        .card-title, .card-text {
-            color: $light-black3;
-        }
-        .card-title {
-            font-family: Avenir-Heavy;
-            font-size: 14px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-        }
-        .card-text {
-            font-family: AvenirLTStd-Book;
-        }
-        .card-price {
-            color: $gold;
-        }
-    }
+    @extend %product-box;
 }
 
 .banner {
