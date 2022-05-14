@@ -1,5 +1,14 @@
 (function () {
 	lazyLoad();
+	$("body").append('<div id="cart-sidebar"></div>');
+	$("#cart-sidebar").load("cart.html", function() {
+	 });
+
+	$('.header .shop-elements .cart').click(function(){
+		$('.fullscreen-bg').addClass('active cart');
+		$('#cart-sidebar').animate({ right: 0 }, 200);
+	});
+
 	$(window).on("scroll",function(){
 		if($(window).scrollTop() > 0)
 			$(".header .navbar").addClass("sticky").animate({top:0,},4000)
@@ -13,12 +22,11 @@
 			left: 0
 		}, 200);
 	});
+	$('.navbar-nav .nav-close a').click(function(){
+		sidebarClose();
+	});
 	$('.fullscreen-bg').click(function(){
-		$(this).removeClass('active');
-		if($(this).hasClass('header')){
-			$('#mainNavbar').animate({left: -300}, 300);
-			setTimeout(function(){$('#mainNavbar').removeClass('show');}, 1000);
-		}
+		sidebarClose();
 	});
 
 	// Search Box
@@ -59,8 +67,37 @@
 			shopFilterTagsClear($('.shop-content .shop-topbar .tags #' + id + ' .clear'));
 		}
 	});
-})();
 
+	$('.modal').on('hidden.bs.modal', function () {
+		$('.modal form')[0].reset();
+	});
+})();
+function cartItemQtyEditClick(ct){
+	var oldValue = ct.parent().find("span.qty").text();
+	var newVal = '';
+	if (ct.text() == "+")
+		newVal = parseInt(oldValue) + 1;
+	else {
+		// Don't allow decrementing below zero
+		if (oldValue > 0)
+			newVal = parseInt(oldValue) - 1;
+		else
+			newVal = oldValue;
+	}
+	ct.parent().find("span.qty").text(newVal);
+	var price = ct.parent().next().find('.value').attr('value');
+	ct.parent().next().find('.value').text((newVal * price).toLocaleString());
+}
+function sidebarClose(){
+	$('.fullscreen-bg').removeClass('active');
+	if($('.fullscreen-bg').hasClass('header')){
+		$('#mainNavbar').animate({left: -300}, 300);
+		setTimeout(function(){$('#mainNavbar').removeClass('show');}, 1000);
+	}
+	else if($('.fullscreen-bg').hasClass('cart')){
+		$('#cart-sidebar').animate({ right: -450 }, 200);
+	}
+}
 function shopProductsAddToCart(btn, validationCheck){
 	if(validationCheck){
 		if($('.colors input:checked').length == 0)

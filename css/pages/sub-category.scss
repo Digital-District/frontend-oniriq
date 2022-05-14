@@ -38,16 +38,7 @@
                 border-bottom: 1px solid $black-half-opacity; 
             }
             .accord {
-                &.collapsed {
-                    .icon-arrow-up {
-                        display: none;
-                    }
-                }
-                &:not(.collapsed) {
-                    .icon-arrow-down {
-                        display: none;
-                    }
-                }
+                @extend %accord-arrow;
                 &:hover {
                     color: $black;
                 }

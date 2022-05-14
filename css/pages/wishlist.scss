@@ -1,0 +1,100 @@
+@import "../global";
+
+.product-box {
+    @include maxExtraSmall {
+        margin-inline: 20px;
+    }
+    @extend %product-box;
+}
+.my-wishlist {
+    padding: $sec-padding;
+    .heading-title {
+        @extend %heading-title;
+        h2 {
+            font-size: 32px;
+        }
+        p{
+            font-size: 20px;
+            color: $dark-gray;
+            line-height: 32px;
+        }
+    }
+}
+.recommended {
+    padding: $sec-padding;
+    .heading-title {
+        @extend %heading-title;
+        h2 {
+            line-height: 1.06;
+            letter-spacing: -0.72px;
+        }
+    }
+    #owl-recommended {
+        .owl-nav {
+            display: flex;
+            justify-content: end;
+            .owl-next, .owl-prev {
+                width: 40px;
+                height: 40px;
+                background: $light-gray2;
+                @include opacity(0.38);
+                border-radius: 50%;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: -20px;
+                // @include prefixer(transform, translateY(-50%), webkit moz o);
+                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+                svg {
+                    fill: $light-gray3;
+                }
+                &:hover {
+                    background-color: $light-black;
+                    svg {
+                        fill: $white;
+                    }
+                }
+            }
+            .owl-next {
+                @include minSmall{
+                    right: 10px;
+                }
+                @include maxSmall{
+                    right: 40px;
+                }
+            }
+            .owl-prev {
+                @include minSmall{
+                    left: 10px;
+                }
+                @include maxSmall{
+                    left: 40px;
+                }
+            }
+        }
+    }
+}
+.discover {
+    padding: $sec-padding;
+    background-color: $gold-quarter-opacity;
+    .heading-title {
+        @extend %heading-title;
+        .shop-now {
+            font-family: Avenir-Medium;
+            width: 120px;
+            height: 40px;
+            font-size: 14px;
+            border: solid 1px $light-black3;
+            border-radius: 4px;
+            @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+            &:hover {
+                background-color: $dark-gray;
+                color: $white;
+            }
+        }
+    }
+    .card {
+        background-color: transparent;
+    }
+}

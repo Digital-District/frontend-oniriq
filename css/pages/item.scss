@@ -214,13 +214,16 @@
                 position: relative;
                 &:not(.active) {
                     font-family: AvenirLTStd-Roman;
-                    margin-left: 30px;
                 }
-                &:not(.disabled), &:not(.active) {
+                &:not(.disabled) {
                     color: $black;
+                    &:hover {
+                        color: $gold;
+                    }
                 }
                 &.disabled {
                     color: $light-gray3;
+                    cursor: default;
                 }
                 &.active {
                     font-family: Avenir-Heavy;

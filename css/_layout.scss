@@ -1,5 +1,4 @@
 .header{
-  position: relative;
   @include minMeduim {
     padding-top: 90px;
   }
@@ -59,6 +58,22 @@
           background-color: $white;
         }
         .navbar-nav {
+          @include maxMeduim {
+            margin-top: 20px;
+          }
+          .nav-close {
+            a {
+              width: 30px;
+              height: 30px;
+              font-size: 30px;
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              &:hover {
+                color: $gold;
+              }
+            }
+          }
           .nav-item {
             font-family: Avenir-Medium;
             &.active {
@@ -148,6 +163,7 @@
                     padding-left: 50px;
                   }
                   img {
+                    min-height: 170px;
                     @include minLarge {
                       width: 50%;
                     }
@@ -363,18 +379,4 @@
   background: $gold;
   color: $white;
 }
-
-::-webkit-scrollbar {
-  width: 7px;
-}
-::-webkit-scrollbar-track {
-  box-shadow: inset -1px 0 0 0 #f0f0f0, inset 1px 0 0 0 #e8e8e8;
-  background-color: #fafafa;
-}
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #c1c1c1;
-}
+@include scrollbars(0.45em, #c1c1c1, 4px);

@@ -1,0 +1,544 @@
+@import "../global";
+
+.orders-nav {
+    ul {
+        &.vertical {
+            @include maxSmall { 
+                display: flex;
+                margin-bottom: 20px !important;
+            }
+            li {
+                padding-block: 5px;
+                &.active, &:hover {
+                    &:before {
+                        width: 2px;
+                        height: 100%;
+                        top: 0;
+                    }
+                }
+            }
+        }
+        &.horizontal {
+            @include minMeduim {
+                &:after {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #eaeaea;
+                }
+            }
+            li {
+                @include minMeduim {
+                    padding-right: 10px;
+                }
+                @include maxSmall {
+                    &.active, &:hover {
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+                &.active, &:hover {
+                    &:before {
+                        width: 100%;
+                        height: 3px;
+                        bottom: 0;
+                    }
+                }
+                &.active {
+                    a {
+                        font-family: Avenir-Heavy;
+                    }
+                }
+                &.notif {
+                    &:after {
+                        position: absolute;
+                        content: '';
+                        width: 12px;
+                        height: 12px;
+                        top: 5px;
+                        background-color: $light-red;
+                        border-radius: 50%;
+                        @include minMeduim {
+                            right: -12px;
+                        }
+                        @include maxSmall {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        li {
+            font-family: AvenirLTStd-Book;
+            position: relative;
+            &.active, &:hover {
+                &:before {
+                    position:absolute;
+                    content: '';
+                    left: 0;
+                    background-color: $gold;
+                    z-index: 2;
+                }
+                a {
+                    color: $gold;
+                }
+            }
+            a {
+                color: $dark-gray;
+                @include prefixer(transition, all 0.3s ease-in-out 0s, webkit moz o);
+            }
+        }
+    }
+}
+.orders-nav-icons {
+    @include maxSmall {
+        ul {
+            li {
+                width: 40px;
+                height: 40px;
+                line-height: 50px;
+                border: 1px solid $dark-gray;
+                border-radius: 4px;
+                @include prefixer(transition, all 0.1s ease-in-out, webkit moz o);
+                &.active, &:hover {
+                    border-color: $gold;
+                    background-color: $gold;
+                    svg {
+                        fill: $white;
+                    }
+                }
+                svg {
+                    fill: $light-black3;
+                }
+            }
+        }
+    }
+}
+.top-nav {
+    h2 {
+        font-family: Avenir-Heavy;
+        font-size: 16px;
+        color: $dark-gray;
+    }
+    a {
+        font-family: AvenirLTStd-Book;
+        color: $gold;
+        @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+        &:hover {
+            color: $dark-gray;
+        }
+        @include maxExtraSmall {
+            .text {
+                display: none;
+            }
+            .icon {
+                font-size: 26px;
+            }
+        }
+    }
+}
+.sec-padding {
+    padding: $sec-padding;
+}
+.my-orders {
+    .order-status {
+        .accord {
+            &.collapsed{
+                border-bottom: 2px solid #eaeaea;
+            }
+            h3 {
+                font-family: Avenir-Heavy;
+                font-size: 16px;
+                color: $gold
+            }
+            @extend %accord-arrow;
+            i {
+                color: $light-black;
+                font-size: 12px;
+            }
+        }
+    }
+    .order-box {
+        padding: 30px;
+        border-radius: 4px;
+        border: solid 1px #eaeaea;
+        @include minLarge {
+            width: calc(100% - 250px);
+        }
+        .serial {
+            .title {
+                font-family: Avenir-Heavy;
+                font-size: 32px;
+                color: $dark-gray;
+            }
+            .num {
+                font-family: AvenirLTStd-Book;
+                font-size: 14px;
+                background-color: $gold;
+                color: $white;
+                border-radius: 4px;
+                padding: 8px;
+            }
+        }
+        .cancel {
+            font-family: Avenir-Medium;
+            color: $dark-gray-half-opacity;
+            font-size: 20px;
+            @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+            @include minSmall {
+                .icon {
+                    display: none;
+                }
+            }
+            @include maxExtraSmall {
+                .text {
+                    display: none;
+                }
+            }
+            &:hover {
+                color: $dark-gray;
+            }
+        }
+        h3 {
+            font-family: Avenir-Heavy;
+            font-size: 20px;
+            color: $dark-gray;
+        }
+        .tracking {
+            .cycle {
+                @include minSmall {
+                    align-items: center;
+                }
+                @include maxExtraSmall {
+                    flex-direction: column;
+                }
+                .box {
+                    position: relative;
+                    width: 90px;
+                    &:not(:last-child){
+                        @include minSmall {
+                            margin-right: 50px;
+                        }
+                        @include maxExtraSmall {
+                            margin-bottom: 40px;
+                        }
+                    }
+                    &:not(.active) {
+                        @include opacity(0.5);
+                    }
+                    &:not(:last-child){
+                        &:after {
+                            position: absolute;
+                            content: '\203A';
+                            color: $dark-gray;
+                            font-size: 26px;
+                            @include minSmall {
+                                right: -30px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                            @include maxExtraSmall {
+                                left: 50%;
+                                bottom: -40px;
+                                @include prefixer(transform, translateX(-50%) rotate(90deg), webkit moz o);
+                            }
+                        }
+                    }
+                    img {
+                        @include minMeduim {
+                            width: 44px;
+                            height: 44px;
+                        }
+                        @include maxSmall {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                    h4 {
+                        font-family: Avenir-Medium;
+                        font-size: 20px;
+                        color: $dark-gray;
+                    }
+                }
+            }
+        }
+        .details {
+            & > div {
+                @include maxExtraSmall {
+                    flex-direction: column;
+                }
+            }
+            .address, .payment {
+                @include minSmall {
+                    width: 50%;
+                }
+            }
+            h4 {
+                font-family: Avenir-Heavy;
+                font-size: 16px;
+                color: $dark-gray;
+            }
+            p {
+                font-family: Avenir-Medium;
+                color: $dark-gray-half-opacity;
+                font-size: 14px;
+            }
+        }
+        .items {
+            .accord {
+                @extend %accord-arrow;
+                i {
+                    color: $light-black;
+                    font-size: 12px;
+                }
+            }
+            color: $dark-gray;
+            .box {
+                @include maxExtraSmall {
+                    flex-direction: column;
+                }
+                .media {
+                    @include minSmall {
+                        width: calc(100% - 120px);
+                    }
+                    img {
+                        width: 80px;
+                        height: 80px;
+                    }
+                    h4, p {
+                        font-size: 16px;
+                        font-family: AvenirLTStd-Book;
+                    }
+                }
+                .price {
+                    font-family: Avenir-Heavy;
+                    font-size: 18px;
+                    @include minSmall {
+                        width: 120px;
+                        text-align: right;
+                    }
+                    @include maxExtraSmall {
+                        margin-left: 95px;
+                    }
+                }
+            }
+        }
+    }
+}
+.table {
+    @include minMeduim{
+        display: table;
+    }
+    th, td {
+        color: $dark-gray;
+        @include minSmall {
+            &:first-child {
+                padding-left: 40px;
+            }
+            &:last-child {
+                padding-right: 40px;
+            }
+        }
+    }
+    .thead-dark {
+        th {
+            background-color: $dark-gray;
+            border-color: transparent;
+            font-family: Avenir-Medium;
+            font-weight: normal;
+            @include minMeduim {
+                &:first-child {
+                    border-radius: 4px 0 0 4px;
+                }
+                &:last-child {
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+        }
+    }
+    tbody {
+        td {
+            @include minSmall {
+                padding: 20px;
+            }
+            &.name, &.number {
+                font-family: AvenirLTStd-Book;
+            } 
+            &.address, &.more {
+                font-family: Avenir-Medium;
+            } 
+            &.address {
+                font-size: 14px;
+            }
+            &.more {
+                a {
+                    &:hover {
+                        color: $gold;
+                    }
+                    i {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @include scrollbars(0.4em, #c1c1c1, 4px);
+    
+}
+.profile {
+    h2 {
+        font-family: Avenir-Heavy;
+        font-size: 20px;
+        color: $dark-gray;
+    }
+    .btn {
+        font-family: Avenir-Heavy;
+        font-size: 14px;
+        letter-spacing: 1px;
+        width: 130px;
+        height: 44px;
+    }
+    label {
+        a {
+            font-family: AvenirLTStd-Book;
+            color: $gold;
+            &:hover {
+                color: $dark-gray;
+            }
+        }
+    }
+    .form-control {
+        &[readonly] {
+            background-color: transparent;
+        }
+    }
+}
+.custom-form {
+    color: $dark-gray;
+    label {
+        font-family: 'AvenirLTStd-Roman';
+    }
+    .form-control {
+        height: 48px;
+    }
+    .payment-error-message {
+        font-family: 'AvenirLTStd-Roman';
+        margin-top: 5px;
+        display: block;
+    }
+    .row {
+        & > div {
+            &.col-sm-6 {
+                &:first-child{
+                    @include minSmall {
+                        padding-right: 8px;
+                    }
+                    @include maxExtraSmall {
+                        margin-bottom: 1rem;
+                    }
+                }
+                &:last-child {
+                    @include minSmall {                
+                        padding-left: 8px;
+                    }
+                }
+            }
+            @include maxSmall {
+                &.col-md-6 {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+    select {
+        @include prefixer(appearance, none, webkit moz o);
+    }
+    .select-ctrl {
+        position: relative;
+        &:after {
+            position: absolute;
+            content: '\203A';
+            color: $dark-gray;
+            font-size: 26px;
+            top: 36px;
+            right: 25px;
+            @include prefixer(transform, rotate(90deg), webkit moz o);
+        }
+    }
+}
+.modal {
+    &#cancelOrderModal {
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+    }
+    &#addressAddEditModal {
+        .address-delete {
+            font-family: Avenir-Medium;
+            font-size: 20px;
+            color: $dark-gray-half-opacity;
+            &:hover{
+                color: $dark-gray;
+            }
+        }
+    }
+    &#cardsAddModal{
+        ::-webkit-input-placeholder {
+            text-align: center;
+        }
+        :-moz-placeholder {
+            text-align: center;
+        }
+    }
+    .modal-dialog {
+        &.size-sm {
+            @include minMeduim {
+                max-width: 636px;  
+            }
+            .modal-body {
+                padding: 30px;
+            }
+        }
+        &.size-xs {
+            @include minMeduim {
+                max-width: 478px;  
+            }
+            .modal-body {
+                padding: 40px;
+            }
+        }
+    }
+    .modal-content {
+        color: $dark-gray;
+        .close {
+            font-size: 42px;
+            color: $light-black;
+            font-weight: normal;
+        }
+        h3 {
+            font-family: Avenir-Heavy;
+            font-size: 32px;
+        }
+        p {
+            font-family: Avenir-Medium;
+            font-size: 20px;
+        }
+        .btn {
+            font-family: Avenir-Heavy;
+            font-size: 14px;
+            letter-spacing: 1px;
+            width: 130px;
+            height: 44px;
+            &.btn-secondary {
+                background-color: transparent;
+                color: $dark-gray;
+            }
+        }
+    }
+}

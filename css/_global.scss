@@ -31,14 +31,19 @@ a{
   font-size: 14px;
   letter-spacing: 1px;
   height: 38px;
+  outline: 0;
   @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
   &:hover {
       background-color: $gold;
       border-color: $gold;
   }
-  &:active{
+  &:active:not(:disabled) {
       background-color: $dark-gray !important;
       border-color: $dark-gray !important;
+  }
+  &:disabled {
+    background-color: $disabled;
+    border-color: $disabled;
   }
 }
 button {
@@ -70,7 +75,7 @@ button {
   visibility: hidden;
   @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
   &.active{
-    z-index: 1;
+    z-index: 10;
     opacity: 1;
     visibility: visible;
   }

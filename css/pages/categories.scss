@@ -177,6 +177,14 @@
                 background: #00000029;
                 @include prefixer(transition, all .3s ease-in-out, webkit moz o);
             }
+            img {
+                @include minLarge {
+                    min-height: 360px;
+                }
+                @include maxMeduim {
+                    min-height: 550px;
+                }
+            }
         }
         .cat-title {
             position: absolute;

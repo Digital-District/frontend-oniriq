@@ -95,8 +95,14 @@
   .card-img-top {
     position: relative;
     overflow: hidden;
-    min-height: 305px;
-
+    img {
+      @include minMeduim {
+        min-height: 350px;
+      }
+      @include maxSmall {
+        min-height: 300px;
+      }
+    }
     &:after {
       position: absolute;
       top: 0;
@@ -112,7 +118,7 @@
 
   .card-body {
     font-size: 14px;
-    .colors{
+    .colors {
       @extend %custom-radio-btns;
     }
     .card-title,
@@ -272,6 +278,19 @@
           @include prefixer(transform, translate(-50%, -50%), webkit moz o);
         }
       }
+    }
+  }
+}
+
+%accord-arrow {
+  &.collapsed {
+    .icon-arrow-up {
+      display: none;
+    }
+  }
+  &:not(.collapsed) {
+    .icon-arrow-down {
+      display: none;
     }
   }
 }

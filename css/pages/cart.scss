@@ -1,0 +1,128 @@
+@import "../global";
+
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+    background-color: $white;
+    @media (min-width: 460px) {
+        right: -450px;
+        width: 450px;
+    }
+    @media (max-width: 459.98px) {
+        right: -100%;
+        width: 100%;
+    }
+    .cart-header {
+        padding: 20px;
+        & > div {
+            border-bottom: 1px solid $dark-gray-quarter-opacity;
+            h2 {
+                font-family: Avenir-Medium;
+                font-size: 24px;
+                color: $dark-gray;
+            }
+            a {
+                height: 30px;
+                width: 30px;
+                font-size: 30px;
+                color: $light-black;
+                &:hover {
+                    color: $gold;
+                }
+            }
+        }
+    }
+    .cart-content {
+        height: calc(100vh - 266px );
+        min-height: calc(100vh - 266px );
+        overflow-y: auto;
+        margin-right: 1px;
+        .items-list {
+            .item {
+                padding: 20px;
+                &:not(:first-child) {
+                    padding-top: 0;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                &:not(:last-child){
+                    .item-inner {
+                        border-bottom: 1px solid $dark-gray-quarter-opacity;
+                    }
+                }
+                .item-inner {
+                    padding-bottom: 20px;
+                }
+                .item-img {
+                    width: 115px;
+                    height: 150px;
+                }
+                .item-details {
+                    width: calc(100% - 115px);
+                    color: $dark-gray;
+                    h3 {
+                        font-family: AvenirLTStd-Book;
+                        font-size: 16px;
+                    }
+                    .color, .size {
+                        font-size: 12px;
+                        .title {
+                            font-family: Avenir-Heavy;
+                        }
+                        .value {
+                            font-family: AvenirLTStd-Roman;
+                        }
+                    }
+                    .quantity {
+                        font-family: Avenir-Medium;
+                        border: 1px solid $dark-gray-quarter-opacity;
+                        width: 80px;
+                        height: 32px;
+                        a, span {
+                            flex:1;
+                        }
+                        a {
+                            &:hover {
+                                color: $gold;
+                            }
+                        }
+                        span {
+                            text-align: center;
+                        }
+                    }
+                    .price {
+                        font-family: AvenirLTStd-Roman;
+                        font-size: 14px;
+                        color: $light-gray3;
+                    }
+                }
+            }
+        }
+    }
+    .cart-footer {
+        padding: 20px;
+        border-top: 1px solid $dark-gray-quarter-opacity;
+        .total {
+            font-size: 14px;
+            .title {
+                letter-spacing: 1px;
+                color: $black-half-opacity;
+            }
+            .value {
+                font-family: Avenir-Medium;
+                color: $light-gray3;
+            }
+        }
+        .note {
+            color: $black-half-opacity;
+            font-family: AvenirLTStd-Roman;
+            font-size: 14px;
+        }
+        button {
+            height: 48px;
+        }
+    }
+}

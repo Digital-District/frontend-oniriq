@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="css/pages/cart.css">
+<div class="cart-container">
+    <div class="cart-header pb-0">
+        <div class="pb-3 d-flex align-items-center justify-content-between">
+            <h2 class="mb-0 text-uppercase">Cart</h2>
+            <a class="cart-close d-flex align-items-center justify-content-center" href="javascript:void(0)" onclick="sidebarClose();">
+                <span>&times;</span>
+            </a>
+        </div>
+    </div>
+    <div class="cart-content">
+        <div class="items-list">
+            <div class="item">
+                <div class="item-inner d-flex align-items-center">
+                    <div class="item-img d-flex align-items-end">
+                        <img src="images/order-item-1.jpg" alt="Dolce & Gabbana" class="img-fluid">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="name text-uppercase">Dolce & Gabbana</h3>
+                        <p class="color mb-0"><span class="title">Color: </span><span class="value">Brown</span></p>
+                        <p class="size mb-0"><span class="title">Size: </span><span class="value">Medium</span></p>
+                        <div class="d-flex align-items-center justify-content-between mt-4">
+                            <div class="quantity d-flex align-items-center justify-content-center">
+                                <a href="javascript:void(0)" onclick="cartItemQtyEditClick($(this))" class="minus d-flex align-items-center justify-content-center">-</a>
+                                <span type="text" class="qty">1</span>
+                                <a href="javascript:void(0)" onclick="cartItemQtyEditClick($(this))" class="plus d-flex align-items-center justify-content-center">+</a>
+                            </div>
+                            <div class="price"><span class="value" value="5400">5,400</span> QAR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-inner d-flex align-items-center">
+                    <div class="item-img d-flex align-items-end">
+                        <img src="images/order-item-2.jpg" alt="Dolce & Gabbana" class="img-fluid">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="name text-uppercase">Dolce & Gabbana</h3>
+                        <p class="color mb-0"><span class="title">Color: </span><span class="value">Brown</span></p>
+                        <p class="size mb-0"><span class="title">Size: </span><span class="value">Medium</span></p>
+                        <div class="d-flex align-items-center justify-content-between mt-4">
+                            <div class="quantity d-flex align-items-center justify-content-center">
+                                <a href="javascript:void(0)" onclick="cartItemQtyEditClick($(this))" class="minus d-flex align-items-center justify-content-center">-</a>
+                                <span type="text" class="qty">1</span>
+                                <a href="javascript:void(0)" onclick="cartItemQtyEditClick($(this))" class="plus d-flex align-items-center justify-content-center">+</a>
+                            </div>
+                            <div class="price"><span class="value" value="5400">5,400</span> QAR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-inner d-flex align-items-center">
+                    <div class="item-img d-flex align-items-end">
+                        <img src="images/order-item-3.jpg" alt="Dolce & Gabbana" class="img-fluid">
+                    </div>
+                    <div class="item-details">
+                        <h3 class="name text-uppercase">Dolce & Gabbana</h3>
+                        <p class="color mb-0"><span class="title">Color: </span><span class="value">Brown</span></p>
+                        <p class="size mb-0"><span class="title">Size: </span><span class="value">Medium</span></p>
+                        <div class="d-flex align-items-center justify-content-between mt-4">
+                            <div class="quantity d-flex align-items-center justify-content-center">
+                                <a href="javascript:void(0)" onclick="cartItemQtyEditClick($(this))" class="minus d-flex align-items-center justify-content-center">-</a>
+                                <span type="text" class="qty">1</span>
+                                <a href="javascript:void(0)" onclick="cartItemQtyEditClick($(this))" class="plus d-flex align-items-center justify-content-center">+</a>
+                            </div>
+                            <div class="price"><span class="value" value="5400">5,400</span> QAR</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <div>
+            <p class="total mb-2 d-flex align-items-center justify-content-between">
+                <span class="title text-uppercase">Subtotal</span>
+                <span class="value">5,400 QAR</span>
+            </p>
+            <p class="total d-flex align-items-center justify-content-between">
+                <span class="title text-uppercase">Total</span>
+                <span class="value">5,400 QAR</span>
+            </p>
+            <p class="note text-center">Discounts coupon calculated at checkout.</p>
+            <button type="submit" class="btn btn-primary btn-block text-uppercase">Check out</button>
+        </div>
+    </div>
+</div>
