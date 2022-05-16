@@ -1,7 +1,8 @@
-/* @font-face {
+@font-face {
   font-family: AvenirLTStd-Black;
   src: url("../../fonts/AvenirLTStd-Black.otf") format("opentype");
-} */
+}
+
 @font-face {
   font-family: AvenirLTStd-Book;
   src: url("../../fonts/AvenirLTStd-Book.otf") format("opentype");
@@ -315,6 +316,113 @@
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+body {
+  font-family: Avenir-Light;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+@media (min-width: 1360px) {
+  .container {
+    max-width: 144rem;
+    padding-inline: 4.8rem;
+  }
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: unset;
+}
+
+.btn-primary {
+  font-family: 'Avenir-Heavy';
+  background-color: #303030;
+  border-color: #303030;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 38px;
+  outline: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #84754e;
+  border-color: #84754e;
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: #303030 !important;
+  border-color: #303030 !important;
+}
+
+.btn-primary:disabled {
+  background-color: #c4c4c4;
+  border-color: #c4c4c4;
+}
+
+button:focus {
+  -webkit-box-shadow: unset !important;
+  -o-box-shadow: unset !important;
+  box-shadow: unset !important;
+  outline: unset;
+}
+
+button:active:focus {
+  -webkit-box-shadow: unset !important;
+  -o-box-shadow: unset !important;
+  box-shadow: unset !important;
+}
+
+.form-control {
+  height: 48px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ced4da;
+  outline: 0;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.fullscreen-bg.active {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+}
+
+#ajax-loader {
+  display: none;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  z-index: 100010;
+  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
 }
 
 @media (min-width: 768px) {
@@ -677,6 +785,10 @@
   }
 }
 
+.categories-header .search-form .form-control {
+  height: 40px;
+}
+
 @media (min-width: 992px) {
   .categories-header .search-form .autocomplete-suggestions {
     width: 240px !important;
@@ -821,109 +933,6 @@
 
 ::-webkit-scrollbar-track {
   background: #e0e0e0;
-}
-
-body {
-  font-family: Avenir-Light;
-  overflow-x: hidden;
-  font-size: 16px;
-}
-
-@media (min-width: 1360px) {
-  .container {
-    max-width: 144rem;
-    padding-inline: 4.8rem;
-  }
-}
-
-a {
-  color: #000;
-}
-
-a:hover {
-  text-decoration: unset;
-}
-
-.btn-primary {
-  font-family: 'Avenir-Heavy';
-  background-color: #303030;
-  border-color: #303030;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 1px;
-  height: 38px;
-  outline: 0;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-  background-color: #84754e;
-  border-color: #84754e;
-}
-
-.btn-primary:active:not(:disabled) {
-  background-color: #303030 !important;
-  border-color: #303030 !important;
-}
-
-.btn-primary:disabled {
-  background-color: #c4c4c4;
-  border-color: #c4c4c4;
-}
-
-button:focus {
-  -webkit-box-shadow: unset !important;
-  -o-box-shadow: unset !important;
-  box-shadow: unset !important;
-  outline: unset;
-}
-
-button:active:focus {
-  -webkit-box-shadow: unset !important;
-  -o-box-shadow: unset !important;
-  box-shadow: unset !important;
-}
-
-.form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #ced4da;
-  outline: 0;
-  -webkit-box-shadow: unset;
-          box-shadow: unset;
-}
-
-.fullscreen-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #00000080;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
-.fullscreen-bg.active {
-  z-index: 10;
-  opacity: 1;
-  visibility: visible;
-}
-
-#ajax-loader {
-  display: none;
-  position: fixed;
-  top: calc(50% - 100px);
-  left: calc(50% - 100px);
-  width: 200px;
-  height: 200px;
-  z-index: 100010;
-  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
-  -webkit-transform: scale(0.15);
-          transform: scale(0.15);
 }
 
 .shop-now {

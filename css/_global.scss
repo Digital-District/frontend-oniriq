@@ -2,7 +2,6 @@
 @import "helper/variables";
 @import "helper/extends";
 @import "helper/mixins";
-@import "layout";
 
 
 body {
@@ -57,12 +56,15 @@ button {
       }
   }
 }
-.form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #ced4da;
-  outline: 0;
-  box-shadow: unset;
+.form-control{
+  height: 48px;
+  &:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: unset;
+  }
 }
 .fullscreen-bg {
   position: fixed;

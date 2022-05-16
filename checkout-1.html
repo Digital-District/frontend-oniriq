@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Checkout - 1</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/pages/checkout.css">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+        <div class="row no-gutters">
+            <div class="col-lg-7">
+                <div class="info py-5">
+                    <div class="container">
+                        <div class="logo">
+                            <a href="/"><img data-lazyload="images/logo-sm.png" alt="ONIRIQ"></a>
+                        </div>
+                        <ul class="checkout-steps list-inline mt-3 mb-4">
+                            <li class="list-inline-item">Cart <span class="seperator">></span></li>
+                            <li class="list-inline-item active">Information <span class="seperator">></span></li>
+                            <li class="list-inline-item">Payment</li>
+                        </ul>
+                        <form>
+                            <fieldset class="mb-4">
+                                <legend class="heading-title mb-4">Contact information</legend>
+                                <div class="form-group">
+                                    <label for="email" class="d-flex align-items-center justify-content-between">
+                                        <span>Email address</span>
+                                        <span class="note">Already have an account? <a href="sign-in.html">log in</a></span>
+                                    </label>
+                                    <input type="email" name="email" id="email" class="form-control">
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="heading-title mb-4">Shipping address</legend>
+                                <div class="row form-group">
+                                    <div class="col-md-6">
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" name="firstName" id="firstName" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="secondName">Second Name</label>
+                                        <input type="text" name="secondName" id="secondName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-md-6 select-ctrl">
+                                        <label for="government">Government</label>
+                                        <select id="government" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 select-ctrl">
+                                        <label for="city">City</label>
+                                        <select id="city" class="form-control">
+                                            <option selected>Select</option>
+                                            <option>...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" name="address" id="address" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="apartment">apartment, Villa... <i class="icon-info"></i></label>
+                                    <input type="text" name="apartment" id="apartment" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="text" name="phone" id="phone" class="form-control">
+                                </div>
+                            </fieldset>
+                            <div class="form-check mt-3">
+                                <input type="checkbox" class="form-check-input" id="saveInfo">
+                                <label class="form-check-label" for="saveInfo">Save this information for next time.</label>
+                            </div>
+                            <div class="d-flex align-items-center actions">
+                                <button type="button" onclick="location.href='checkout-2.html'" class="btn continue mt-4">Continue to payment</button>
+                                <a href="" class="d-block mt-4 return">Return to cart</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="cart py-5">
+                    <div class="container">
+                        <h2 class="mb-0 pb-3 text-uppercase">Inside cart</h2>
+                        <div class="items pt-4 pr-3">
+                            <div class="box mb-3">
+                                <div class="media align-items-center">
+                                    <img data-lazyload="images/order-item-1.jpg" alt="Dolce & Gabbana" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="text-uppercase">Dolce & Gabbana</h4>
+                                                <p class="count mb-0">2 Items</p>
+                                            </div>
+                                            <div class="price">5,400 QAR</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box mb-3">
+                                <div class="media align-items-center">
+                                    <img data-lazyload="images/order-item-2.jpg" alt="Dolce & Gabbana" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="text-uppercase">Dolce & Gabbana</h4>
+                                                <p class="count mb-0">2 Items</p>
+                                            </div>
+                                            <div class="price">5,400 QAR</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box mb-3">
+                                <div class="media align-items-center">
+                                    <img data-lazyload="images/order-item-3.jpg" alt="Dolce & Gabbana" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="text-uppercase">Dolce & Gabbana</h4>
+                                                <p class="count mb-0">2 Items</p>
+                                            </div>
+                                            <div class="price">5,400 QAR</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="" class="discount-form py-4">
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control mr-3" onkeyup="discountCodeCheck($(this))" placeholder="Discount code" autocomplete="off">
+                                <button type="submit" class="btn btn-primary text-capitalize" disabled>Apply</button>
+                            </div>
+                        </form>
+                        <div class="total-calc pt-4">
+                            <p class="mb-2 d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Subtotal</span>
+                                <span class="value">5,400 QAR</span>
+                            </p>
+                            <p class="mb-2 d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Shipping</span>
+                                <span class="value">Next step</span>
+                            </p>
+                            <p class="d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Discount</span>
+                                <span class="value">-5,400 QAR</span>
+                            </p>
+                            <p class="total py-4 d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Total</span>
+                                <span class="value">5,800 QAR</span>
+                            </p>
+                        </div>
+                        <div class="guarantee d-flex align-items-center justify-content-center">
+                            <img src="images/protected.png" class="mr-2" alt="Guarantee">
+                            <p class="mb-0">Shop worry-free! We offer free and easy returns within 7days. 
+                                <a href="">Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- <a href="javascript:void(0)" class="go-top" class="rounded"><i class="fa fa-angle-up"></i></a> -->
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

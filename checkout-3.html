@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Checkout - 3</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/pages/checkout.css">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+        <div class="row no-gutters">
+            <div class="col-lg-7">
+                <div class="info py-5">
+                    <div class="container">
+                        <div class="logo">
+                            <a href="/"><img data-lazyload="images/logo-sm.png" alt="ONIRIQ"></a>
+                        </div>
+                        <div class="success mt-4">
+                            <div class="media">
+                                <img class="mr-3 img-fluid" src="images/checked.png" alt="Order #DD21345">
+                                <div class="media-body">
+                                    <h3 class="mb-2">Order #DD21345</h3>
+                                    <p class="mb-0">Thank you Mohamed!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="confirmed mt-4">
+                            <h3 class="heading-title">Your order is confirmed</h3>
+                            <p class="mb-0">An email confirmation has been sent to name@example.com</p>
+                        </div>
+                        <div class="order-details mt-4">
+                            <div class="d-flex justify-content-between">
+                                <div class="mb-4">
+                                    <h3 class="heading-title">Contact information.</h3>
+                                    <p class="mb-0">mohamed3nasr3@gmail.com</p>
+                                </div>
+                                <div class="mb-4">
+                                    <h3 class="heading-title">Payment method.</h3>
+                                    <p class="mb-0">Cash on Delivery (COD) - 5,800 QAR</p>
+                                </div>
+                            </div>
+                            <h3 class="heading-title">Shipping address</h3>
+                            <p class="mb-2">Mohamed nasr</p>
+                            <p class="mb-2">4771 Dovetail Drive, sdfsd</p>
+                            <p class="mb-2">Al-Shahaniya</p>
+                            <p class="mb-2">Al Samriya</p>
+                            <p class="mb-2">+974 3126 3209</p>
+                        </div>
+                        <p class="mt-4 completed-note">Please note: after three unsuccessful attempts to deliver your order, it will be cancelled and 
+                            you will be notified accordingly.</p>
+                        <div class="actions">
+                            <button type="button" onclick="location.href='categories.html'" class="btn continue mt-4">Continue Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="cart py-5">
+                    <div class="container">
+                        <h2 class="mb-0 pb-3 text-uppercase">Inside cart</h2>
+                        <div class="items pt-4 pr-3">
+                            <div class="box mb-3">
+                                <div class="media align-items-center">
+                                    <img data-lazyload="images/order-item-1.jpg" alt="Dolce & Gabbana" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="text-uppercase">Dolce & Gabbana</h4>
+                                                <p class="count mb-0">2 Items</p>
+                                            </div>
+                                            <div class="price">5,400 QAR</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box mb-3">
+                                <div class="media align-items-center">
+                                    <img data-lazyload="images/order-item-2.jpg" alt="Dolce & Gabbana" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="text-uppercase">Dolce & Gabbana</h4>
+                                                <p class="count mb-0">2 Items</p>
+                                            </div>
+                                            <div class="price">5,400 QAR</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box mb-3">
+                                <div class="media align-items-center">
+                                    <img data-lazyload="images/order-item-3.jpg" alt="Dolce & Gabbana" class="img-fluid mr-3">
+                                    <div class="media-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div>
+                                                <h4 class="text-uppercase">Dolce & Gabbana</h4>
+                                                <p class="count mb-0">2 Items</p>
+                                            </div>
+                                            <div class="price">5,400 QAR</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="" class="discount-form py-4">
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control mr-3" onkeyup="discountCodeCheck($(this))" placeholder="Discount code" autocomplete="off">
+                                <button type="submit" class="btn btn-primary text-capitalize" disabled>Apply</button>
+                            </div>
+                        </form>
+                        <div class="total-calc pt-4">
+                            <p class="mb-2 d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Subtotal</span>
+                                <span class="value">5,400 QAR</span>
+                            </p>
+                            <p class="mb-2 d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Shipping</span>
+                                <span class="value">Next step</span>
+                            </p>
+                            <p class="d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Discount</span>
+                                <span class="value">-5,400 QAR</span>
+                            </p>
+                            <p class="total py-4 d-flex align-items-center justify-content-between">
+                                <span class="title text-uppercase">Total</span>
+                                <span class="value">5,800 QAR</span>
+                            </p>
+                        </div>
+                        <div class="guarantee d-flex align-items-center justify-content-center">
+                            <img src="images/protected.png" class="mr-2" alt="Guarantee">
+                            <p class="mb-0">Shop worry-free! We offer free and easy returns within 7days. 
+                                <a href="">Learn more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- <a href="javascript:void(0)" class="go-top" class="rounded"><i class="fa fa-angle-up"></i></a> -->
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
+    <script src="js/payment-min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

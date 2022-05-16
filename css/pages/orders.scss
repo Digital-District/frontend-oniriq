@@ -1,4 +1,5 @@
 @import "../global";
+@import "../layout";
 
 .orders-nav {
     ul {
@@ -422,9 +423,6 @@
     label {
         font-family: 'AvenirLTStd-Roman';
     }
-    .form-control {
-        height: 48px;
-    }
     .payment-error-message {
         font-family: 'AvenirLTStd-Roman';
         margin-top: 5px;
@@ -447,15 +445,15 @@
                     }
                 }
             }
+            & + .payment-error-message {
+                padding-left: 15px;
+            }
             @include maxSmall {
                 &.col-md-6 {
                     margin-bottom: 1rem;
                 }
             }
         }
-    }
-    select {
-        @include prefixer(appearance, none, webkit moz o);
     }
     .select-ctrl {
         position: relative;
@@ -467,6 +465,12 @@
             top: 36px;
             right: 25px;
             @include prefixer(transform, rotate(90deg), webkit moz o);
+        }
+        select{
+            &.form-control {
+                height: 48px;
+                @include prefixer(appearance, none, webkit moz o);
+            }
         }
     }
 }

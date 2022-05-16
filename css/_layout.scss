@@ -275,6 +275,9 @@
     @include maxMeduim {
       width: 100%;
     }
+    .form-control {
+      height: 40px;
+    }
     .autocomplete-suggestions{
       @include minLarge {
         width: 240px !important;

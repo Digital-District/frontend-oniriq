@@ -32,14 +32,16 @@
 	// Search Box
 	var searchResults = [];
 	$('#search-results-list li').each(function() { searchResults.push($(this).text()) });
-	$('#search-autocomplete').devbridgeAutocomplete({
-		lookup: searchResults,
-		appendTo: '.search-form',
-		maxHeight: '200',
-		// width: '100%',
-		showNoSuggestionNotice: true,
-		noSuggestionNotice: 'Sorry, no matching results',
-	});
+	if($('#search-autocomplete').length != 0){
+		$('#search-autocomplete').devbridgeAutocomplete({
+			lookup: searchResults,
+			appendTo: '.search-form',
+			maxHeight: '200',
+			// width: '100%',
+			showNoSuggestionNotice: true,
+			noSuggestionNotice: 'Sorry, no matching results',
+		});
+	}
 	$("#search-autocomplete").on("keyup", function() {
 		var value = $(this).val().toLowerCase();
 		if(value == '')
@@ -178,7 +180,6 @@ function shopProductsPagination(selector, page, range){
 	if (page < count)
 		$(selector).append('<li class="page-item"><a class="page-link" href="javascript:void(0)">Next<span><i class="icon-arrow-right"></i</span></a></li>');
 }
-shopProductsPagination('.pagination', 1, 3);
 
 function owlCarouselInit(options){
 	var autoplay = options.autoplay == undefined ? false : options.autoplay,
@@ -207,9 +208,20 @@ function owlCarouselInit(options){
 		lazyLoadEager: lazyLoadEager,
 		responsiveClass:responsiveClass,
 		responsive: responsive
+		/* onInitialized: function(){
+			console.log(this);
+			console.log("Main Slider height after intialise:" + $(this.$element[0]).height());
+		},
+		onTranslated: function(){} */
 	});
 }
-
+function discountCodeCheck(ct){
+	var val = ct.val();
+	if(val == '')
+		ct.next().prop('disabled', true);
+	else
+		ct.next().prop('disabled', false);
+}
 function lazyLoad() {
 	var lazyLoadEl = $('[data-lazyload]');
 	if( lazyLoadEl.length > 0 ) {
