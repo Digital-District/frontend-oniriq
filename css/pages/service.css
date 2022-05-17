@@ -1,0 +1,446 @@
+@font-face {
+  font-family: AvenirLTStd-Black;
+  src: url("../../fonts/AvenirLTStd-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: AvenirLTStd-Book;
+  src: url("../../fonts/AvenirLTStd-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: AvenirLTStd-Roman;
+  src: url("../../fonts/AvenirLTStd-Roman.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Medium;
+  src: url("../../fonts/Avenir-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Light;
+  src: url("../../fonts/Avenir-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Heavy;
+  src: url("../../fonts/Avenir-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Regular;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-SemiBold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Medium;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Bold;
+  src: url("../../fonts/Playfair_Display/PlayfairDisplay-Bold.otf") format("opentype");
+}
+
+body {
+  font-family: Avenir-Light;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+@media (min-width: 1360px) {
+  .container {
+    max-width: 144rem;
+    padding-inline: 4.8rem;
+  }
+}
+
+a {
+  color: #000;
+}
+
+a:hover {
+  text-decoration: unset;
+}
+
+.btn-primary {
+  font-family: 'Avenir-Heavy';
+  background-color: #303030;
+  border-color: #303030;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 38px;
+  outline: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #84754e;
+  border-color: #84754e;
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: #303030 !important;
+  border-color: #303030 !important;
+}
+
+.btn-primary:disabled {
+  background-color: #c4c4c4;
+  border-color: #c4c4c4;
+}
+
+button:focus {
+  -webkit-box-shadow: unset !important;
+  -o-box-shadow: unset !important;
+  box-shadow: unset !important;
+  outline: unset;
+}
+
+button:active:focus {
+  -webkit-box-shadow: unset !important;
+  -o-box-shadow: unset !important;
+  box-shadow: unset !important;
+}
+
+.form-control:not(textarea) {
+  height: 48px;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #ced4da;
+  outline: 0;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.fullscreen-bg.active {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+}
+
+#ajax-loader {
+  display: none;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  z-index: 100010;
+  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
+  -webkit-transform: scale(0.15);
+          transform: scale(0.15);
+}
+
+.menu-items ul {
+  position: relative;
+}
+
+.menu-items ul:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #eaeaea;
+}
+
+.menu-items ul li {
+  position: relative;
+  padding-inline: 10px;
+}
+
+.menu-items ul li.active:before, .menu-items ul li:hover:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  background-color: #84754e;
+  z-index: 2;
+}
+
+.menu-items ul li.active a, .menu-items ul li:hover a {
+  color: #84754e;
+}
+
+.menu-items ul li.active a {
+  font-family: Avenir-Heavy;
+}
+
+.menu-items ul li a {
+  font-family: AvenirLTStd-Book;
+  color: #303030;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-items .page-title h1 {
+  font-size: 24px;
+}
+
+.contact-us {
+  padding: 60px 0;
+}
+
+.contact-us .heading-title {
+  color: #303030;
+}
+
+.contact-us .heading-title h2 {
+  font-family: PlayfairDisplay-SemiBold;
+  line-height: 1.15;
+}
+
+@media (min-width: 576px) {
+  .contact-us .heading-title h2 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-us .heading-title h2 {
+    font-size: 34px;
+  }
+}
+
+.contact-us .heading-title p {
+  font-family: AvenirLTStd-Roman;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .contact-us form {
+    width: 570px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-us form {
+    margin: 0 20px;
+  }
+}
+
+.contact-us form label {
+  font-family: 'AvenirLTStd-Roman';
+}
+
+@media (min-width: 768px) {
+  .contact-us form .row > div.col-md-6:first-child {
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-us form .row > div.col-md-6:first-child {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-us form .row > div.col-md-6:last-child {
+    padding-left: 8px;
+  }
+}
+
+.contact-us form .row > div + .payment-error-message {
+  padding-left: 15px;
+}
+
+.contact-us form .select-ctrl {
+  position: relative;
+}
+
+.contact-us form .select-ctrl:after {
+  position: absolute;
+  content: '\203A';
+  color: #303030;
+  font-size: 26px;
+  top: 36px;
+  right: 25px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.contact-us form .select-ctrl select.form-control {
+  height: 48px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.contact-us form button {
+  height: 48px;
+}
+
+@media (min-width: 768px) {
+  .contact-us form button {
+    width: 279px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-us form button {
+    width: 100%;
+  }
+}
+
+.faqs {
+  padding: 60px 0;
+}
+
+.faqs .heading-title h2 {
+  color: #303030;
+  font-family: PlayfairDisplay-Medium;
+  line-height: 1.06;
+  letter-spacing: -1.2px;
+}
+
+@media (min-width: 576px) {
+  .faqs .heading-title h2 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .faqs .heading-title h2 {
+    font-size: 34px;
+  }
+}
+
+.faqs #accordion .card {
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #30303026;
+}
+
+@media (min-width: 992px) {
+  .faqs #accordion .card {
+    margin-inline: 40px;
+  }
+}
+
+.faqs #accordion .card .card-header {
+  background-color: transparent;
+}
+
+.faqs #accordion .card .card-header h2 {
+  font-family: Avenir-Medium;
+  font-size: 24px;
+  color: #303030;
+  cursor: pointer;
+}
+
+.faqs #accordion .card .card-header h2 p {
+  width: calc(100% - 50px);
+}
+
+.faqs #accordion .card .card-header h2.collapsed .minus {
+  display: none;
+}
+
+.faqs #accordion .card .card-header h2.collapsed .plus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.faqs #accordion .card .card-header h2:not(.collapsed) .minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.faqs #accordion .card .card-header h2:not(.collapsed) .plus {
+  display: none;
+}
+
+.faqs #accordion .card .card-header h2 span {
+  background-color: #989898;
+  color: #fff;
+}
+
+@media (min-width: 576px) {
+  .faqs #accordion .card .card-header h2 span {
+    width: 49px;
+    height: 49px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .faqs #accordion .card .card-header h2 span {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+  }
+}
+
+.faqs #accordion .card .card-body span {
+  width: 80px;
+  height: 80px;
+  background-color: #303030;
+  color: #fff;
+  font-size: 32px;
+}
+
+@media (min-width: 576px) {
+  .faqs #accordion .card .card-body span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .faqs #accordion .card .card-body span {
+    display: none;
+  }
+}
+
+.faqs #accordion .card .card-body p {
+  font-family: AvenirLTStd-Roman;
+  font-size: 18px;
+  line-height: 1.68;
+  color: #303030;
+}
+
+@media (min-width: 992px) {
+  .faqs #accordion .card .card-body p {
+    width: calc(100% - 380px);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .faqs #accordion .card .card-body p {
+    width: calc(100% - 100px);
+  }
+}
+/*# sourceMappingURL=service.css.map */

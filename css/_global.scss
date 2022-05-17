@@ -56,8 +56,10 @@ button {
       }
   }
 }
-.form-control{
-  height: 48px;
+.form-control {
+  &:not(textarea){
+    height: 48px;
+  }
   &:focus {
     color: #495057;
     background-color: #fff;

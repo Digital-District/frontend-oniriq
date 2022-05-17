@@ -358,7 +358,12 @@ input {
         flex-direction: column;
     }
     .continue {
-        width: 279px;
+        @include minMeduim {
+            width: 279px;
+        }
+        @include maxSmall {
+            width: 100%;
+        }
         height: 44px;
         line-height: 1;
         font-family: 'Avenir-Heavy';

@@ -12,11 +12,11 @@
 .acc {
     padding: $sec-padding;
     form{
-        @media (min-width: 420px) {
+        @include minSmall {
             width: 382px; 
             margin: auto;
         }
-        @media (max-width: 419.98px) {
+        @include maxExtraSmall {
             margin: 0 20px;
         }
         label{

@@ -110,7 +110,7 @@ button:active:focus {
   box-shadow: unset !important;
 }
 
-.form-control {
+.form-control:not(textarea) {
   height: 48px;
 }
 
@@ -577,7 +577,6 @@ input + label:before {
 }
 
 .actions .continue {
-  width: 279px;
   height: 44px;
   line-height: 1;
   font-family: 'Avenir-Heavy';
@@ -589,6 +588,18 @@ input + label:before {
   letter-spacing: 1px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .actions .continue {
+    width: 279px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .actions .continue {
+    width: 100%;
+  }
 }
 
 .actions .continue:hover {

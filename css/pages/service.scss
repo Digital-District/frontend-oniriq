@@ -1,0 +1,228 @@
+@import '../global';
+
+.menu-items {
+    ul {
+        position: relative;
+        &:after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #eaeaea;
+        }
+        li {
+            position: relative;
+            padding-inline: 10px;
+            &.active, &:hover {
+                &:before {
+                    position:absolute;
+                    content: '';
+                    left: 0;
+                    width: 100%;
+                    height: 3px;
+                    bottom: 0;
+                    background-color: $gold;
+                    z-index: 2;
+                }
+                a {
+                    color: $gold;
+                }
+            }
+            &.active {
+                a {
+                    font-family: Avenir-Heavy;
+                }
+            }
+            a {
+                font-family: AvenirLTStd-Book;
+                color: $dark-gray;
+                @include prefixer(transition, all 0.3s ease-in-out 0s, webkit moz o);
+            }
+        }
+    }
+    .page-title {
+        h1 {
+            font-size: 24px;
+        }
+    }
+}
+
+.contact-us {
+    padding: $sec-padding;
+    .heading-title {
+        color: $dark-gray;
+        h2 {
+            font-family: PlayfairDisplay-SemiBold;
+            line-height: 1.15;
+            @include minSmall {
+                font-size: 48px;
+            }
+            @include maxExtraSmall {
+                font-size: 34px;
+            }
+        }
+        p {
+            font-family: AvenirLTStd-Roman;
+            font-size: 20px;
+        }
+    }
+    form {
+        @include minMeduim {
+            width: 570px; 
+            margin: auto;
+        }
+        @include maxSmall {
+            margin: 0 20px;
+        }
+        label {
+            font-family: 'AvenirLTStd-Roman';
+        }
+        .row {
+            & > div {
+                &.col-md-6 {
+                    &:first-child{
+                        @include minMeduim {
+                            padding-right: 8px;
+                        }
+                        @include maxSmall {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                    &:last-child {
+                        @include minMeduim {                
+                            padding-left: 8px;
+                        }
+                    }
+                }
+                & + .payment-error-message {
+                    padding-left: 15px;
+                }
+            }
+        }
+        .select-ctrl {
+            position: relative;
+            &:after {
+                position: absolute;
+                content: '\203A';
+                color: $dark-gray;
+                font-size: 26px;
+                top: 36px;
+                right: 25px;
+                @include prefixer(transform, rotate(90deg), webkit moz o);
+            }
+            select{
+                &.form-control {
+                    height: 48px;
+                    @include prefixer(appearance, none, webkit moz o);
+                }
+            }
+        }
+        button {
+            @include minMeduim {
+                width: 279px;
+            }
+            @include maxSmall {
+                width: 100%;
+            }
+            height: 48px;
+        }
+    }
+}
+.faqs {
+    padding: $sec-padding;
+    .heading-title {
+        h2 {
+            color: $dark-gray;
+            font-family: PlayfairDisplay-Medium;
+            line-height: 1.06;
+            letter-spacing: -1.2px;
+            @include minSmall {
+                font-size: 40px;
+            }
+            @include maxExtraSmall {
+                font-size: 34px;
+            }
+        }
+    }
+    #accordion {
+        .card {
+            border: 0;
+            border-radius: 0;
+            border-bottom: 1px solid #30303026;
+            @include minLarge {
+                margin-inline: 40px;
+            }
+            .card-header {
+                background-color: transparent;
+                h2 {
+                    font-family: Avenir-Medium;
+                    font-size: 24px;
+                    color: $dark-gray;
+                    cursor: pointer;
+                    p {
+                        width: calc(100% - 50px);
+                    }
+                    &.collapsed {
+                        .minus {
+                            display: none;
+                        }
+                        .plus {
+                            display: flex;
+                        }
+                    }
+                    &:not(.collapsed) {
+                        .minus {
+                            display: flex;
+                        }
+                        .plus {
+                            display: none;
+                        }
+                    }
+                    span {
+                        @include minSmall {
+                            width: 49px;
+                            height: 49px;
+                            font-size: 30px;
+                        }
+                        @include maxExtraSmall {
+                            width: 35px;
+                            height: 35px;
+                            font-size: 24px;
+                        }
+                        background-color: #989898;
+                        color: $white;
+                    }
+                }
+            }
+            .card-body {
+                span {
+                    width: 80px;
+                    height: 80px;
+                    background-color: $dark-gray;
+                    color: $white;
+                    font-size: 32px;
+                    @include minSmall {
+                        display: flex;
+                    }
+                    @include maxExtraSmall {
+                        display: none;
+                    }
+                }
+                p {
+                    font-family: AvenirLTStd-Roman;
+                    font-size: 18px;
+                    line-height: 1.68;
+                    color: $dark-gray;
+                    @include minLarge {
+                        width: calc(100% - 380px);
+                    }
+                    @media (min-width: 576px) and (max-width: 991.98px) {
+                        width: calc(100% - 100px);
+                    }
+                }
+            }
+        }
+    }
+}

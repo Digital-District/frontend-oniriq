@@ -123,9 +123,14 @@
         .details {
             h2 {
                 font-family: 'PlayfairDisplay-SemiBold';
-                font-size: 48px;
                 color: $gold;
                 text-transform: uppercase;
+                @include minSmall {
+                    font-size: 48px;
+                }
+                @include maxExtraSmall {
+                    font-size: 34px;
+                }
             }
             p {
                 font-family: Avenir-Roman;
