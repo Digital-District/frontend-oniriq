@@ -17,13 +17,13 @@
             }
             img {
                 @include minLarge {
-                    height: 500px;
+                    height: 550px;
                 }
                 @include minMeduimToMaxMeduim {
                     height: 400px;
                 }
                 @include maxSmall {
-                    min-height: 250px;
+                    min-height: 300px;
                 }
             }
         }
@@ -33,9 +33,14 @@
             left: 50%;
             z-index: 2;
             @include prefixer(transform, translate(-50%, -50%), webkit moz o);
-            h5{
+            h5 {
                 font-family: 'PlayfairDisplay-Regular';
-                font-size: 72px;
+                @include minLarge {
+                    font-size: 72px;
+                }
+                @include maxMeduim {
+                    font-size: 52px;
+                }
             }
         }
     }

@@ -1,10 +1,10 @@
 (function () {
 	lazyLoad();
-	$("body").append('<div id="cart-sidebar"></div>');
-	$("#cart-sidebar").load("cart.html", function() {
-	 });
+	$("body").append('<div id="cart-sidebar" class="d-none"></div>');
+	$("#cart-sidebar").load("cart.html");
 
 	$('.header .shop-elements .cart').click(function(){
+		$("#cart-sidebar").removeClass('d-none');
 		$('.fullscreen-bg').addClass('active cart');
 		$('#cart-sidebar').animate({ right: 0 }, 200);
 	});
@@ -227,12 +227,12 @@ function lazyLoad() {
 	if( lazyLoadEl.length > 0 ) {
 		lazyLoadEl.each( function(){
 			var element = $(this),
-				elementImg = element.attr( 'data-lazyload' );
+				elementImg = element.attr('data-lazyload');
 
-			element.attr( 'src', '../images/blank.svg' ).css({ 'background': 'url(../images/preloader.gif) no-repeat center center #FFF' });
+			// element.attr( 'src', '../images/blank.svg' ).css({ 'background': 'url(../images/preloader.gif) no-repeat center center #FFF' });
 
 			element.appear(function () {
-				element.css({ 'background': 'none' }).removeAttr( 'width' ).removeAttr( 'height' ).attr('src', elementImg);
+				element.removeClass('loading').removeAttr('width').removeAttr('height').attr('src', elementImg);
 			},{accX: 0, accY: 120},'easeInCubic');
 		});
 	}

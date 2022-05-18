@@ -76,7 +76,7 @@ a:hover {
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
-  height: 38px;
+  height: 48px;
   outline: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -153,6 +153,10 @@ button:active:focus {
   background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
   -webkit-transform: scale(0.15);
           transform: scale(0.15);
+}
+
+img .loading {
+  background: url(../../images/preloader.gif) no-repeat center center transparent;
 }
 
 @media (min-width: 992px) and (max-width: 1359.98px) {
@@ -433,7 +437,6 @@ button:active:focus {
 }
 
 .checkout-container .cart .container .discount-form button {
-  height: 48px;
   width: 89px;
   font-family: Avenir-Light;
 }

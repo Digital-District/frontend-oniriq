@@ -199,12 +199,7 @@
             z-index: 2;
             @include prefixer(transform, translate(-50%, -50%), webkit moz o);
             h3 {
-                @include minMeduim {
-                    font-size: 32px;
-                }
-                @include minSmallToMaxSmall {
-                    font-size: 20px;                    
-                }
+                font-size: 32px;
                 letter-spacing: 1px;
                 font-family: 'PlayfairDisplay-Medium';
             }

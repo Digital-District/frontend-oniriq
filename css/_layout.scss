@@ -96,16 +96,16 @@
                 @include prefixer(transform, translate(0, 0), webkit moz o);
               }
             }
-            & > .sub-menu{
+            & > .sub-menu {
+              @media (min-width: 1360px) {
+                left: 4.8rem;
+                right: 4.8rem;
+              }
+              @media (max-width: 1359.98px) {
+                left: 0;
+                right: 0;
+              }
               @include minLarge {
-                @media (min-width: 1360px) {
-                  left: 4.8rem;
-                  right: 4.8rem;
-                }
-                @media (max-width: 1359.98px) {
-                  left: 0;
-                  right: 0;
-                }
                 position: absolute;
                 background: $light-gray;
                 z-index: 2;
