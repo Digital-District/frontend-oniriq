@@ -1,5 +1,5 @@
-@import "../global";
-@import "../layout";
+@import "../components/global";
+@import "../components/layout";
 
 .orders-nav {
     ul {
@@ -25,7 +25,7 @@
                     position: absolute;
                     content: '';
                     bottom: 0;
-                    left: 0;
+                    #{$left}: 0;
                     width: 100%;
                     height: 2px;
                     background-color: #eaeaea;
@@ -33,7 +33,7 @@
             }
             li {
                 @include minMeduim {
-                    padding-right: 10px;
+                    padding-#{$right}: 10px;
                 }
                 @include maxSmall {
                     &.active, &:hover {
@@ -64,10 +64,10 @@
                         background-color: $light-red;
                         border-radius: 50%;
                         @include minMeduim {
-                            right: -12px;
+                            #{$right}: -12px;
                         }
                         @include maxSmall {
-                            right: 0;
+                            #{$right}: 0;
                         }
                     }
                 }
@@ -80,7 +80,7 @@
                 &:before {
                     position:absolute;
                     content: '';
-                    left: 0;
+                    #{$left}: 0;
                     background-color: $gold;
                     z-index: 2;
                 }
@@ -222,7 +222,7 @@
                     width: 90px;
                     &:not(:last-child){
                         @include minSmall {
-                            margin-right: 50px;
+                            margin-#{$right}: 50px;
                         }
                         @include maxExtraSmall {
                             margin-bottom: 40px;
@@ -238,14 +238,14 @@
                             color: $dark-gray;
                             font-size: 26px;
                             @include minSmall {
-                                right: -30px;
+                                #{$right}: -30px;
                                 top: 50%;
                                 transform: translateY(-50%);
                             }
                             @include maxExtraSmall {
-                                left: 50%;
+                                #{$left}: 50%;
                                 bottom: -40px;
-                                @include prefixer(transform, translateX(-50%) rotate(90deg), webkit moz o);
+                                @include prefixer(transform, translateX(-50% * $transform-direction) rotate(90 * $transform-direction#{deg}), webkit moz o);
                             }
                         }
                     }
@@ -320,10 +320,10 @@
                     font-size: 18px;
                     @include minSmall {
                         width: 120px;
-                        text-align: right;
+                        text-align: $right;
                     }
                     @include maxExtraSmall {
-                        margin-left: 95px;
+                        margin-#{$left}: 95px;
                     }
                 }
             }
@@ -338,10 +338,10 @@
         color: $dark-gray;
         @include minSmall {
             &:first-child {
-                padding-left: 40px;
+                padding-#{$left}: 40px;
             }
             &:last-child {
-                padding-right: 40px;
+                padding-#{$right}: 40px;
             }
         }
     }
@@ -353,10 +353,12 @@
             font-weight: normal;
             @include minMeduim {
                 &:first-child {
-                    border-radius: 4px 0 0 4px;
+                    border-top-#{$left}-radius: 4px;
+                    border-bottom-#{$left}-radius: 4px;
                 }
                 &:last-child {
-                    border-radius: 0 4px 4px 0;
+                    border-top-#{$right}-radius: 4px;
+                    border-bottom-#{$right}-radius: 4px;
                 }
             }
         }
@@ -381,7 +383,7 @@
                         color: $gold;
                     }
                     i {
-                        margin-right: 10px;
+                        margin-#{$right}: 10px;
                     }
                 }
             }
@@ -430,28 +432,23 @@
     }
     .row {
         & > div {
-            &.col-sm-6 {
+            &.col-md-6 {
                 &:first-child{
-                    @include minSmall {
-                        padding-right: 8px;
+                    @include minMeduim {
+                        padding-#{$right}: 8px;
                     }
-                    @include maxExtraSmall {
+                    @include maxSmall {
                         margin-bottom: 1rem;
                     }
                 }
                 &:last-child {
-                    @include minSmall {                
-                        padding-left: 8px;
+                    @include minMeduim {                
+                        padding-#{$left}: 8px;
                     }
                 }
             }
             & + .payment-error-message {
-                padding-left: 15px;
-            }
-            @include maxSmall {
-                &.col-md-6 {
-                    margin-bottom: 1rem;
-                }
+                padding-#{$left}: 15px;
             }
         }
     }
@@ -463,7 +460,7 @@
             color: $dark-gray;
             font-size: 26px;
             top: 36px;
-            right: 25px;
+            #{$right}: 25px;
             @include prefixer(transform, rotate(90deg), webkit moz o);
         }
         select{
@@ -479,7 +476,7 @@
         .close {
             position: absolute;
             top: 10px;
-            right: 15px;
+            #{$right}: 15px;
         }
     }
     &#addressAddEditModal {

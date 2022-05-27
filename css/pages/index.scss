@@ -1,5 +1,5 @@
-@import "../global";
-@import "../layout";
+@import "../components/global";
+@import "../components/layout";;
 
 .categories{
     padding: $sec-padding;
@@ -8,7 +8,7 @@
             display: block;
             position: relative;
             &:before{
-                @include overlay;
+                @extend %overlay;
                 content: " ";
                 z-index: 1;
                 background: #00000029;
@@ -30,9 +30,9 @@
         .cat-title{
             position: absolute;
             top: 50%;
-            left: 50%;
+            #{$left}: 50%;
             z-index: 2;
-            @include prefixer(transform, translate(-50%, -50%), webkit moz o);
+            @include prefixer(transform, translate(-50% * $transform-direction, -50%), webkit moz o);
             h5 {
                 font-family: 'PlayfairDisplay-Regular';
                 @include minLarge {
@@ -52,7 +52,7 @@
         background-color: $light-black2;
         min-height: 392px;
         @include minLarge {
-            padding-left: 50px;
+            padding-#{$left}: 50px;
         }
         @include maxMeduim {
             padding: 50px;
@@ -79,6 +79,9 @@
                 padding: 12px 24px 12px 24px;
                 text-transform: uppercase;
                 border-radius: 4px;
+                i {
+                    @include prefixer(transform, scaleX(1 * $transform-direction), webkit moz o);
+                }
             }
         }
     }

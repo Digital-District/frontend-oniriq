@@ -1,5 +1,5 @@
-@import "../global";
-@import "../layout";
+@import "../components/global";
+@import "../components/layout";
 
 .product-box {
     @include maxExtraSmall {
@@ -59,18 +59,18 @@
             }
             .owl-next {
                 @include minSmall{
-                    right: 10px;
+                    #{$right}: 10px;
                 }
                 @include maxSmall{
-                    right: 40px;
+                    #{$right}: 40px;
                 }
             }
             .owl-prev {
                 @include minSmall{
-                    left: 10px;
+                    #{$left}: 10px;
                 }
                 @include maxSmall{
-                    left: 40px;
+                    #{$left}: 40px;
                 }
             }
         }

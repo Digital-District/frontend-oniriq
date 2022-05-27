@@ -64,7 +64,8 @@
 }
 
 .categories-header .search-form button.search-btn, .search-box .search-form button.search-btn {
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   padding-right: 10px;
 }
 
@@ -190,6 +191,40 @@ button:active:focus {
   z-index: 10;
   opacity: 1;
   visibility: visible;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0.45em;
+  height: 0.45em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
 }
 
 #ajax-loader {
@@ -443,11 +478,22 @@ img .loading {
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item > .sub-menu > li.menu-banner a {
   color: #84754e;
   font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item > .sub-menu > li.menu-banner a span {
   padding-right: 10px;
   text-transform: uppercase;
+}
+
+.header .navbar .container .navbar-collapse .navbar-nav .nav-item > .sub-menu > li.menu-banner a i {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item i {
@@ -686,40 +732,6 @@ img .loading {
 
 .footer .links li a:hover {
   color: #84754e;
-}
-
-::-moz-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-webkit-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-webkit-scrollbar {
-  width: 0.45em;
-  height: 0.45em;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
 }
 
 .heading-title {

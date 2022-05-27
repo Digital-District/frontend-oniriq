@@ -10,14 +10,14 @@
     position: absolute;
     top: 0;
     width: 100%;
-    left: 0;
+    #{$left}: 0;
     background-color: $white;
     @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
     &.sticky {
       position: fixed;
       top: 0;
       width: 100%;
-      left: 0;
+      #{$left}: 0;
       z-index: 100;
       @include prefixer(box-shadow, 0 3px 10px #00000017, webkit moz o);
     }
@@ -48,7 +48,7 @@
           display: block !important;
           position: fixed;
           top: 0;
-          left: -300px;
+          #{$left}: -300px;
           height: 100vh;
           padding: 20px;
           z-index: 100;
@@ -67,7 +67,7 @@
               font-size: 30px;
               position: absolute;
               top: 10px;
-              right: 10px;
+              #{$right}: 10px;
               &:hover {
                 color: $gold;
               }
@@ -98,12 +98,12 @@
             }
             & > .sub-menu {
               @media (min-width: 1360px) {
-                left: 4.8rem;
-                right: 4.8rem;
+                #{$left}: 4.8rem;
+                #{$right}: 4.8rem;
               }
               @media (max-width: 1359.98px) {
-                left: 0;
-                right: 0;
+                #{$left}: 0;
+                #{$right}: 0;
               }
               @include minLarge {
                 position: absolute;
@@ -112,7 +112,7 @@
                 top: 80px;
                 padding: 30px;
                 @include opacity(0);
-                @include prefixer(transform, translate(0,20px), webkit moz o);
+                @include prefixer(transform, translate(0, 20px), webkit moz o);
                 @include prefixer(transition, all 0.3s ease-in-out 0s, webkit moz o);
                 visibility: hidden;
                 display: flex;
@@ -120,7 +120,7 @@
                 color: $black;
               }
               @include maxMeduim {
-                padding-left: 15px;
+                padding-#{$left}: 15px;
               }
               & > li {
                 flex-grow: 1;
@@ -131,7 +131,7 @@
                 }
                 &.megamenu-li{
                   @include minLarge {
-                    padding-right: 30px;
+                    padding-#{$right}: 30px;
                   }
                   .title{
                     text-transform: uppercase;
@@ -143,7 +143,7 @@
                       content: '';
                       width: 100%;
                       height: 2px;
-                      left: 0;
+                      #{$left}: 0;
                       bottom: 0;
                       background-color: $light-gray2;
                     }
@@ -159,7 +159,7 @@
                 }
                 &.menu-banner{
                   @include minLarge {
-                    padding-left: 50px;
+                    padding-#{$left}: 50px;
                   }
                   img {
                     min-height: 170px;
@@ -170,9 +170,14 @@
                   a {
                     color: $gold;
                     font-size: 12px;
+                    display: flex;
+                    align-items: center;
                     span{
-                      padding-right: 10px;
+                      padding-#{$right}: 10px;
                       text-transform: uppercase;
+                    }
+                    i {
+                      @include prefixer(transform, scaleX(1 * $transform-direction), webkit moz o);
                     }
                   }
                 }
@@ -210,13 +215,13 @@
           &.search{
             position: relative;
             @include minMeduim {
-              margin-right: 10px;
+              margin-#{$right}: 10px;
               &:after{
                 position: absolute;
                 content: '';
                 width: 1.7px;
                 height: 100%;
-                right: 0;
+                #{$right}: 0;
                 bottom: 0;
                 background-color: $light-gray2;
               }
@@ -238,7 +243,7 @@
                 content: '';
                 width: 7px;
                 height: 7px;
-                right: -1px;
+                #{$right}: -1px;
                 bottom: -2px;
                 background-color: $red;
                 border-radius: 50%;
@@ -304,7 +309,7 @@
   display: none;
   position: fixed;
   top: 0;
-  left: 0;
+  #{$left}: 0;
   width: 100%;
   background: $white;
   padding-block: 30px;
@@ -377,17 +382,3 @@
     }
   }
 }
-
-::selection {
-  background: $gold;
-  color: $white;
-}
-::-moz-selection {
-  background: $gold;
-  color: $white;
-}
-::-webkit-selection {
-  background: $gold;
-  color: $white;
-}
-@include scrollbars(0.45em, #c1c1c1, 4px);

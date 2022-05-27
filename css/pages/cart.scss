@@ -1,5 +1,5 @@
-@import "../global";
-@import "../layout";
+@import '../helper/variables';
+@import "../directions/dir-ltr";
 
 #cart-sidebar {
     position: fixed;
@@ -8,11 +8,11 @@
     height: 100vh;
     background-color: $white;
     @media (min-width: 460px) {
-        right: -450px;
+        #{$right}: -450px;
         width: 450px;
     }
     @media (max-width: 459.98px) {
-        right: -100%;
+        #{$right}: -100%;
         width: 100%;
     }
     .cart-header {
@@ -39,7 +39,7 @@
         height: calc(100vh - 266px );
         min-height: calc(100vh - 266px );
         overflow-y: auto;
-        margin-right: 1px;
+        margin-#{$right}: 1px;
         .items-list {
             .item {
                 padding: 20px;

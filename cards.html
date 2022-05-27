@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Credit cards</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-	<link rel="stylesheet" href="css/pages/orders.css">
+	<link rel="stylesheet" href="css/pages/orders-ltr.min.css">
+	<!-- <link rel="stylesheet" href="css/pages/orders-rtl.min.css"> -->
 </head>
 
 <body>
@@ -171,12 +173,12 @@
 							<tr>
 								<td class="name">Mohamed Nasr</td>
 								<td class="number">**** 8928</td>
-								<td class="more text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#cardRemoveModal"><i class="icon-trash"></i>Remove</a></td>
+								<td class="more text-right"><a class="d-flex align-items-center justify-content-end" href="javascript:void(0)" data-toggle="modal" data-target="#cardRemoveModal"><i class="icon-trash"></i>Remove</a></td>
 							</tr>
 							<tr>
 								<td class="name">Mohamed Nasr</td>
 								<td class="number">**** 8928</td>
-								<td class="more text-right"><a href="javascript:void(0)" data-toggle="modal" data-target="#cardRemoveModal"><i class="icon-trash"></i>Remove</a></td>
+								<td class="more text-right"><a class="d-flex align-items-center justify-content-end" href="javascript:void(0)" data-toggle="modal" data-target="#cardRemoveModal"><i class="icon-trash"></i>Remove</a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -267,12 +269,12 @@
 								<input type="text" id="cc-number" class="form-control cc-number" data-payment='cc-number' required>
 							</div>
 							<div class="row form-group">
-								<div class="col-sm-6">
+								<div class="col-md-6">
 									<label for="cc-exp">Expiration Date</label>
 									<input type="text" id="cc-exp" placeholder="MM / YYYY" class="form-control cc-exp" data-payment='cc-exp' required>
 								</div>
-								<div class="col-sm-6">
-									<label for="cc-cvc">Cvv <i class="icon-info"></i></label>
+								<div class="col-md-6">
+									<label class="d-flex align-items-center" for="cc-cvc"><span class="pr-2">Cvv </span><i class="icon-info"></i></label>
 									<input type="text" id="cc-cvc" class="form-control cc-cvc" data-payment='cc-cvc' required>
 								</div>
 							</div>
@@ -291,8 +293,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.11/jquery.autocomplete.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
-	<script src="js/payment-min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/payment.min.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 
 </html>

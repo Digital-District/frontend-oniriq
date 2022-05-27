@@ -1,9 +1,17 @@
-@import "../global";
-@import "../layout";
+@import "../components/global";
+@import "../components/layout";
 
 .shop {
     .shop-sidebar {
         font-family: "Avenir-Medium";
+        position: relative;
+        &.loading{
+            &:after{
+                @extend %overlay;
+                content: '';
+                cursor: unset;
+            }
+        }
         .close {
             float: unset;
         }
@@ -15,14 +23,14 @@
             z-index: 100;
             padding: 20px;
             top: 0;
-            @include prefixer(transition, left 0.3s ease-in-out, webkit moz o);
+            @include prefixer(transition, $left 0.3s ease-in-out, webkit moz o);
             @include minSmallToMaxSmall {
-                left: -330px;
+                #{$left}: -330px;
                 width: 330px;
             }
             @include maxExtraSmall {
                 width: 100%;
-                left: -100%;
+                #{$left}: -100%;
             }
         }
         .filter-title {
@@ -56,7 +64,7 @@
                         position: relative;
                         span {
                             position: absolute;
-                            left: 0;
+                            #{$left}: 0;
                             top: 0;
                             width: 35px;
                             height: 100%;
@@ -64,7 +72,7 @@
                             color: $light-black;
                         }
                         input {
-                            padding-left: 40px;
+                            padding-#{$left}: 40px;
                         }
                     }
                 }
@@ -75,6 +83,7 @@
                             input {
                                 width: 17px;
                                 height: 18px;
+                                outline: unset;
                                 @include prefixer(appearance, none, webkit moz o);
                                 &:checked {
                                     & + label:before {
@@ -85,7 +94,7 @@
                                         content: "\2714";
                                         width: 16px;
                                         height: 16px;
-                                        left: -16px;
+                                        #{$left}: -16px;
                                         top: 4px;
                                         color: $white;
                                         display: flex;
@@ -125,7 +134,7 @@
                                     height: 16px;
                                     border: 1px solid $black;
                                     position: absolute;
-                                    left: -16px;
+                                    #{$left}: -16px;
                                     top: 50%;
                                     transform: translateY(-50%);
                                     background: white;
@@ -156,7 +165,7 @@
                                 color: $dark-gray;
                                 outline: 0;
                                 padding: 0;
-                                text-align: right;
+                                text-align: $right;
                             }
                         }
                     }                    
@@ -199,7 +208,7 @@
                     display: inline-flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin-right: 10px;
+                    margin-#{$right}: 10px;
                     margin-top: 10px;
                     padding: 5px 10px;
                     border-radius: 4px;
@@ -214,7 +223,7 @@
                         cursor: default;
                     }
                     .clear {
-                        margin-left: 5px;
+                        margin-#{$left}: 5px;
                         font-size: 20px;
                         display: flex;
                         align-items: center;
@@ -251,11 +260,12 @@
                     &:focus {
                         @include prefixer(box-shadow, unset, webkit moz o);
                     }
-                    span {
-                        margin-left: 5px;
+                    i {
+                        margin-#{$left}: 5px;
                         color: $light-black;
                         font-size: 12px;
                         line-height: 1;
+                        @include prefixer(transform, scaleX(1 * $transform-direction), webkit moz o);
                     }
                 }
             }

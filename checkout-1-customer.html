@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Checkout - 1</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-	<link rel="stylesheet" href="css/pages/checkout.css">
+	<link rel="stylesheet" href="css/pages/checkout-ltr.min.css">
+    <!-- <link rel="stylesheet" href="css/pages/checkout-rtl.min.css"> -->
 </head>
 
 <body>
@@ -35,27 +37,32 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="shipping-info">
-                            <h2 class="heading-title mb-4">Shipping address</h2>
-                            <div class="my-4">
-                                <button type="button" class="btn btn-secondary selected mr-4 text-capitalize">Mohamed Nasr</button>
-                                <button type="button" class="btn btn-secondary">+ Add New Address</button>
+                        <form action="">
+                            <div class="shipping-info">
+                                <h2 class="heading-title mb-4">Shipping address</h2>
+                                <select id="address" class="d-none form-control">
+                                    <option value="Mohamed-Nasr">Mohamed Nasr</option>
+                                </select>
+                                <div class="address-list mb-4">
+                                    <button type="button" class="btn btn-secondary selected mr-3 text-capitalize" onclick="addressChange($(this))" value="Mohamed-Nasr">Mohamed Nasr</button>
+                                    <button type="button" class="btn btn-secondary">+ Add New Address</button>
+                                </div>
+                                <h2 class="heading-title mb-2 d-flex align-items-center">Shipping address <a href="javascript:void(0)"><i class="icon-pencil ml-3"></i></a></h2>
+                                <p class="mb-2">Mohamed nasr</p>
+                                <p class="mb-2">4771 Dovetail Drive, sdfsd</p>
+                                <p class="mb-2">Al-Shahaniya</p>
+                                <p class="mb-2">Al Samriya</p>
+                                <p class="mb-2">+974 3126 3209</p>
                             </div>
-                            <h2 class="heading-title mb-2">Shipping address <a href="javascript:void(0)"><i class="icon-pencil ml-3"></i></a></h2>
-                            <p class="mb-2">Mohamed nasr</p>
-                            <p class="mb-2">4771 Dovetail Drive, sdfsd</p>
-                            <p class="mb-2">Al-Shahaniya</p>
-                            <p class="mb-2">Al Samriya</p>
-                            <p class="mb-2">+974 3126 3209</p>
-                        </div>
-                        <div class="form-check mt-3">
-                            <input type="checkbox" class="form-check-input" id="saveInfo">
-                            <label class="form-check-label" for="saveInfo">Save this information for next time.</label>
-                        </div>
-                        <div class="d-flex align-items-center actions">
-                            <button type="button" onclick="location.href='checkout-2.html'" class="btn mt-4 continue">Continue to payment</button>
-                            <a href="" class="d-block mt-4 return">Return to cart</a>
-                        </div>
+                            <div class="form-check mt-3">
+                                <input type="checkbox" class="form-check-input" id="saveInfo">
+                                <label class="form-check-label" for="saveInfo">Save this information for next time.</label>
+                            </div>
+                            <div class="d-flex align-items-center actions">
+                                <button type="button" onclick="location.href='checkout-2.html'" class="btn mt-4 continue">Continue to payment</button>
+                                <a href="" class="d-block mt-4 return">Return to cart</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -131,11 +138,13 @@
                                 <span class="value">5,800 QAR</span>
                             </p>
                         </div>
-                        <div class="guarantee d-flex align-items-center justify-content-center">
-                            <img src="images/protected.png" class="mr-2" alt="Guarantee">
-                            <p class="mb-0">Shop worry-free! We offer free and easy returns within 7days. 
-                                <a href="">Learn more</a>
-                            </p>
+                        <div class="guarantee">
+                            <div class="d-flex align-items-center justify-content-center mt-3">
+                                <img src="images/protected.png" class="mr-2" alt="Guarantee">
+                                <p class="mb-0">Shop worry-free! We offer free and easy returns within 7days. 
+                                    <a href="">Learn more</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -146,7 +155,15 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="js/main.min.js"></script>
+    <script>
+        function addressChange(ct){
+            var method = ct.attr('value');
+            $('select#address').val(method);
+            ct.parent().find('button').removeClass('selected');
+            ct.parent().find('button[value="' + method + '"]').addClass('selected');
+        }
+    </script>
 </body>
 
 </html>

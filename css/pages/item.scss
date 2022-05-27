@@ -1,5 +1,5 @@
-@import "../global";
-@import "../layout";
+@import "../components/global";
+@import "../components/layout";
 
 .page-title {
     .breadcrumb-item {
@@ -87,6 +87,7 @@
                     color: $light-red;
                     width: 150px;
                     display: none;
+                    text-align: $right;
                 }
             }
         }
@@ -134,17 +135,48 @@
                 }
             }
         }
-        .add-to-bag {
-            @extend %add-to-bag;
-            background-color: $gold;
-            border-color: $gold;
-            color: $white;
-        }
-        .view-cart {
-            @extend %view-cart;
-            background-color: $gold;
-            border-color: $gold;
-            color: $white;
+        .fixed-btn-container {
+            @include maxMeduim {
+                position: fixed;
+                bottom: 0;
+                #{$right}: 50%;
+                @include prefixer(transform, translateX(50% * $transform-direction), webkit moz o);
+                z-index: 9;
+                background: #fff;
+                width: 100%;
+                height: 70px;
+            }
+            &.show {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &.hide {
+                display: none;
+            }
+            button {
+                @include minMeduimToMaxMeduim {
+                    width: 690px;
+                }
+                @include minSmallToMaxSmall {
+                    width: 510px;
+                }
+                @include maxExtraSmall {
+                    width: calc(100% - 30px);
+                }
+            }
+            .add-to-bag {
+                @extend %add-to-bag;
+                background-color: $gold;
+                border-color: $gold;
+                color: $white;
+            }
+            .view-cart {
+                @extend %view-cart;
+                background-color: $gold;
+                border-color: $gold;
+                color: $white;
+            }
         }
         .add-to-wishlist {
             @extend %cart-btn;
@@ -189,10 +221,10 @@
         width: 60px;
         z-index: 1;
         @include minSmallToMaxSmall {
-            right: 0;
+            #{$right}: 0;
         }
         @include maxExtraSmall {
-            right: 15px;
+            #{$right}: 15px;
         }
         a {
             width: 25px;
@@ -200,10 +232,13 @@
             font-size: 12px;
             border: 1px solid $light-gray3;
             color: $light-gray3;
-            @include prefixer(transition, all 0.1s ease-in-out 0s, webkit moz o);
+            @include prefixer(transition, all 0.1s ease-in-out, webkit moz o);
             &:hover {
                 background-color: $light-black3;
                 color: $white;
+            }
+            i {
+                @include prefixer(transform, scaleX(1 * $transform-direction), webkit moz o);
             }
         }
     }
@@ -233,7 +268,7 @@
                         position: absolute;
                         content: '';
                         bottom: -2px;
-                        left: 0;
+                        #{$left}: 0;
                         height: 4px;
                         width: 100%;
                         background-color: $gold;
@@ -278,7 +313,7 @@
                             &:before {
                                 position: absolute;
                                 content: '';
-                                left: 10px;
+                                #{$left}: 10px;
                                 top: 50%;
                                 @include prefixer(transform, translateY(-50%), webkit moz o);
                                 width: 5px;

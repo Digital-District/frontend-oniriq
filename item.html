@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Item</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css?ver=29be384a3d0563d7308dc00d497f1a0e">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="css/lightboxed-min.css">
-	<link rel="stylesheet" href="css/pages/item.css">
+    <link rel="stylesheet" href="css/lightboxed.min.css">
+	<link rel="stylesheet" href="css/pages/item-ltr.min.css">
+    <!-- <link rel="stylesheet" href="css/pages/item-rtl.min.css"> -->
 </head>
 
 <body>
@@ -154,7 +156,7 @@
                     <div class="item-details">
                         <h3 class="item-title text-uppercase">Dolce & Gabbana</h3>
                         <p class="item-desc mb-1">Tokyo Design Studio X Snow Peak boots.</p>
-                        <p class="price mb-4"><span class="value">5,400 QAR</span><span class="notes ml-3">Including VAT</span></p>
+                        <p class="price mb-4 d-flex align-items-center"><span class="value">5,400 QAR</span><span class="notes ml-3">Including VAT</span></p>
                         <div class="colors mb-3">
                             <div class="title mb-2 d-flex align-items-center justify-content-between">
                                 <p class="mb-0">Color: <span>Gold</span></p>
@@ -219,12 +221,14 @@
                                 </div>
                             </form>
                         </div>
-                        <button class="add-to-bag btn-block rounded" onclick="shopProductsAddToCart($(this), true);">
-                            <span class="btn-success"><i class="fa fa-check mr-2"></i>Succefully Added</span>
-                            <span class="btn-content">Add To Bag</span>
-                            <span class="btn-loading"><i class="fa fa-spinner fa-spin"></i></span>
-                        </button> 
-                        <button class="view-cart btn-block mt-0 rounded">View Cart</button>
+                        <div class="fixed-btn-container">
+                            <button class="add-to-bag btn-block rounded" onclick="shopProductsAddToCart($(this), true);">
+                                <span class="btn-success"><i class="fa fa-check mr-2"></i>Succefully Added</span>
+                                <span class="btn-content">Add To Bag</span>
+                                <span class="btn-loading"><i class="fa fa-spinner fa-spin"></i></span>
+                            </button>
+                            <button class="view-cart btn-block mt-0 rounded" onclick="$('.header .shop-elements .cart').click();">View Cart</button>
+                        </div>
                         <button class="add-to-wishlist btn-block mt-4 rounded">Add To Wishlist</button>
                         <div class="media delivery-box mt-4 py-3 align-items-center">
                             <img src="images/delivery-truck.png" class="align-self-center mr-3 rounded-circle p-2" alt="Get it today">
@@ -247,9 +251,9 @@
             </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link active border-0 px-0 py-3" data-toggle="tab" href="#details">Product details</a></li>
-                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 ml-4" data-toggle="tab" href="#size">Size & fit</a></li>
-                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 ml-4 disabled" data-toggle="tab" href="#designer">About the designer</a></li>
-                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 ml-4" data-toggle="tab" href="#shipping">Shipping & returns</a></li>
+                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 ml-0 ml-md-4" data-toggle="tab" href="#size">Size & fit</a></li>
+                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 ml-0 ml-md-4 disabled" data-toggle="tab" href="#designer">About the designer</a></li>
+                <li class="nav-item"><a class="nav-link border-0 px-0 py-3 ml-0 ml-md-4" data-toggle="tab" href="#shipping">Shipping & returns</a></li>
             </ul>
             <div class="container pl-0">
                 <div class="tab-content">
@@ -472,9 +476,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/jquery.flexslider-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-	<script src="js/lightboxed-min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/item.js"></script>
+	<script src="js/lightboxed.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/item.min.js"></script>
 </body>
 
 </html>

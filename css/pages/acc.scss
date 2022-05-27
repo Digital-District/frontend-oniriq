@@ -1,5 +1,5 @@
-@import "../global";
-@import "../layout";
+@import "../components/global";
+@import "../components/layout";
 
 .heading-title{
     @media (min-width: 420px) {
@@ -42,7 +42,7 @@
 .reset-success-msg {
     font-family: 'AvenirLTStd-Roman';
     position: fixed;
-    right: 10px;
+    #{$right}: 10px;
     top: 100px;
     background-color: $dark-gray;
     padding: 10px 15px;

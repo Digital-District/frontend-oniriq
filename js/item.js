@@ -1,5 +1,17 @@
 $(function() { 
     itemImgGalleryIntialize($('.single-item .item-details .colors form > div:first input'));
+    $('.single-item .item-details .fixed-btn-container').addClass('show');
+
+    $(window).on("scroll",function(){  
+        if(window.innerWidth < '992'){
+            var windowElm = $(document).scrollTop() + window.innerHeight;
+            var footerElm = $('.footer').offset().top;
+            if (windowElm < footerElm) 
+                $('.single-item .item-details .fixed-btn-container').removeClass('hide').addClass('show');
+            else 
+                $('.single-item .item-details .fixed-btn-container').removeClass('show').addClass('hide');   
+        }
+    });
 });
 function itemImgGalleryIntialize(ct){
     var imgsSrcArr = imgThumbsSrcArr = [],

@@ -1,4 +1,4 @@
-@import "../global";
+@import "../components/global";
 
 .checkout-container {
     .info{
@@ -22,7 +22,7 @@
                         color: $black-half-opacity;
                     }
                     .seperator {
-                        padding-left: 5px;
+                        padding-#{$left}: 5px;
                     }
                 }
             }
@@ -44,7 +44,7 @@
                     &.col-md-6 {
                         &:first-child{
                             @include minMeduim {
-                                padding-right: 8px;
+                                padding-#{$right}: 8px;
                             }
                             @include maxSmall {
                                 margin-bottom: 1rem;
@@ -52,12 +52,12 @@
                         }
                         &:last-child {
                             @include minMeduim {                
-                                padding-left: 8px;
+                                padding-#{$left}: 8px;
                             }
                         }
                     }
                     & + .payment-error-message {
-                        padding-left: 15px;
+                        padding-#{$left}: 15px;
                     }
                 }
             }
@@ -69,8 +69,8 @@
                     color: $dark-gray;
                     font-size: 26px;
                     top: 36px;
-                    right: 25px;
-                    @include prefixer(transform, rotate(90deg), webkit moz o);
+                    #{$right}: 25px;
+                    @include prefixer(transform, rotate(90 * $transform-direction#{deg}), webkit moz o);
                 }
                 .form-control {
                     height: 48px;
@@ -179,10 +179,14 @@
     }
     .cart {
         background-color: #f5f5f5;
-        height: 100%;
+        min-height: 100%;
+        position: relative;
+        @include minLarge {
+            height: 100vh;
+        }
         .container {
             @media (min-width: 1360px) {
-                padding-left: 40px;
+                padding-#{$left}: 40px;
             }
             @media (min-width: 992px) and (max-width: 1359.98px) {
                 padding-inline: 30px;
@@ -230,7 +234,7 @@
                                 font-size: 18px;
                                 @include minExtraLarge {
                                     width: 120px;
-                                    text-align: right;
+                                    text-align: $right;
                                 }
                             }
                         }
@@ -256,6 +260,9 @@
                 }
             }
             .total-calc {
+                @include minLarge {
+                    min-height: 289px;
+                }
                 p {
                     font-size: 14px;
                     .title {
@@ -279,6 +286,13 @@
             }
             .guarantee {
                 background-color: #f5f5f5;
+                @include minLarge {
+                    position: fixed;
+                    bottom: 0;
+                    #{$right}: 0;
+                    height: 100px;
+                    width: 41.666667%;
+                }
                 img {
                     height: 26px;
                     width: 26px;
@@ -321,7 +335,7 @@ input {
                 content: "\2714";
                 width: 16px;
                 height: 16px;
-                left: -20px;
+                #{$left}: -20px;
                 top: 3px;
                 color: $white;
                 display: flex;
@@ -337,14 +351,14 @@ input {
         font-size: 14px;
         color: $black;
         font-family: Avenir-Light;
-        padding-left: 5px;
+        padding-#{$left}: 5px;
         &:before {
             content: "";
             width: 16px;
             height: 16px;
             border: 1px solid $black;
             position: absolute;
-            left: -20px;
+            #{$left}: -20px;
             top: 50%;
             transform: translateY(-50%);
             background: white;
@@ -357,10 +371,10 @@ input {
         flex-direction: column;
     }
     .continue {
-        @include minMeduim {
+        @include minSmall {
             width: 279px;
         }
-        @include maxSmall {
+        @include maxExtraSmall {
             width: 100%;
         }
         height: 44px;
@@ -378,10 +392,10 @@ input {
             border-color: $dark-gray;
         }
         @include maxExtraSmall {
-            margin-right: 0;
+            margin-#{$right}: 0;
         }
         @include minSmall {
-            margin-right: 30px;
+            margin-#{$right}: 30px;
         }
     }
     .return {

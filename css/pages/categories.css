@@ -48,6 +48,14 @@
   src: url("../../fonts/Playfair_Display/PlayfairDisplay-Bold.otf") format("opentype");
 }
 
+.categories .cat-box .cat-img:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .categories-header .search-form button, .search-box .search-form button {
   border: 1px solid #ced4da;
   background-color: unset;
@@ -64,7 +72,8 @@
 }
 
 .categories-header .search-form button.search-btn, .search-box .search-form button.search-btn {
-  border-radius: 0 0.25rem 0.25rem 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   padding-right: 10px;
 }
 
@@ -118,7 +127,7 @@
 .product-box .card-body .add-to-bag, .product-box .card-body .view-cart {
   font-family: Avenir-Heavy;
   border-color: #303030;
-  border-width: 1px;
+  border: 1px solid;
   height: 40px;
   text-transform: uppercase;
   color: #303030;
@@ -215,7 +224,7 @@
 }
 
 .product-box .card-body .success.add-to-bag {
-  border-color: transparent;
+  border-color: #28a745;
 }
 
 .product-box .card-body .success.add-to-bag .btn-success {
@@ -411,6 +420,40 @@ button:active:focus {
   z-index: 10;
   opacity: 1;
   visibility: visible;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-selection {
+  background: #84754e;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0.45em;
+  height: 0.45em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
 }
 
 #ajax-loader {
@@ -664,11 +707,22 @@ img .loading {
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item > .sub-menu > li.menu-banner a {
   color: #84754e;
   font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item > .sub-menu > li.menu-banner a span {
   padding-right: 10px;
   text-transform: uppercase;
+}
+
+.header .navbar .container .navbar-collapse .navbar-nav .nav-item > .sub-menu > li.menu-banner a i {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .header .navbar .container .navbar-collapse .navbar-nav .nav-item i {
@@ -909,40 +963,6 @@ img .loading {
   color: #84754e;
 }
 
-::-moz-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-moz-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-webkit-selection {
-  background: #84754e;
-  color: #fff;
-}
-
-::-webkit-scrollbar {
-  width: 0.45em;
-  height: 0.45em;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
-}
-
 .shop-now {
   font-family: Avenir-Medium;
   width: 120px;
@@ -1168,11 +1188,6 @@ img .loading {
 }
 
 .categories .cat-box .cat-img:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   content: " ";
   z-index: 1;
   background: #00000029;

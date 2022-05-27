@@ -1,8 +1,6 @@
-@import "helper/fonts";
-@import "helper/variables";
-@import "helper/extends";
-@import "helper/mixins";
-
+@import "../helper/fonts";
+@import "../helper/variables";
+@import "../helper/extends";
 
 body {
   font-family: Avenir-Light;
@@ -71,7 +69,7 @@ button {
 .fullscreen-bg {
   position: fixed;
   top: 0;
-  left: 0;
+  #{$left}: 0;
   width: 100%;
   height: 100%;
   background-color: $black-half-opacity;
@@ -84,11 +82,24 @@ button {
     visibility: visible;
   }
 }
+::selection {
+  background: $gold;
+  color: $white;
+}
+::-moz-selection {
+  background: $gold;
+  color: $white;
+}
+::-webkit-selection {
+  background: $gold;
+  color: $white;
+}
+@include scrollbars(0.45em, #c1c1c1, 4px);
 #ajax-loader {
   display: none;
   position: fixed;
   top: calc(50% - 100px);
-  left: calc(50% - 100px);
+  #{$left}: calc(50% - 100px);
   width: 200px;
   height: 200px;
   z-index: 100010;
