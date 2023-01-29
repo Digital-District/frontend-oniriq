@@ -4,6 +4,9 @@
 .heading-title {
     @extend %heading-title;
 }
+.test{
+    direction: ltr;
+}
 .shop-now {
     font-family: Avenir-Medium;
     width: 120px;

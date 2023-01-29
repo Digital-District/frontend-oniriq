@@ -1,0 +1,71 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "typicode typicode typicode",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "typicode typicode typicode",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "description": "typicode typicode typicode",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "description": "typicode typicode typicode",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 5,
+      "name": "Product 5",
+      "description": "typicode typicode typicode",
+      "link": "https://theoniriq.com",
+      "img": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "some category 1",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 2,
+      "name": "some category 2",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 3,
+      "name": "some category 3",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 4,
+      "name": "some category 4",
+      "link": "https://theoniriq.com",
+      "img": ""
+    },
+    {
+      "id": 5,
+      "name": "some category 5",
+      "link": "https://theoniriq.com",
+      "img": ""
+    }
+  ]
+}
