@@ -1,0 +1,30 @@
+$font14: 14px;
+$home-content: 960px;
+$max-phones: 'max-width: 767px';
+$max-tablets: 'max-width: 1024px';
+$png-icon: 'png';
+$svg-icon: 'svg';
+$icons-folder-svg: '../images/svg/';
+$icons-folder-png: '../images/png/';
+$backgrounds-folder: '../images/backgrounds/';
+$direction: 'left' !default; // Dont't Remove or Edit this line
+$reverse-direction: 'right' !default; // Dont't Remove or Edit this line
+$font-face: 'BPReplay Regular' !default;
+$font-face-bold: 'BPReplay Regular Bold' !default;
+$font-face-other: 'Noto Kufi Arabic' !default;
+$left: left;
+$right: right;
+$transform-direction: 1;
+// Dont't Remove this Block
+@if ($language == 'ar') {
+  $direction: 'right'; // Dont't Remove or Edit this line
+  $reverse-direction: 'left'; // Dont't Remove or Edit this line
+  $font-face: 'Noto Kufi Arabic';
+  $font-face-bold: 'Noto Kufi Arabic Bold';
+  $font-face-other: 'BPReplay Regular';
+  $left: right;
+  $right: left;
+  $transform-direction: -1;
+}
+
+// Dont't Remove this Block

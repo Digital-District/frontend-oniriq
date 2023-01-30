@@ -1,6 +1,8 @@
 @import '../helper/variables';
-@import "../directions/dir-ltr";
-
+@import "../directions/variables";
+.test{
+    padding-#{$left}: 20px;
+}
 #cart-sidebar {
     position: fixed;
     top: 0;

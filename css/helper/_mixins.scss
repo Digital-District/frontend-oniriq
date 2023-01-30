@@ -17,22 +17,23 @@
   $background-color: mix($foreground-color, white, 50%)
 ) {
   // For Google Chrome
-  &::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: $size;
     height: $size;
   }
 
-  &::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: $foreground-color;
     border-radius: $border-radius;
   }
 
-  &::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: $background-color;
   }
 
   // For Internet Explorer
-  & {
+
+  body {
     scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
   }

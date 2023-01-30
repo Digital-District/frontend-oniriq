@@ -1,0 +1,104 @@
+@import "helper/fonts";
+@import "helper/variables";
+@import "helper/extends";
+@import "helper/mixins";
+
+.test{
+  background: white;
+}
+body {
+  font-family: Avenir-Light;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+.container {
+  @media (min-width: 1360px) {
+    max-width: 144rem;
+    padding-inline: 4.8rem;
+  }
+}
+a{
+  color: $black;
+  &:hover {
+    text-decoration: unset;
+  }
+}
+
+.btn-primary {
+  font-family: 'Avenir-Heavy';
+  background-color: $dark-gray;
+  border-color: $dark-gray;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 48px;
+  outline: 0;
+  @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+  &:hover {
+      background-color: $gold;
+      border-color: $gold;
+  }
+  &:active:not(:disabled) {
+      background-color: $dark-gray !important;
+      border-color: $dark-gray !important;
+  }
+  &:disabled {
+    background-color: $disabled;
+    border-color: $disabled;
+  }
+}
+button {
+  &:focus {
+    @include prefixer(box-shadow, unset !important, webkit moz o);
+    outline: unset;
+  }
+  &:active{
+      &:focus {
+        @include prefixer(box-shadow, unset !important, webkit moz o);
+      }
+  }
+}
+.form-control {
+  &:not(textarea){
+    height: 48px;
+  }
+  &:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ced4da;
+    outline: 0;
+    box-shadow: unset;
+  }
+}
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $black-half-opacity;
+  opacity: 0;
+  visibility: hidden;
+  @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+  &.active{
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+#ajax-loader {
+  display: none;
+  position: fixed;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 200px;
+  z-index: 100010;
+  background: url(../../images/loader.gif) scroll no-repeat 5px 50% transparent;
+  transform: scale(0.15);
+}
+img {
+  .loading {
+    background: url(../../images/preloader.gif) no-repeat center center transparent;
+  }
+}

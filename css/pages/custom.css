@@ -1,0 +1,245 @@
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #303030;
+    border-color: #303030;
+}
+
+.shop .shop-sidebar .filter-group:not(:last-child) {
+    border-bottom: 1px solid #dddddd !important;
+}
+
+.color-image {
+    height: 24px;
+    width: 24px;
+    margin-right: 0.5rem !important;
+    border-radius: 50%;
+}
+
+.clear {
+    cursor: pointer;
+}
+
+.cat-img-home-first, .cat-img-home-first img {
+    min-height: 587px;
+    object-fit: cover !important;
+}
+
+.cat-img-home-second {
+    min-height: 400px;
+}
+
+.cat-img-home-second img {
+    height: 400px !important;
+    object-fit: cover !important;
+}
+
+.deals {
+    padding: 0 0 !important;
+}
+
+.categories {
+    padding: 30px 0 !important;
+}
+
+.header .navbar .container .shop-elements a:not(.search) {
+    width: 40px !important;
+}
+
+.shop-elements i {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.product-box .card-img-top img {
+    height: 450px;
+    object-fit: cover;
+}
+
+.add-to-bag-custom {
+    margin-bottom: 30px;
+}
+
+.product-variation-color {
+    vertical-align: middle;
+    border-style: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}
+
+.flexslider .slides img {
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.item-desc {
+    width: 60%;
+}
+
+.item-image-gallery img {
+    width: 100%;
+}
+
+#SortBy {
+    padding: 7px;
+    outline: none;
+}
+
+@media (min-width: 420px) {
+    .heading-title {
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .item-image-gallery-custom img {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .categories .cat-box .cat-img img {
+        min-height: 586px !important;
+    }
+}
+
+.sec-padding {
+    min-height: 700px;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.cart-qty-input {
+    width: 35px !important;
+    text-align: center !important;
+}
+
+.cart-qty-btn {
+    background: #303030;
+    color: #fff;
+    border: none;
+    height: 30px;
+    width: 30px;
+}
+
+@media (min-width: 576px) {
+    .table tbody td {
+        padding: 12px !important;
+    }
+}
+
+.phone-form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: ltr !important;
+}
+
+.phone-form-group select {
+    max-width: 80px;
+    height: 48px !important;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.phone-form-group input {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.password-form-group input, .email-form-group input {
+    direction: ltr !important;
+}
+
+@media (max-width: 768px) {
+    .cart-qty-btn {
+        margin: 5px 0 !important;
+        width: 35px !important;
+    }
+
+    .cart-price {
+        padding: 0 !important;
+        width: 75px;
+        font-size: 14px;
+    }
+}
+
+.custom-slider-mobile.loading {
+    background-image: url() !important;
+    background: white;
+}
+
+.nav-item > .sub-menu {
+    z-index: 6;
+}
+
+.text-decoration-line-through {
+    text-decoration: line-through;
+}
+
+.product-filter-custom {
+    max-height: 294px;
+    overflow: auto;
+}
+
+.search-box-img {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+}
+
+.dropdown-search {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #dddddd;
+    border-top: 0;
+    color: black;
+}
+
+.dropdown-search div p {
+    font-weight: 600;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-search ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-search ul li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.dropdown-search ul li:hover {
+    background-color: #efeded;
+    cursor: pointer;
+}
+
+.dropdown-search ul li a {
+    display: flex;
+    place-items: center;
+}
+
+.dropdown-search ul li a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown-search ul li a > span {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0.5rem;
+    font-weight: 500;
+}
+
+.dropdown-search div:not(:last-child) {
+    border-bottom: 1px solid #dddddd;
+    margin-bottom: 0.5rem;
+}
