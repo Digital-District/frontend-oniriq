@@ -217,11 +217,6 @@
     padding: 0.5rem;
 }
 
-.dropdown-search ul li:hover {
-    background-color: #efeded;
-    cursor: pointer;
-}
-
 .dropdown-search ul li a {
     display: flex;
     place-items: center;
@@ -237,9 +232,4 @@
     flex-direction: column;
     margin: 0 0.5rem;
     font-weight: 500;
-}
-
-.dropdown-search div:not(:last-child) {
-    border-bottom: 1px solid #dddddd;
-    margin-bottom: 0.5rem;
 }

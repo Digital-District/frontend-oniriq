@@ -1,8 +1,6 @@
 @import '../helper/variables';
-@import "../directions/variables";
-.test{
-    padding-#{$left}: 20px;
-}
+@import '../directions/dir-rtl';
+//@import "../directions/variables";
 #cart-sidebar {
     position: fixed;
     top: 0;
@@ -22,7 +20,7 @@
         & > div {
             border-bottom: 1px solid $dark-gray-quarter-opacity;
             h2 {
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
                 font-size: 24px;
                 color: $dark-gray;
             }
@@ -67,20 +65,20 @@
                     width: calc(100% - 115px);
                     color: $dark-gray;
                     h3 {
-                        font-family: AvenirLTStd-Book;
+                        font-family: #{$AvenirLTStd-Book};
                         font-size: 16px;
                     }
                     .color, .size {
                         font-size: 12px;
                         .title {
-                            font-family: Avenir-Heavy;
+                            font-family: #{$Avenir-Heavy};
                         }
                         .value {
-                            font-family: AvenirLTStd-Roman;
+                            font-family: #{$AvenirLTStd-Roman};
                         }
                     }
                     .quantity {
-                        font-family: Avenir-Medium;
+                        font-family: #{$Avenir-Medium};
                         border: 1px solid $dark-gray-quarter-opacity;
                         width: 80px;
                         height: 32px;
@@ -97,7 +95,7 @@
                         }
                     }
                     .price {
-                        font-family: AvenirLTStd-Roman;
+                        font-family: #{$AvenirLTStd-Roman};
                         font-size: 14px;
                         color: $light-gray3;
                     }
@@ -115,13 +113,13 @@
                 color: $black-half-opacity;
             }
             .value {
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
                 color: $light-gray3;
             }
         }
         .note {
             color: $black-half-opacity;
-            font-family: AvenirLTStd-Roman;
+            font-family: #{$AvenirLTStd-Roman};
             font-size: 14px;
         }
     }

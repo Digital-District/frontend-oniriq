@@ -1,5 +1,6 @@
 @import "../components/global";
 @import "../components/layout";
+//@import "../directions/variables";
 
 .heading-title{
     @media (min-width: 420px) {
@@ -21,7 +22,7 @@
         }
         label{
             color: $dark-gray;
-            font-family: 'AvenirLTStd-Roman';
+            font-family: #{$AvenirLTStd-Roman};
             a {
                 color: $dark-gray-half-opacity;
                 @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
@@ -32,7 +33,7 @@
         }
     }
     .desc{
-        font-family: 'AvenirLTStd-Book';
+        font-family: #{$AvenirLTStd-Book};
         color: $dark-gray;
         a {
             color: $gold;
@@ -40,14 +41,14 @@
     }
 }
 .reset-success-msg {
-    font-family: 'AvenirLTStd-Roman';
+    font-family: #{$AvenirLTStd-Roman};
     position: fixed;
     #{$right}: 10px;
     top: 100px;
     background-color: $dark-gray;
     padding: 10px 15px;
     color: $white;
-    font-family: AvenirLTStd-Roman;
+    font-family: #{$AvenirLTStd-Roman};
     font-size: 14px;
     @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
     @include minMeduim {

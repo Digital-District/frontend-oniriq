@@ -1,379 +1,531 @@
 @import "../components/global";
 @import "../components/layout";
+//@import "../directions/variables";
 
 .page-title {
-    .breadcrumb-item {
-        &.active {
-            color: $black;
-        }
-        &:not(.active) {
-            a {
-                color: $black-half-opacity;
-            }
-        }
-        &:not(:first-child):before {
-            content: '>';
-            color: $light-black;
-            font-size: 12px;
-        }
+  .breadcrumb-item {
+    &.active {
+      color: $black;
     }
+
+    &:not(.active) {
+      a {
+        color: $black-half-opacity;
+      }
+    }
+
+    &:not(:first-child):before {
+      content: '>';
+      color: $light-black;
+      font-size: 12px;
+    }
+  }
 }
+
+.modal-popup {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+
+  &.show {
+    animation: slideIn 0.5s ease-in-out forwards;
+  }
+
+  &.out {
+    animation: slideOut 0.5s ease-in-out forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes slideOut {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  & #popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    @include minMeduim {
+      width: 400px;
+    }
+    @include maxSmall {
+      width: 90%;
+    }
+    border-radius: 4px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+}
+
 .item-title {
-    font-family: Avenir-Heavy;
-    font-size: 15.7px;
-    color: $light-gray3;
+  font-family: #{$Avenir-Heavy};
+  font-size: 15.7px;
+  color: $light-gray3;
 }
+
 .item-desc {
-    font-family: AvenirLTStd-Book;
-    color: $light-gray3;
-    font-size: 18.3px;
+  font-family: #{$AvenirLTStd-Book};
+  color: $light-gray3;
+  font-size: 18.3px;
 }
+
 .single-item {
-    @include minExtraLarge {
-        padding-top: 60px;
+  @include minExtraLarge {
+    padding-top: 60px;
+  }
+  @include maxExtraLarge {
+    padding: $sec-padding;
+  }
+
+  .item-image-gallery {
+    #slider {
+      @include minSmall {
+        width: calc(100% - 90px);
+        order: 2;
+      }
+      @include maxExtraSmall {
+        margin-bottom: 0;
+      }
+
+      .flex-direction-nav {
+        display: none;
+      }
     }
-    @include maxExtraLarge {
-        padding: $sec-padding;
+
+    #thumbnail-slider {
+      @include minSmall {
+        width: 90px;
+        order: 1;
+      }
+
+      .slides {
+        @include minSmall {
+          width: 90px !important;
+          li {
+            float: none !important;
+            width: 100% !important;
+          }
+        }
+      }
     }
-    .item-image-gallery {
-        #slider {
-            @include minSmall {
-                width: calc(100% - 90px);
-                order: 2;
-            }
-            @include maxExtraSmall {
-                margin-bottom: 0;
-            }
-            .flex-direction-nav {
-                display: none;
-            }
-        }
-        #thumbnail-slider {
-            @include minSmall {
-                width: 90px;
-                order: 1;
-            }
-            .slides {
-                @include minSmall {
-                    width: 90px !important;
-                    li {
-                        float: none !important;
-                        width: 100% !important;
-                    }
-                }
-            }
-        }
+  }
+
+  .item-details {
+    & > div .outofstock-text {
+      color: #B12704 !important;
+      font-size: 18px;
+      margin: 0;
+      font-weight: 600;
+
+      & ~ span {
+        font-size: 14px;
+        margin-bottom: 0.75rem;
+      }
     }
-    .item-details {
-        .price {
-            font-family: AvenirLTStd-Roman;
-            .value{
-                color: $gold;
-                font-size: 18.3px;
-            }
-            .notes {
-                font-size: 11px;
-                color: #828282;
-            }
-        }
-        .colors, .sizes {
-            .title {
-                font-family: AvenirLTStd-Book;
-                width: 80%;
-                p {
-                    color: $light-gray3;
-                }
-                .error {
-                    color: $light-red;
-                    width: 150px;
-                    display: none;
-                    text-align: $right;
-                }
-            }
-        }
-        .colors {
-            @extend %custom-radio-btns;
-        }
-        .sizes {
-            & > div {
-                a {
-                    font-family: AvenirLTStd-Book;
-                    font-size: 14px;
-                    color: $black;
-                    text-decoration: underline;
-                    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
-                    &:hover {
-                        color: $gold;
-                    }
-                }
-            }
-            @extend %custom-radio-btns;
-            form {
-                & > div {
-                    width: 49px;
-                    height: 35px;
-                    input[type=radio]{
-                        &:checked, &:hover {
-                          & ~ .check {
-                            background-color: $gold;
-                            border-color: $gold;
-                          }
-                          & ~ label {
-                            color: $white
-                          }
-                        }
-                      }
-                    label {
-                        font-size: 12px;
-                        height: 35px;
-                        width: 100%;
-                    }
-                    .check {
-                        width: 49px;
-                        height: 35px;
-                    }
-                }
-            }
-        }
-        .fixed-btn-container {
-            @include maxMeduim {
-                position: fixed;
-                bottom: 0;
-                #{$right}: 50%;
-                @include prefixer(transform, translateX(50% * $transform-direction), webkit moz o);
-                z-index: 9;
-                background: #fff;
-                width: 100%;
-                height: 70px;
-            }
-            &.show {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            &.hide {
-                display: none;
-            }
-            button {
-                @include minMeduimToMaxMeduim {
-                    width: 690px;
-                }
-                @include minSmallToMaxSmall {
-                    width: 510px;
-                }
-                @include maxExtraSmall {
-                    width: calc(100% - 30px);
-                }
-            }
-            .add-to-bag {
-                @extend %add-to-bag;
-                background-color: $gold;
-                border-color: $gold;
-                color: $white;
-            }
-            .view-cart {
-                @extend %view-cart;
-                background-color: $gold;
-                border-color: $gold;
-                color: $white;
-            }
-        }
-        .add-to-wishlist {
-            @extend %cart-btn;
-        }
-        .delivery-box {
-            background-color: #fafafa;
-            @include minMeduim {
-                padding-inline: 20%;
-            }
-            @include maxSmall {
-                padding-inline: 1rem;
-            }
-            img {
-                background-color: $white;
-            }
-            .media-body {
-                h5 {
-                    font-family: Avenir-Heavy;
-                    font-size: 12px;
-                }
-                p {
-                    font-family: Avenir-Medium;
-                    font-size: 14px;
-                    color: $light-gray3;
-                }
-            }
-        }
+
+    .price {
+      font-family: #{$AvenirLTStd-Roman};
+
+      .value {
+        color: $gold;
+        font-size: 18.3px;
+      }
+
+      .notes {
+        font-size: 11px;
+        color: #828282;
+      }
     }
-}
-.item-details {
-    .container {
-        position: relative;
+
+    .colors, .sizes {
+      .title {
+        font-family: #{$AvenirLTStd-Book};
+        width: 80%;
+
+        p {
+          color: $light-gray3;
+        }
+
+        .error {
+          color: $light-red;
+          width: 150px;
+          display: none;
+          text-align: $right;
+        }
+      }
     }
-    & > .row {
-        @include maxExtraSmall {
-            margin-inline: 15px;
-        }
+
+    .colors {
+      @extend %custom-radio-btns;
     }
-    .tab-btns {
-        position: absolute;
-        top: 17px;
-        width: 60px;
-        z-index: 1;
-        @include minSmallToMaxSmall {
-            #{$right}: 0;
-        }
-        @include maxExtraSmall {
-            #{$right}: 15px;
-        }
+
+    .sizes {
+      & > div {
         a {
-            width: 25px;
-            height: 25px;
+          font-family: #{$AvenirLTStd-Book};
+          font-size: 14px;
+          color: $black;
+          text-decoration: underline;
+          @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+
+          &:hover {
+            color: $gold;
+          }
+        }
+      }
+
+      @extend %custom-radio-btns;
+
+      form {
+        & > div {
+          width: 49px;
+          height: 35px;
+
+          input[type=radio] {
+            &:checked, &:hover {
+              & ~ .check {
+                background-color: $gold;
+                border-color: $gold;
+              }
+
+              & ~ label {
+                color: $white
+              }
+            }
+          }
+
+          label {
             font-size: 12px;
-            border: 1px solid $light-gray3;
-            color: $light-gray3;
-            @include prefixer(transition, all 0.1s ease-in-out, webkit moz o);
-            &:hover {
-                background-color: $light-black3;
-                color: $white;
-            }
-            i {
-                @include prefixer(transform, scaleX(1 * $transform-direction), webkit moz o);
-            }
+            height: 35px;
+            width: 100%;
+          }
+
+          .check {
+            width: 49px;
+            height: 35px;
+          }
         }
+      }
     }
-    .nav-tabs {
-        border-bottom-width: 2px;
-        .nav-item {
-            margin-bottom: 0;
-            .nav-link {
-                position: relative;
-                &:not(.active) {
-                    font-family: AvenirLTStd-Roman;
-                }
-                &:not(.disabled) {
-                    color: $black;
-                    &:hover {
-                        color: $gold;
-                    }
-                }
-                &.disabled {
-                    color: $light-gray3;
-                    cursor: default;
-                }
-                &.active {
-                    font-family: Avenir-Heavy;
-                    color: $gold;
-                    &:after {
-                        position: absolute;
-                        content: '';
-                        bottom: -2px;
-                        #{$left}: 0;
-                        height: 4px;
-                        width: 100%;
-                        background-color: $gold;
-                    }
-                }
-                @include maxSmall {
-                    &:not(.active) {
-                        display: none;
-                    }
-                }
-            }
+
+    .fixed-btn-container {
+      @include maxMeduim {
+        position: fixed;
+        bottom: 0;
+        #{$right}: 50%;
+        @include prefixer(transform, translateX(50% * $transform-direction), webkit moz o);
+        z-index: 9;
+        background: #fff;
+        width: 100%;
+        height: 70px;
+      }
+
+      &.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &.hide {
+        display: none;
+      }
+
+      button {
+        @include minMeduimToMaxMeduim {
+          width: 690px;
         }
-    }
-    .tab-content {
-        .tab-pane {
-            & > div {
-                .details-content, .details-img {
-                    flex-grow: 1;
-                    flex-basis: 0;
-                }
-                .details-content {
-                    .desc-lg {
-                        opacity: 0.5;
-                        font-family: AvenirLTStd-Roman;
-                        font-size: 14px;
-                        color: $light-gray3;
-                        line-height: 1.71;
-                    }
-                    .features-title {
-                        font-family: Avenir-Heavy;
-                        color: $light-gray3-half-opacity;
-                        font-size: 16px;
-                    }
-                    .features-list {
-                        @include minSmall {
-                            column-count: 2;
-                        }
-                        li {
-                            position: relative;
-                            font-family: AvenirLTStd-Roman;
-                            line-height: 2;
-                            &:before {
-                                position: absolute;
-                                content: '';
-                                #{$left}: 10px;
-                                top: 50%;
-                                @include prefixer(transform, translateY(-50%), webkit moz o);
-                                width: 5px;
-                                height: 5px;
-                                border-radius: 50%;
-                                background-color: $light-gray3;
-                            }
-                        }
-                    }
-                }
-            }
+        @include minSmallToMaxSmall {
+          width: 510px;
         }
-    }
-}
-.similar-items {
-    padding: $sec-padding;
-    .heading-title {
-        @extend %heading-title;
-        h2 {
-            font-family: Avenir-Heavy;
-            color: $light-gray3;
-            letter-spacing: 0;
-        }
-    }
-    .card {
-        background-color: transparent;
-    }
-    .product-box {
         @include maxExtraSmall {
-            margin-inline: 20px;
+          width: calc(100% - 30px);
         }
-        @extend %product-box;
+      }
+
+      .disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+
+      .disabled:hover {
+        opacity: 0.5;
+        cursor: default;
+        background: #{$gold};
+      }
+
+      .add-to-bag {
+        @extend %add-to-bag;
+        background-color: $gold;
+        border-color: $gold;
+        color: $white;
+      }
+
+      .view-cart {
+        @extend %view-cart;
+        background-color: $gold;
+        border-color: $gold;
+        color: $white;
+      }
     }
+
+    .add-to-wishlist {
+      @extend %cart-btn;
+    }
+
+    .delivery-box {
+      background-color: #fafafa;
+      @include minMeduim {
+        padding-inline: 20%;
+      }
+      @include maxSmall {
+        padding-inline: 1rem;
+      }
+
+      img {
+        background-color: $white;
+      }
+
+      .media-body {
+        h5 {
+          font-family: #{$Avenir-Heavy};
+          font-size: 12px;
+        }
+
+        p {
+          font-family: #{$Avenir-Medium};
+          font-size: 14px;
+          color: $light-gray3;
+        }
+      }
+    }
+  }
 }
-.discover {
-    padding: $sec-padding;
-    background-color: $gold-quarter-opacity;
-    .heading-title {
-        @extend %heading-title;
-        .shop-now {
-            font-family: Avenir-Medium;
-            width: 120px;
-            height: 40px;
+
+.item-details {
+  .container {
+    position: relative;
+  }
+
+  & > .row {
+    @include maxExtraSmall {
+      margin-inline: 15px;
+    }
+  }
+
+  .tab-btns {
+    position: absolute;
+    top: 17px;
+    width: 60px;
+    z-index: 1;
+    @include minSmallToMaxSmall {
+      #{$right}: 0;
+    }
+    @include maxExtraSmall {
+      #{$right}: 15px;
+    }
+
+    a {
+      width: 25px;
+      height: 25px;
+      font-size: 12px;
+      border: 1px solid $light-gray3;
+      color: $light-gray3;
+      @include prefixer(transition, all 0.1s ease-in-out, webkit moz o);
+
+      &:hover {
+        background-color: $light-black3;
+        color: $white;
+      }
+
+      i {
+        @include prefixer(transform, scaleX(1 * $transform-direction), webkit moz o);
+      }
+    }
+  }
+
+  .nav-tabs {
+    border-bottom-width: 2px;
+
+    .nav-item {
+      margin-bottom: 0;
+
+      .nav-link {
+        position: relative;
+
+        &:not(.active) {
+          font-family: #{$AvenirLTStd-Roman};
+        }
+
+        &:not(.disabled) {
+          color: $black;
+
+          &:hover {
+            color: $gold;
+          }
+        }
+
+        &.disabled {
+          color: $light-gray3;
+          cursor: default;
+        }
+
+        &.active {
+          font-family: #{$Avenir-Heavy};
+          color: $gold;
+
+          &:after {
+            position: absolute;
+            content: '';
+            bottom: -2px;
+            #{$left}: 0;
+            height: 4px;
+            width: 100%;
+            background-color: $gold;
+          }
+        }
+
+        @include maxSmall {
+          &:not(.active) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    .tab-pane {
+      & > div {
+        .details-content, .details-img {
+          flex-grow: 1;
+          flex-basis: 0;
+        }
+
+        .details-content {
+          .desc-lg {
+            opacity: 0.5;
+            font-family: #{$AvenirLTStd-Roman};
             font-size: 14px;
-            border: solid 1px $light-black3;
-            border-radius: 4px;
-            @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
-            &:hover {
-                background-color: $dark-gray;
-                color: $white;
+            color: $light-gray3;
+            line-height: 1.71;
+          }
+
+          .features-title {
+            font-family: #{$Avenir-Heavy};
+            color: $light-gray3-half-opacity;
+            font-size: 16px;
+          }
+
+          .features-list {
+            @include minSmall {
+              column-count: 2;
             }
+
+            li {
+              position: relative;
+              font-family: #{$AvenirLTStd-Roman};
+              line-height: 2;
+
+              &:before {
+                position: absolute;
+                content: '';
+                #{$left}: 10px;
+                top: 50%;
+                @include prefixer(transform, translateY(-50%), webkit moz o);
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $light-gray3;
+              }
+            }
+          }
         }
+      }
     }
-    .card {
-        background-color: transparent;
+  }
+}
+
+.similar-items {
+  padding: $sec-padding;
+
+  .heading-title {
+    @extend %heading-title;
+
+    h2 {
+      font-family: #{$Avenir-Heavy};
+      color: $light-gray3;
+      letter-spacing: 0;
     }
-    .product-box {
-        @include maxExtraSmall {
-            margin-inline: 20px;
-        }
-        @extend %product-box;
+  }
+
+  .card {
+    background-color: transparent;
+  }
+
+  .product-box {
+    @include maxExtraSmall {
+      margin-inline: 20px;
     }
+    @extend %product-box;
+  }
+}
+
+.discover {
+  padding: $sec-padding;
+  background-color: $gold-quarter-opacity;
+
+  .heading-title {
+    @extend %heading-title;
+
+    .shop-now {
+      font-family: #{$Avenir-Medium};
+      width: 120px;
+      height: 40px;
+      font-size: 14px;
+      border: solid 1px $light-black3;
+      border-radius: 4px;
+      @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+
+      &:hover {
+        background-color: $dark-gray;
+        color: $white;
+      }
+    }
+  }
+
+  .card {
+    background-color: transparent;
+  }
+
+  .product-box {
+    @include maxExtraSmall {
+      margin-inline: 20px;
+    }
+    @extend %product-box;
+  }
 }

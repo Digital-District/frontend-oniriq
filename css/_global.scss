@@ -7,7 +7,7 @@
   background: white;
 }
 body {
-  font-family: Avenir-Light;
+  font-family: #{$Avenir-Light};
   overflow-x: hidden;
   font-size: 16px;
 }
@@ -25,7 +25,7 @@ a{
 }
 
 .btn-primary {
-  font-family: 'Avenir-Heavy';
+  font-family: #{$Avenir-Heavy};
   background-color: $dark-gray;
   border-color: $dark-gray;
   text-transform: uppercase;

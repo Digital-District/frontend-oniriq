@@ -1,333 +1,386 @@
 @import "../components/global";
 @import "../components/layout";
+//@import "../directions/variables";
 
 .heading-title {
-    @extend %heading-title;
+  @extend %heading-title;
 }
+
 .shop-now {
-    font-family: Avenir-Medium;
-    width: 120px;
-    height: 40px;
-    font-size: 14px;
-    border: solid 1px $light-black3;
-    border-radius: 4px;
-    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
-    &:hover {
-        background-color: $dark-gray;
-        color: $white;
-    }
+  font-family: #{$Avenir-Medium};
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  border: solid 1px $light-black3;
+  border-radius: 4px;
+  @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+
+  &:hover {
+    background-color: $dark-gray;
+    color: $white;
+  }
 }
+
 .product-box {
-    @include maxExtraSmall {
-        margin-inline: 20px;
-    }
-    @extend %product-box;
+  @include maxExtraSmall {
+    margin-inline: 20px;
+  }
+  @extend %product-box;
 }
 
 .banner {
-    .carousel {
-      .carousel-indicators {
-        li {
-          background: $white-half-opacity;
-          @include opacity(1);
-          width: 12px;
-          height: 12px;
-          border-top: 0;
-          border-bottom: 0;
-          border-radius: 50%;
-          margin: 0 5px;
-          cursor: pointer;
-          &.active {
-            background-color: $white;
-          }
-          &:hover {
-            background-color: $white;
-          }
+  .carousel {
+    .carousel-indicators {
+      li {
+        background: $white-half-opacity;
+        @include opacity(1);
+        width: 12px;
+        height: 12px;
+        border-top: 0;
+        border-bottom: 0;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+
+        &.active {
+          background-color: $white;
         }
-      }
-      .carousel-item {
-        position: relative;
-        .carousel-img {
-          display: block;
-          background-repeat: no-repeat;
-          background-size: cover;
-          @include maxMeduim {
-            background-position: left 35% bottom;
-          }
-          @include minMeduim {
-            height: calc(100vh - 152px);
-          }
-          @include maxSmall {
-            height: calc(100vh - 134px);
-          }
-        }
-        .caption-container {
-            width: 100%;
-            height: 100%;
-            #{$left}: 0;
-            top: 0;
-            .carousel-caption {
-                width: 50%;
-                position: relative;
-                #{$left}: 0;
-                bottom: 0;
-                #{$right}: 0;
-                h1 {
-                    font-family: 'PlayfairDisplay-Regular';
-                    color: $white;
-                    @include minMeduim {
-                        font-size: 80px;
-                    }
-                    @include minSmallToMaxSmall {
-                        font-size: 40px;
-                    }
-                }
-                .shop-btn {
-                    @include minSmall {
-                        width: 203px;
-                    }
-                    font-family: Avenir-Heavy;
-                    font-size: 14px;
-                    letter-spacing: 1px;
-                    height: 48px;
-                    margin: 50px auto 0;
-                    text-transform: uppercase;
-                    border-radius: 4px;
-                    background-color: $gold;
-                    color: $white;
-                    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
-                    &:hover {
-                        background-color: $dark-gray;
-                    }
-                }
-            }
+
+        &:hover {
+          background-color: $white;
         }
       }
     }
+
+    .carousel-item {
+      position: relative;
+
+      .carousel-img {
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include maxMeduim {
+          background-position: left 35% bottom;
+        }
+        @include minMeduim {
+          height: calc(100vh - 152px);
+        }
+        @include maxSmall {
+          height: calc(100vh - 134px);
+        }
+      }
+
+      .caption-container {
+        width: 100%;
+        height: 100%;
+        #{$left}: 0;
+        top: 0;
+
+        .carousel-caption {
+          width: 50%;
+          position: relative;
+          #{$left}: 0;
+          bottom: 0;
+          #{$right}: 0;
+
+          h1 {
+            font-family: #{$PlayfairDisplay-Regular};
+            color: $white;
+            @include minMeduim {
+              font-size: 80px;
+            }
+            @include minSmallToMaxSmall {
+              font-size: 40px;
+            }
+          }
+
+          .shop-btn {
+            @include minSmall {
+              width: 203px;
+            }
+            font-family: #{$Avenir-Heavy};
+            font-size: 14px;
+            letter-spacing: 1px;
+            height: 48px;
+            margin: 50px auto 0;
+            text-transform: uppercase;
+            border-radius: 4px;
+            background-color: $gold;
+            color: $white;
+            @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+
+            &:hover {
+              background-color: $dark-gray;
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
 .new-in {
-    padding: $sec-padding;
-    .heading-title {
-        h2 {
-            font-size: 20px;
-        }
+  padding: $sec-padding;
+
+  .heading-title {
+    h2 {
+      font-size: 20px;
     }
+  }
 }
+
 .our-mission {
-    padding: $sec-padding;
-    .inner {
-        & > div {
-            flex-grow: 1;
-            flex-basis: 0;
-        }
-        .details {
-            h2 {
-                font-family: 'PlayfairDisplay-SemiBold';
-                color: $gold;
-                text-transform: uppercase;
-                @include minSmall {
-                    font-size: 48px;
-                }
-                @include maxExtraSmall {
-                    font-size: 34px;
-                }
-            }
-            p {
-                font-family: Avenir-Roman;
-                font-size: 20px;
-                color: $dark-gray;
-                line-height: 1.71;
-                @include minLarge {
-                    width: 80%;
-                }
-            }
-            .shop-now {
-                font-family: Avenir-Heavy;
-                &:not(:hover) {
-                    color: $gold;
-                    border-color: $gold;
-                }
-            }
-        }
+  padding: $sec-padding;
+
+  .inner {
+    & > div {
+      flex-grow: 1;
+      flex-basis: 0;
     }
-}
-.discover {
-    padding: $sec-padding;
-    background-color: $gold-quarter-opacity;
-    .card {
-        background-color: transparent;
-    }
-}
-.new-categories {
-    padding: $sec-padding;
-}
-.categories {
-    padding: $sec-padding;
-    .heading-title {
-        h2 {
-            font-family: 'PlayfairDisplay-Medium';
-            font-size: 32px;
+
+    .details {
+      h2 {
+        font-family: #{$PlayfairDisplay-SemiBold};
+        color: $gold;
+        text-transform: uppercase;
+        @include minSmall {
+          font-size: 48px;
         }
-    }
-    .cat-box {
-        position: relative;
         @include maxExtraSmall {
-            margin-inline: 30px;
+          font-size: 34px;
         }
-        .cat-img {
-            position: relative;
-            &:after {
-                @extend %overlay;
-                content: " ";
-                z-index: 1;
-                background: #00000029;
-                @include prefixer(transition, all .3s ease-in-out, webkit moz o);
-            }
-            img {
-                @include minLarge {
-                    min-height: 360px;
-                }
-                @include maxMeduim {
-                    min-height: 550px;
-                }
-            }
+      }
+
+      p {
+        font-family: Avenir-Roman;
+        font-size: 20px;
+        color: $dark-gray;
+        line-height: 1.71;
+        @include minLarge {
+          width: 80%;
         }
-        .cat-title {
-            position: absolute;
-            top: 50%;
-            #{$left}: 50%;
-            z-index: 2;
-            @include prefixer(transform, translate(-50% * $transform-direction, -50%), webkit moz o);
-            h3 {
-                font-size: 32px;
-                letter-spacing: 1px;
-                font-family: 'PlayfairDisplay-Medium';
-            }
+      }
+
+      .shop-now {
+        font-family: Avenir-Heavy;
+
+        &:not(:hover) {
+          color: $gold;
+          border-color: $gold;
         }
+      }
     }
+  }
 }
+
+.discover {
+  padding: $sec-padding;
+  background-color: $gold-quarter-opacity;
+
+  .card {
+    background-color: transparent;
+  }
+}
+
+.new-categories {
+  padding: $sec-padding;
+}
+
+.categories {
+  padding: $sec-padding;
+
+  .heading-title {
+    h2 {
+      font-family: #{$PlayfairDisplay-Medium};
+      font-size: 32px;
+    }
+  }
+
+  .cat-box {
+    position: relative;
+    @include maxExtraSmall {
+      margin-inline: 30px;
+    }
+
+    .cat-img {
+      position: relative;
+
+      &:after {
+        @extend %overlay;
+        content: " ";
+        z-index: 1;
+        background: #00000029;
+        @include prefixer(transition, all .3s ease-in-out, webkit moz o);
+      }
+
+      img {
+        @include minLarge {
+          min-height: 360px;
+        }
+        @include maxMeduim {
+          min-height: 550px;
+        }
+      }
+    }
+
+    .cat-title {
+      position: absolute;
+      top: 50%;
+      #{$left}: 50%;
+      z-index: 1;
+      @include prefixer(transform, translate(-50% * $transform-direction, -50%), webkit moz o);
+
+      h3 {
+        font-size: 32px;
+        letter-spacing: 1px;
+        font-family: #{$PlayfairDisplay-Medium};
+      }
+    }
+  }
+}
+
 .testimonials {
-    padding: $sec-padding;
-    background-color: $gold;
-    .heading-title {
-        h2 {
-            font-family: 'PlayfairDisplay-Regular';
-            letter-spacing: 0.82px;
-            font-size: 38px;
+  padding: $sec-padding;
+  background-color: $gold;
+
+  .heading-title {
+    h2 {
+      font-family: #{$PlayfairDisplay-Regular};
+      letter-spacing: 0.82px;
+      font-size: 38px;
+
+      span {
+        color: $white-half-opacity;
+      }
+    }
+
+    p {
+      font-family: #{$AvenirLTStd-Book};
+      font-size: 18px;
+      @include opacity(0.67);
+    }
+  }
+
+  #owl-testimonials {
+    .owl-stage-outer {
+      border-top: 1px solid $white-quarter-opacity;
+      padding-top: 20px;
+
+      .testi-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        padding-bottom: 65px;
+        min-height: 312px;
+        position: relative;
+        @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+        @include maxExtraSmall {
+          margin-inline: 30px;
+        }
+
+        &:before {
+          position: absolute;
+          content: '';
+          top: -21px;
+          #{$left}: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $white;
+          display: none;
+          @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
+        }
+
+        &:hover {
+          background-color: $white;
+
+          &:before {
+            display: block;
+          }
+
+          p {
+            color: $black;
+            @include opacity(1);
+          }
+
+          .testi-details {
             span {
-                color: $white-half-opacity;
+              color: $black-half-opacity;
             }
+          }
         }
-        p{
-            font-family: AvenirLTStd-Book;
-            font-size: 18px;
-            @include opacity(0.67);
+
+        p {
+          color: $white;
+          @include opacity(0.61);
+          font-family: #{$PlayfairDisplay-Regular};
+          font-size: 18px;
+          margin-bottom: 0;
         }
+
+        .testi-details {
+          position: absolute;
+          bottom: 10px;
+          #{$right}: 20px;
+          font-family: #{$AvenirLTStd-Book};
+
+          img {
+            width: 32px;
+            height: 32px;
+          }
+
+          h5 {
+            color: $black;
+            font-size: 12px;
+          }
+
+          span {
+            color: $white-half-opacity;
+            font-size: 12px;
+          }
+        }
+      }
     }
-    #owl-testimonials {
-        .owl-stage-outer {
-            border-top: 1px solid $white-quarter-opacity;
-            padding-top: 20px;
-            .testi-box {
-                background-color: rgba(255, 255, 255, 0.1);
-                padding: 20px;
-                padding-bottom: 65px;
-                min-height: 312px;
-                position: relative;
-                @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
-                @include maxExtraSmall {
-                    margin-inline: 30px;
-                }
-                &:before {
-                    position: absolute;
-                    content: '';
-                    top: -21px;
-                    #{$left}: 0;
-                    width: 100%;
-                    height: 2px;
-                    background-color: $white;
-                    display: none;
-                    @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
-                }
-                &:hover {
-                    background-color: $white;
-                    &:before {
-                        display: block;
-                    }
-                    p {
-                        color: $black;
-                        @include opacity(1);
-                    }
-                    .testi-details {
-                        span {
-                            color: $black-half-opacity;
-                        }
-                    }
-                }
-                p {
-                    color: $white;
-                    @include opacity(0.61);
-                    font-family: 'PlayfairDisplay-Regular';
-                    font-size: 18px;
-                    margin-bottom: 0;
-                }   
-                .testi-details {
-                    position: absolute;
-                    bottom: 10px;
-                    #{$right}: 20px;
-                    font-family: AvenirLTStd-Book;
-                    img {
-                        width: 32px;
-                        height: 32px;
-                    }
-                    h5 {
-                        color: $black;
-                        font-size: 12px;
-                    }
-                    span {
-                        color: $white-half-opacity;
-                        font-size: 12px;
-                    }
-                }     
-            }
+
+    .owl-nav {
+      display: flex;
+      justify-content: end;
+
+      .owl-next, .owl-prev {
+        width: 40px;
+        height: 40px;
+        background: #fff;
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: -20px;
+        // @include prefixer(transform, translateY(-50%), webkit moz o);
+        &:hover {
+          background-color: $black-half-opacity;
+
+          svg {
+            fill: $white !important;
+          }
         }
-        .owl-nav {
-            display: flex;
-            justify-content: end;
-            .owl-next, .owl-prev {
-                width: 40px;
-                height: 40px;
-                background: #fff;
-                border-radius: 50%;
-                position: absolute;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                bottom: -20px;
-                // @include prefixer(transform, translateY(-50%), webkit moz o);
-                &:hover {
-                    background-color: $black-half-opacity;
-                    svg {
-                        fill: $white !important;
-                    }
-                }
-            }
-            .owl-next {
-                @include minSmall{
-                    #{$right}: 10px;
-                }
-                @include maxSmall{
-                    #{$right}: 40px;
-                }
-            }
-            .owl-prev {
-                @include minSmall{
-                    #{$left}: 10px;
-                }
-                @include maxSmall{
-                    #{$left}: 40px;
-                }
-            }
+      }
+
+      .owl-next {
+        @include minSmall {
+          #{$right}: 10px;
         }
+        @include maxSmall {
+          #{$right}: 40px;
+        }
+      }
+
+      .owl-prev {
+        @include minSmall {
+          #{$left}: 10px;
+        }
+        @include maxSmall {
+          #{$left}: 40px;
+        }
+      }
     }
+  }
 }

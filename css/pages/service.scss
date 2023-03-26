@@ -1,5 +1,6 @@
 @import '../components/global';
 @import "../components/layout";
+//@import "../directions/variables";
 
 .menu-items {
     ul {
@@ -33,11 +34,11 @@
             }
             &.active {
                 a {
-                    font-family: Avenir-Heavy;
+                    font-family: #{$Avenir-Heavy};
                 }
             }
             a {
-                font-family: AvenirLTStd-Book;
+                font-family: #{$AvenirLTStd-Book};
                 color: $dark-gray;
                 @include prefixer(transition, all 0.3s ease-in-out 0s, webkit moz o);
             }
@@ -55,7 +56,7 @@
     .heading-title {
         color: $dark-gray;
         h2 {
-            font-family: PlayfairDisplay-SemiBold;
+            font-family: #{$PlayfairDisplay-SemiBold};
             line-height: 1.15;
             @include minSmall {
                 font-size: 48px;
@@ -65,7 +66,7 @@
             }
         }
         p {
-            font-family: AvenirLTStd-Roman;
+            font-family:#{$AvenirLTStd-Roman};
             font-size: 20px;
         }
     }
@@ -78,7 +79,7 @@
             margin: 0 20px;
         }
         label {
-            font-family: 'AvenirLTStd-Roman';
+            font-family: #{$AvenirLTStd-Roman};
         }
         .row {
             & > div {
@@ -135,7 +136,7 @@
     .heading-title {
         h2 {
             color: $dark-gray;
-            font-family: PlayfairDisplay-Medium;
+            font-family: #{$PlayfairDisplay-Medium};
             line-height: 1.06;
             letter-spacing: -1.2px;
             @include minSmall {
@@ -157,7 +158,7 @@
             .card-header {
                 background-color: transparent;
                 h2 {
-                    font-family: Avenir-Medium;
+                    font-family: #{$Avenir-Medium};
                     font-size: 24px;
                     color: $dark-gray;
                     cursor: pointer;
@@ -211,7 +212,7 @@
                     }
                 }
                 p {
-                    font-family: AvenirLTStd-Roman;
+                    font-family:#{$AvenirLTStd-Roman};
                     font-size: 18px;
                     line-height: 1.68;
                     color: $dark-gray;

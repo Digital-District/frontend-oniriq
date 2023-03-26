@@ -1,6 +1,6 @@
 @import "mixins";
 @import "../directions/dir-ltr";
-
+@import "../helper/variables";
 %overlay {
   position: absolute;
   top: 0;
@@ -11,7 +11,6 @@
 %header-search-form {
   button {
     border: 1px solid #ced4da;
-    background-color: unset;
     cursor: pointer;
 
     &.search-filter-clear {

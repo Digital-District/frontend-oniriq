@@ -1,5 +1,32 @@
 $font14: 14px;
 $home-content: 960px;
+$light-gray: #f9f9f9;
+$light-gray2: #dadada;
+$light-gray3: #4f4f4f;
+$light-gray3-half-opacity: #4f4f4f80;
+$dark-gray: #303030;
+$dark-gray-half-opacity: #30303080;
+$dark-gray-quarter-opacity: #30303040;
+$gold: #84754e;
+$gold-quarter-opacity: #84754e40;
+$beige: #dcc6b6;
+$light-black2: #2f292b;
+$light-black3: #454545;
+$black-half-opacity: #00000080;
+$black-quarter-opacity: #00000040;
+$black: #000;
+$white-half-opacity: #ffffff80;
+$white-quarter-opacity: #ffffff45; // 0.27
+$white: #fff;
+$red: #b11515;
+$light-red: #cf4f4f;
+$dark-blue: #3c3a55;
+$green: #b3e140;
+$brown: #888888;
+$pink: #edbeea;
+$orange: #ffa600;
+$disabled: #c4c4c4;
+$sec-padding: 60px 0;
 $max-phones: 'max-width: 767px';
 $max-tablets: 'max-width: 1024px';
 $png-icon: 'png';
@@ -15,6 +42,16 @@ $font-face-other: 'Noto Kufi Arabic' !default;
 $left: left;
 $right: right;
 $transform-direction: 1;
+$AvenirLTStd-Black: 'AvenirLTStd-Black';
+$AvenirLTStd-Book: 'AvenirLTStd-Book';
+$AvenirLTStd-Roman: 'AvenirLTStd-Roman';
+$Avenir-Medium: 'Avenir-Medium';
+$Avenir-Light: 'Avenir-Light';
+$Avenir-Heavy: 'Avenir-Heavy';
+$PlayfairDisplay-Regular: 'PlayfairDisplay-Regular';
+$PlayfairDisplay-SemiBold: 'PlayfairDisplay-SemiBold';
+$PlayfairDisplay-Medium: 'PlayfairDisplay-Medium';
+$PlayfairDisplay-Bold: 'PlayfairDisplay-Bold';
 // Dont't Remove this Block
 @if ($language == 'ar') {
   $direction: 'right'; // Dont't Remove or Edit this line
@@ -25,6 +62,16 @@ $transform-direction: 1;
   $left: right;
   $right: left;
   $transform-direction: -1;
+  $AvenirLTStd-Black: 'Tajawal';
+  $AvenirLTStd-Book: 'Tajawal';
+  $AvenirLTStd-Roman: 'Tajawal';
+  $Avenir-Medium: 'Tajawal';
+  $Avenir-Light: 'Tajawal';
+  $Avenir-Heavy: 'Tajawal';
+  $PlayfairDisplay-Regular: 'Tajawal';
+  $PlayfairDisplay-SemiBold: 'Tajawal';
+  $PlayfairDisplay-Medium: 'Tajawal';
+  $PlayfairDisplay-Bold: 'Tajawal';
 }
 
 // Dont't Remove this Block

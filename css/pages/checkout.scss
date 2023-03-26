@@ -1,4 +1,5 @@
 @import "../components/global";
+//@import "../directions/variables";
 
 .checkout-container {
     .info{
@@ -27,7 +28,7 @@
                 }
             }
             .heading-title {
-                font-family: Avenir-Heavy;
+                font-family: #{$Avenir-Heavy};
                 font-size: 16px;
                 color: $dark-gray;
                 a {
@@ -78,13 +79,13 @@
                 }
             }
             .payment-error-message {
-                font-family: 'AvenirLTStd-Roman';
+                font-family: #{$AvenirLTStd-Roman};
                 margin-top: 5px;
                 display: block;
             }
         }
         .terms-cond {
-            font-family: AvenirLTStd-Roman;
+            font-family: #{$AvenirLTStd-Roman};
             font-size: 12px;
             color: #828282;
             @include maxExtraSmall {
@@ -103,12 +104,12 @@
                 }
                 h3 {
                     font-size: 16px;
-                    font-family: AvenirLTStd-Roman;
+                    font-family: #{$AvenirLTStd-Roman};
                     color: $dark-gray;
                 }
                 p {
                     font-size: 14px;
-                    font-family: Avenir-Medium;
+                    font-family: #{$Avenir-Medium};
                     color: $dark-gray-half-opacity;
                 }
             }
@@ -117,7 +118,7 @@
             button {
                 height: 51px;
                 font-size: 14px;
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
                 letter-spacing: 0;
                 &.btn-secondary {
                     @include maxExtraSmall {
@@ -137,7 +138,7 @@
         .shipping-info, .card-details, .confirmed, .order-details {
             p {
                 font-size: 14px;
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
                 color: $dark-gray-half-opacity;
             }
         }
@@ -148,13 +149,13 @@
                     height: 44px;
                 }
                 h3 {
-                    font-family: AvenirLTStd-Roman;
+                    font-family: #{$AvenirLTStd-Roman};
                     color: $dark-gray-half-opacity;
                     font-size: 14px;
                 }
                 p {
                     font-size: 20px;
-                    font-family: Avenir-Medium;
+                    font-family: #{$Avenir-Medium};
                     color: $dark-gray;
                 }
             }
@@ -172,7 +173,7 @@
             }
         }
         .completed-note {
-            font-family: AvenirLTStd-Roman;
+            font-family: #{$AvenirLTStd-Roman};
             color: $dark-gray;
             font-size: 14px;
         }
@@ -192,7 +193,7 @@
                 padding-inline: 30px;
             }
             h2 {
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
                 font-size: 24px;
                 color: $dark-gray;
                 border-bottom: 1px solid $dark-gray-quarter-opacity;
@@ -227,10 +228,10 @@
                             }
                             h4, p {
                                 font-size: 16px;
-                                font-family: AvenirLTStd-Book;
+                                font-family: #{$AvenirLTStd-Book};
                             }
                             .price {
-                                font-family: Avenir-Heavy;
+                                font-family: #{$Avenir-Heavy};
                                 font-size: 18px;
                                 @include minExtraLarge {
                                     width: 120px;
@@ -248,7 +249,7 @@
                 }
                 button {
                     width: 89px;
-                    font-family: Avenir-Light;
+                    font-family: #{$Avenir-Light};
                     &:not([disabled]){
                         background-color: $gold;
                         border-color: $gold;
@@ -270,16 +271,16 @@
                         color: $black-half-opacity;
                     }
                     .value {
-                        font-family: Avenir-Medium;
+                        font-family: #{$Avenir-Medium};
                         color: $light-gray3;
                     }
                     &.total {
                         border-top: 1px solid $dark-gray-quarter-opacity;
                         .title {
-                            font-family: Avenir-Medium;
+                            font-family: #{$Avenir-Medium};
                         }
                         .value {
-                            font-family: AvenirLTStd-Black;
+                            font-family: #{$AvenirLTStd-Black};
                         }
                     }
                 }
@@ -298,7 +299,7 @@
                     width: 26px;
                 }
                 p {
-                    font-family: AvenirLTStd-Roman;
+                    font-family: #{$AvenirLTStd-Roman};
                     font-size: 12px;
                     color: $light-gray3;
                     a {
@@ -311,10 +312,10 @@
     }
 }
 label {
-    font-family: AvenirLTStd-Roman;
+    font-family: #{$AvenirLTStd-Roman};
     color: $dark-gray;
     .note {
-        font-family: Avenir-Medium;
+        font-family: #{$Avenir-Medium};
         font-size: 14px;
         a {
             color: $gold;
@@ -350,7 +351,7 @@ input {
         position: relative;
         font-size: 14px;
         color: $black;
-        font-family: Avenir-Light;
+        font-family: #{$Avenir-Light};
         padding-#{$left}: 5px;
         &:before {
             content: "";
@@ -379,7 +380,7 @@ input {
         }
         height: 44px;
         line-height: 1;
-        font-family: 'Avenir-Heavy';
+        font-family: #{$Avenir-Heavy};
         background-color: $gold;
         border-color: $gold;
         color: $white;
@@ -399,7 +400,7 @@ input {
         }
     }
     .return {
-        font-family: AvenirLTStd-Roman;
+        font-family: #{$AvenirLTStd-Roman};
         color: $dark-gray;
         @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
         &:hover {

@@ -1,5 +1,5 @@
 {
-  "products": [
+  "category1": [
     {
       "id": 1,
       "name": "Product 1",
@@ -36,67 +36,23 @@
       "img": "images/prod-5.jpg"
     }
   ],
-  "categories": [
+  "category2": [
     {
       "id": 1,
-      "name": "some category 1",
+      "name": "category 1",
       "link": "https://theoniriq.com",
       "img": "images/cats-1.jpg"
     },
     {
       "id": 2,
-      "name": "some category 2",
+      "name": "category 2",
       "link": "https://theoniriq.com",
       "img": "images/cats-2.jpg"
     },
     {
       "id": 3,
-      "name": "some category 3",
+      "name": "category 3",
       "link": "https://theoniriq.com",
       "img": "images/cats-3.jpg"
-    },
-    {
-      "id": 4,
-      "name": "some category 4",
-      "link": "https://theoniriq.com",
-      "img": "images/cats-4.jpg"
-    },
-    {
-      "id": 5,
-      "name": "some category 5",
-      "link": "https://theoniriq.com",
-      "img": "images/cats-5.jpg"
     }
-  ],
-  "brand": [
-    {
-      "id": 1,
-      "name": "some brands 1",
-      "link": "https://theoniriq.com",
-      "img": "images/newcat-1.jpg"
-    },
-    {
-      "id": 2,
-      "name": "some brands 2",
-      "link": "https://theoniriq.com",
-      "img": "images/newcat-2.jpg"
-    },
-    {
-      "id": 3,
-      "name": "some brands 3",
-      "link": "https://theoniriq.com",
-      "img": "images/newcat-3.jpg"
-    },
-    {
-      "id": 4,
-      "name": "some brands 4",
-      "link": "https://theoniriq.com",
-      "img": "images/newcat-4.jpg"
-    },
-    {
-      "id": 5,
-      "name": "some brands 5",
-      "link": "https://theoniriq.com",
-      "img": "images/logo.png"
-    }
-]}
+  ]}

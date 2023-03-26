@@ -1,5 +1,6 @@
 @import "../components/global";
 @import "../components/layout";
+//@import "../directions/variables";
 
 .product-box {
     @include maxExtraSmall {
@@ -82,7 +83,7 @@
     .heading-title {
         @extend %heading-title;
         .shop-now {
-            font-family: Avenir-Medium;
+            font-family: #{$Avenir-Medium};
             width: 120px;
             height: 40px;
             font-size: 14px;

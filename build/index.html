@@ -10,6 +10,11 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
     <link rel="stylesheet" href="css/pages/index-ltr.min.css">
+    <style>
+        .autocomplete-suggestions {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -133,21 +138,131 @@
                     <button type="submit" class="border-left-0 search-btn" aria-label="search">
                         <i class="icon-magnifier" aria-hidden="true"></i>
                     </button>
-                    <div class="dropdown-search">
-                        <div>
-                            <p>Brands</p>
-                            <ul>
+                    <div class="dropdown-search d-none">
+                        <div class="position-relative">
+                            <ul id="category-list" class="d-flex position-relative">
+                                <li><a href="#">Women</a>
+                                </li>
+                                <li><a href="#">Men</a>
+                                </li>
+                                <li><a href="#">Kids</a></li>
+                                <li><a href="#">Lifestyle</a></li>
+                                <li><a href="#">Gourmet</a></li>
+                                <li><a href="#">Library & Stationery</a></li>
+                                <li><span id="category-women" class="category-line"></span></li>
                             </ul>
+                            <div id="line">
+                            </div>
                         </div>
                         <div>
-                            <p>Products</p>
-                            <ul>
-
+                            <ul id="women-products" class="d-none">
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 1
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 2
+                                        </span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 3
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 4
+                                        </span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 1
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 2
+                                        </span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 3
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li class="results-btn mt-2">
+                                    <a href="#" class="btn-primary btn pt-2 w-100">See all search results</a>
+                                </li>
                             </ul>
-                        </div>
-                        <div>
-                            <p>Categories</p>
-                            <ul>
+                            <ul id="men-products" class="d-none">
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 5
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 6
+                                        </span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 7
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li class="results-btn mt-2">
+                                    <button class="btn-primary btn pt-2">View more</button>
+                                </li>
+                            </ul>
+                            <ul id="kids-products" class="d-none">
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 8
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 9
+                                        </span></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>
+                                            Product 10
+                                        </span>
+                                        <span>Brand</span>
+                                    </a>
+                                </li>
+                                <li class="results-btn mt-2">
+                                    <button class="btn-primary btn pt-2">View more</button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -285,153 +400,57 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1/jquery.appear.min.js"></script>
 <script src="js/main.min.js"></script>
 <script>
-    const product = new XMLHttpRequest();
-    product.open("GET", "http://localhost:3000/products", true);
-    product.send();
-    const brand = new XMLHttpRequest();
-    brand.open("GET", "http://localhost:3000/brand", true);
-    brand.send();
-    brand.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const data = JSON.parse(this.responseText);
-            const searchResults = document.querySelector('.dropdown-search > div:first-child ul');
-            document.getElementById('search-autocomplete').addEventListener('keyup', function () {
-                const searchResult = document.getElementById('search-autocomplete').value;
-                searchResults.innerHTML = '';
-                if (searchResult != "") {
-                    brand.search = searchResult;
-                    console.log(product);
-                } else {
-                    data.forEach((item) => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        const img = document.createElement('img');
-                        const span = document.createElement('span');
-                        a.href = item.link
-                        img.src = item.img;
-                        img.classList.add('search-box-img');
-                        searchResults.appendChild(li);
-                        li.appendChild(a);
-                        a.appendChild(img);
-                        a.appendChild(span);
-                        span.innerHTML = item.name;
-                    });
-                }
-            });
-
-            data.forEach((item) => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                const img = document.createElement('img');
-                const span = document.createElement('span');
-                a.href = item.link
-                img.src = item.img;
-                img.classList.add('search-box-img');
-                searchResults.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(img);
-                a.appendChild(span);
-                span.innerHTML = item.name;
-            });
+    document.querySelector('.shop-elements .search').addEventListener('click', function () {
+        document.querySelector('body').classList.add('overflow-hidden');
+    });
+    document.querySelector('.close').addEventListener('click', function () {
+        document.querySelector('body').classList.remove('overflow-hidden');
+        document.querySelector('.search-box').classList.remove('h-100');
+    });
+    document.getElementById('search-autocomplete').addEventListener('keyup', function () {
+        const searchResult = document.getElementById('search-autocomplete').value;
+        if (searchResult != "") {
+            document.querySelector('.dropdown-search').classList.remove('d-none');
+        } else {
+            document.querySelector('.dropdown-search').classList.add('d-none');
         }
-    };
-    product.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const data = JSON.parse(this.responseText);
-            const searchResults = document.querySelector('.dropdown-search > div:nth-child(2) ul');
-            document.getElementById('search-autocomplete').addEventListener('keyup', function () {
-                searchResults.innerHTML = '';
-                const searchResult = document.getElementById('search-autocomplete').value;
-                if (searchResult != '') {
-                    product.search = searchResult;
-                    console.log(product, searchResult);
-                } else {
-                    data.forEach((item) => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        const img = document.createElement('img');
-                        const span = document.createElement('span');
-                        const span2 = document.createElement('span');
-                        a.href = item.link
-                        img.src = item.img;
-                        img.classList.add('search-box-img');
-                        searchResults.appendChild(li);
-                        li.appendChild(a);
-                        a.appendChild(img);
-                        a.appendChild(span);
-                        span.appendChild(span2);
-                        span2.insertAdjacentText('beforebegin', item.name);
-                        span2.innerHTML = item.description;
-                    });
-                }
-            });
-
-            data.forEach((item) => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                const img = document.createElement('img');
-                const span = document.createElement('span');
-                const span2 = document.createElement('span');
-                a.href = item.link
-                img.src = item.img;
-                img.classList.add('search-box-img');
-                searchResults.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(img);
-                a.appendChild(span);
-                span.appendChild(span2);
-                span2.insertAdjacentText('beforebegin', item.name);
-                span2.innerHTML = item.description;
-            });
+    });
+    const categoryList = document.querySelectorAll('#category-list li');
+    document.getElementById('search-autocomplete').addEventListener('keyup', function () {
+        if (categoryList.length < 4) {
+            document.querySelector('#category-list').style.height = "3rem";
         }
-    };
-    const category = new XMLHttpRequest();
-    category.open("GET", "http://localhost:3000/categories", true);
-    category.send();
-    category.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const data = JSON.parse(this.responseText);
-            const searchResults = document.querySelector('.dropdown-search > div:nth-child(3) ul');
-            document.getElementById('search-autocomplete').addEventListener('keyup', function () {
-                const searchResult = document.getElementById('search-autocomplete').value;
-                searchResults.innerHTML = '';
-                if (searchResult != "") {
-                    category.search = searchResult;
-                    console.log(product);
-                } else {
-                    data.forEach((item) => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        const img = document.createElement('img');
-                        const span = document.createElement('span');
-                        a.href = item.link
-                        img.src = item.img;
-                        img.classList.add('search-box-img');
-                        searchResults.appendChild(li);
-                        li.appendChild(a);
-                        a.appendChild(img);
-                        a.appendChild(span);
-                        span.innerHTML = item.name;
-                    });
-                }
-            });
-
-            data.forEach((item) => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                const img = document.createElement('img');
-                const span = document.createElement('span');
-                a.href = item.link
-                img.src = item.img;
-                img.classList.add('search-box-img');
-                searchResults.appendChild(li);
-                li.appendChild(a);
-                a.appendChild(img);
-                a.appendChild(span);
-                span.innerHTML = item.name;
-            });
-        }
-    };
+    });
+    for (const category of categoryList) {
+        category.addEventListener('click', function (e) {
+            for (const category of categoryList) {
+                category.classList.remove('category-active');
+            }
+            if (e.currentTarget.innerText.toLowerCase() == "men") {
+                document.querySelector('#men-products').classList.remove('d-none');
+                document.querySelector('#women-products').classList.add('d-none');
+                document.querySelector('#kids-products').classList.add('d-none');
+                document.querySelector(`.category-line`).setAttribute('id', 'category-men')
+            } else if (e.currentTarget.innerText.toLowerCase() == "women") {
+                document.querySelector('#men-products').classList.add('d-none');
+                document.querySelector('#women-products').classList.remove('d-none');
+                document.querySelector('#kids-products').classList.add('d-none');
+                document.querySelector(`.category-line`).setAttribute('id', 'category-women')
+            } else if (e.currentTarget.innerText.toLowerCase() == "kids") {
+                document.querySelector('#men-products').classList.add('d-none');
+                document.querySelector('#women-products').classList.add('d-none');
+                document.querySelector('#kids-products').classList.remove('d-none');
+                document.querySelector(`.category-line`).setAttribute('id', 'category-kids')
+            } else if (e.currentTarget.innerText.toLowerCase() == "gourmet") {
+                document.querySelector(`.category-line`).setAttribute('id', 'category-gourmet')
+            } else if (e.currentTarget.innerText.toLowerCase() == "lifestyle") {
+                document.querySelector(`.category-line`).setAttribute('id', 'category-lifeStyle')
+            } else {
+                document.querySelector(`.category-line`).setAttribute('id', 'category-library')
+            }
+            // e.currentTarget.classList.add('category-active');
+        });
+    }
 </script>
 </body>
 

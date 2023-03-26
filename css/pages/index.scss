@@ -1,5 +1,6 @@
 @import "../components/global";
 @import "../components/layout";;
+//@import "../directions/variables";
 
 .categories{
     padding: $sec-padding;
@@ -31,10 +32,10 @@
             position: absolute;
             top: 50%;
             #{$left}: 50%;
-            z-index: 2;
+            z-index: 1;
             @include prefixer(transform, translate(-50% * $transform-direction, -50%), webkit moz o);
             h5 {
-                font-family: 'PlayfairDisplay-Regular';
+                font-family: #{$PlayfairDisplay-Regular};
                 @include minLarge {
                     font-size: 72px;
                 }
@@ -61,7 +62,7 @@
             flex-grow: 1;
             flex-basis: 0;
             h2{
-                font-family: 'PlayfairDisplay-SemiBold';
+                font-family: #{$PlayfairDisplay-SemiBold};
                 font-size: 44px;
             }
             p{
@@ -72,7 +73,7 @@
                 width: 400px;
             }
             .shop-now{
-                font-family: 'AvenirLTStd-Book';
+                font-family: #{$AvenirLTStd-Book};
                 background-color: $beige;
                 color: $light-black2;
                 width: 243px;

@@ -1,5 +1,6 @@
 @import "../components/global";
 @import "../components/layout";
+//@import "../directions/variables";
 
 .orders-nav {
     ul {
@@ -51,7 +52,7 @@
                 }
                 &.active {
                     a {
-                        font-family: Avenir-Heavy;
+                        font-family: #{$Avenir-Heavy};
                     }
                 }
                 &.notif {
@@ -74,7 +75,7 @@
             }
         }
         li {
-            font-family: AvenirLTStd-Book;
+            font-family: #{$AvenirLTStd-Book};
             position: relative;
             &.active, &:hover {
                 &:before {
@@ -121,12 +122,12 @@
 }
 .top-nav {
     h2 {
-        font-family: Avenir-Heavy;
+        font-family: #{$Avenir-Heavy};
         font-size: 16px;
         color: $dark-gray;
     }
     a {
-        font-family: AvenirLTStd-Book;
+        font-family: #{$AvenirLTStd-Book};
         color: $gold;
         @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
         &:hover {
@@ -152,7 +153,7 @@
                 border-bottom: 2px solid #eaeaea;
             }
             h3 {
-                font-family: Avenir-Heavy;
+                font-family: #{$Avenir-Heavy};
                 font-size: 16px;
                 color: $gold
             }
@@ -172,12 +173,12 @@
         }
         .serial {
             .title {
-                font-family: Avenir-Heavy;
+                font-family: #{$Avenir-Heavy};
                 font-size: 32px;
                 color: $dark-gray;
             }
             .num {
-                font-family: AvenirLTStd-Book;
+                font-family: #{$AvenirLTStd-Book};
                 font-size: 14px;
                 background-color: $gold;
                 color: $white;
@@ -186,7 +187,7 @@
             }
         }
         .cancel {
-            font-family: Avenir-Medium;
+            font-family: #{$Avenir-Medium};
             color: $dark-gray-half-opacity;
             font-size: 20px;
             @include prefixer(transition, all 0.3s ease-in-out, webkit moz o);
@@ -205,7 +206,7 @@
             }
         }
         h3 {
-            font-family: Avenir-Heavy;
+            font-family: #{$Avenir-Heavy};
             font-size: 20px;
             color: $dark-gray;
         }
@@ -260,7 +261,7 @@
                         }
                     }
                     h4 {
-                        font-family: Avenir-Medium;
+                        font-family: #{$Avenir-Medium};
                         font-size: 20px;
                         color: $dark-gray;
                     }
@@ -279,12 +280,12 @@
                 }
             }
             h4 {
-                font-family: Avenir-Heavy;
+                font-family: #{$Avenir-Heavy};
                 font-size: 16px;
                 color: $dark-gray;
             }
             p {
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
                 color: $dark-gray-half-opacity;
                 font-size: 14px;
             }
@@ -312,11 +313,11 @@
                     }
                     h4, p {
                         font-size: 16px;
-                        font-family: AvenirLTStd-Book;
+                        font-family: #{$AvenirLTStd-Book};
                     }
                 }
                 .price {
-                    font-family: Avenir-Heavy;
+                    font-family: #{$Avenir-Heavy};
                     font-size: 18px;
                     @include minSmall {
                         width: 120px;
@@ -349,7 +350,7 @@
         th {
             background-color: $dark-gray;
             border-color: transparent;
-            font-family: Avenir-Medium;
+            font-family: #{$Avenir-Medium};
             font-weight: normal;
             @include minMeduim {
                 &:first-child {
@@ -369,10 +370,10 @@
                 padding: 20px;
             }
             &.name, &.number {
-                font-family: AvenirLTStd-Book;
+                font-family: #{$AvenirLTStd-Book};
             } 
             &.address, &.more {
-                font-family: Avenir-Medium;
+                font-family: #{$Avenir-Medium};
             } 
             &.address {
                 font-size: 14px;
@@ -394,12 +395,12 @@
 }
 .profile {
     h2 {
-        font-family: Avenir-Heavy;
+        font-family: #{$Avenir-Heavy};
         font-size: 20px;
         color: $dark-gray;
     }
     .btn {
-        font-family: Avenir-Heavy;
+        font-family: #{$Avenir-Heavy};
         font-size: 14px;
         letter-spacing: 1px;
         width: 130px;
@@ -407,7 +408,7 @@
     }
     label {
         a {
-            font-family: AvenirLTStd-Book;
+            font-family: #{$AvenirLTStd-Book};
             color: $gold;
             &:hover {
                 color: $dark-gray;
@@ -423,10 +424,10 @@
 .custom-form {
     color: $dark-gray;
     label {
-        font-family: 'AvenirLTStd-Roman';
+        font-family: #{$AvenirLTStd-Roman};
     }
     .payment-error-message {
-        font-family: 'AvenirLTStd-Roman';
+        font-family: #{$AvenirLTStd-Roman};
         margin-top: 5px;
         display: block;
     }
@@ -481,7 +482,7 @@
     }
     &#addressAddEditModal {
         .address-delete {
-            font-family: Avenir-Medium;
+            font-family: #{$Avenir-Medium};
             font-size: 20px;
             color: $dark-gray-half-opacity;
             &:hover{
@@ -523,15 +524,15 @@
             font-weight: normal;
         }
         h3 {
-            font-family: Avenir-Heavy;
+            font-family: #{$Avenir-Heavy};
             font-size: 32px;
         }
         p {
-            font-family: Avenir-Medium;
+            font-family: #{$Avenir-Medium};
             font-size: 20px;
         }
         .btn {
-            font-family: Avenir-Heavy;
+            font-family: #{$Avenir-Heavy};
             font-size: 14px;
             letter-spacing: 1px;
             width: 130px;

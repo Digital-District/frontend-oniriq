@@ -2,22 +2,27 @@
   font-family: AvenirLTStd-Black;
   src: url("../../fonts/AvenirLTStd-Black.otf") format("opentype");
 }
+
 @font-face {
   font-family: AvenirLTStd-Book;
   src: url("../../fonts/AvenirLTStd-Book.otf") format("opentype");
 }
+
 @font-face {
   font-family: AvenirLTStd-Roman;
   src: url("../../fonts/AvenirLTStd-Roman.otf") format("opentype");
 }
+
 @font-face {
   font-family: Avenir-Medium;
   src: url("../../fonts/Avenir-Medium.otf") format("opentype");
 }
+
 @font-face {
   font-family: Avenir-Light;
   src: url("../../fonts/Avenir-Light.otf") format("opentype");
 }
+
 @font-face {
   font-family: Avenir-Heavy;
   src: url("../../fonts/Avenir-Heavy.otf") format("opentype");
@@ -27,15 +32,55 @@
   font-family: PlayfairDisplay-Regular;
   src: url("../../fonts/Playfair_Display/PlayfairDisplay-Regular.otf") format("opentype");
 }
+
 @font-face {
   font-family: PlayfairDisplay-SemiBold;
   src: url("../../fonts/Playfair_Display/PlayfairDisplay-SemiBold.ttf") format("truetype");
 }
+
 @font-face {
   font-family: PlayfairDisplay-Medium;
   src: url("../../fonts/Playfair_Display/PlayfairDisplay-Medium.otf") format("opentype");
 }
+
 @font-face {
   font-family: PlayfairDisplay-Bold;
   src: url("../../fonts/Playfair_Display/PlayfairDisplay-Bold.otf") format("opentype");
+}
+
+
+@font-face {
+  font-family: Tajawal;
+  src: url("../../fonts/Tajawal/Tajawal-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Tajawal;
+  src: url("../../fonts/Tajawal/Tajawal-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Tajawal;
+  src: url("../../fonts/Tajawal/Tajawal-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Tajawal;
+  src: url("../../fonts/Tajawal/Tajawal-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Tajawal;
+  src: url("../../fonts/Tajawal/Tajawal-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+*[dir="rtl"] {
+  & body {
+    font-family: Tajawal;
+  }
 }

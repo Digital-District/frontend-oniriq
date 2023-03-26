@@ -1,9 +1,10 @@
 @import "../components/global";
 @import "../components/layout";
+//@import "../directions/variables";
 
 .shop {
     .shop-sidebar {
-        font-family: "Avenir-Medium";
+        font-family: #{$Avenir-Medium};
         position: relative;
         &.loading{
             &:after{
@@ -152,7 +153,7 @@
                             width: 89px;
                             height: 48px;
                             border-radius: 4px;
-                            font-family: AvenirLTStd-Roman;
+                            font-family: #{$AvenirLTStd-Roman};
                             font-size: 12px;
                             label {
                                 font-size: 12px;
@@ -200,7 +201,7 @@
             .results-count {
                 font-size: 18px;
                 color: $black-half-opacity;
-                font-family: Avenir-Heavy;
+                font-family: #{$Avenir-Heavy};
             }
             .tags {
                 & > div {
